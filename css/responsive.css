@@ -1,0 +1,166 @@
+/* ============================================
+   RESPONSIVE STYLES - H-GUARDIAN WEBSITE
+   ============================================ */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .features-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-dropdown .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-left: 2px solid var(--gray-light);
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+    
+    /* Content Grids */
+    .features-grid,
+    .products-grid,
+    .factory-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .factory-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .factory-images img {
+        height: 150px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 60px 0;
+    }
+    
+    .product-image {
+        height: 150px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* CTA */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+    
+    /* Certifications Tabs */
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .feature-card,
+    .product-card,
+    .testimonial {
+        padding: 1.5rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+    }
+}
