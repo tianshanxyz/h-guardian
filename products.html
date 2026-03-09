@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | H-Guardian Medical Masks</title>
+    <meta name="description" content="CE/FDA certified medical masks for adults, teens, kids, and double nose-clip masks.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://h-guardian.com/products.html">
+    <meta property="og:title" content="Products | H-Guardian Medical Masks">
+    <meta property="og:description" content="CE/FDA certified medical masks for adults, teens, kids, and double nose-clip masks.">
+    <meta property="og:image" content="https://h-guardian.com/images/products/hero-bg.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://h-guardian.com/products.html">
+    <meta name="twitter:title" content="Products | H-Guardian Medical Masks">
+    <meta name="twitter:description" content="CE/FDA certified medical masks for adults, teens, kids, and double nose-clip masks.">
+    <meta name="twitter:image" content="https://h-guardian.com/images/products/hero-bg.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://h-guardian.com/products.html">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Products页面特有样式 */
+        .page-hero {
+           background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/products/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            position: relative;
+);
+        }
+        
+        .products-main {
+            padding: 60px 0;
+        }
+        
+        .products-container {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 左侧分类导航 - 30%宽度 */
+        .categories-sidebar {
+            flex: 0 0 30%;
+            max-width: 350px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .categories-sidebar h3 {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .category-item {
+            margin-bottom: 8px;
+        }
+        
+        .category-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: var(--secondary-color);
+            border-radius: 6px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .category-link:hover {
+            background: #e6f3f3;
+            border-left-color: var(--primary-light);
+        }
+        
+        .category-link.active {
+            background: var(--primary-color);
+            color: white;
+            border-left-color: var(--primary-dark);
+        }
+        
+        .category-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .category-name {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        .category-badge {
+            background: white;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .category-link.active .category-badge {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        /* 右侧产品区域 - 70%宽度 */
+        .products-content {
+            flex: 0 0 70%;
+        }
+        
+        .category-title {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        /* 产品网格 - 品字形布局 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* 第一个产品占据两列（品字形顶部） */
+        .product-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+	/* 新增：产品板块底部间距（核心） */
+	.product-category {
+   	 margin-bottom: 50px; /* 调整这个数值控制板块间距，比如50px/70px */
+	}
+       
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .product-card.featured .product-image {
+            height: 300px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card.featured .product-info {
+            padding: 30px;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+        
+        .product-badge.bestseller {
+            background: #ff6b35;
+        }
+        
+        .product-badge.new {
+            background: #ffd700;
+            color: #333;
+        }
+        
+        .product-badge.kids {
+            background: #ff69b4;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .product-card.featured .product-title {
+            font-size: 1.5rem;
+        }
+        
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+        
+        .product-specs li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+        
+        .product-specs i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .product-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .products-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .categories-sidebar {
+                position: static;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card.featured {
+                grid-column: 1;
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card.featured .product-image {
+                height: 220px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .product-actions .btn {
+                width: 100%;
+            }
+        }
+        
+        /* 询价表单部分 */
+        .inquiry-section {
+            background: var(--secondary-color);
+        }
+        
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(51, 153, 153, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="H-Guardian Logo">
+                   
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link" data-translate="nav_home">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="products.html" class="nav-link active" data-translate="nav_products">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="disposable-mask-for-adults.html" class="category-anchor" data-translate="product_adults">Disposable Mask for Adults</a>
+                            <a href="disposable-mask-for-teens.html" class="category-anchor" data-translate="product_teens">Disposable Mask for Teens</a>
+                            <a href="disposable-mask-for-kids.html" class="category-anchor" data-translate="product_kids">Disposable Mask for Kids</a>
+                            <a href="double-nose-clip-mask.html" class="category-anchor" data-translate="product_double_clip">Double Nose-Clip Mask</a>
+                        </div>
+                    </div>
+                    <a href="factory.html" class="nav-link" data-translate="nav_factory">Factory</a>
+                    <a href="customization.html" class="nav-link" data-translate="nav_customization">Customization</a>
+                    <a href="contact.html" class="nav-link" data-translate="nav_contact">Contact</a>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i> EN
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="fr">Français</a>
+                            <a href="#" data-lang="es">Español</a>
+                            <a href="#" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-translate="products_title">Medical Protection Products</h1>
+            <p data-translate="products_subtitle">CE/FDA Certified | Japanese Market Approved | Daily Output 1.5M</p>
+        </div>
+    </section>
+
+    <!-- Products Main Content -->
+    <section class="products-main">
+        <div class="container">
+            <div class="products-container">
+                <!-- 左侧分类导航 (30%) -->
+                <div class="categories-sidebar">
+                    <h3><i class="fas fa-list"></i> <span data-translate="products_categories">Categories</span></h3>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="#adults" class="category-link active" data-category="adults">
+                                <div class="category-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="category-name" data-translate="product_adults">Disposable Mask for Adults</span>
+                                <span class="category-badge">Bestseller</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#teens" class="category-link" data-category="teens">
+                                <div class="category-icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <span class="category-name" data-translate="product_teens">Disposable Mask for Teens</span>
+                                <span class="category-badge">Popular</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#kids" class="category-link" data-category="kids">
+                                <div class="category-icon">
+                                    <i class="fas fa-child"></i>
+                                </div>
+                                <span class="category-name" data-translate="product_kids">Disposable Mask for Kids</span>
+                                <span class="category-badge">New</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#double-clip" class="category-link" data-category="double-clip">
+                                <div class="category-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <span class="category-name" data-translate="product_double_clip">Double Nose-Clip Mask</span>
+                                <span class="category-badge">Premium</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 右侧产品内容 (70%) -->
+                <div class="products-content">
+                    <!-- 成人口罩 -->
+                    <div class="product-category active" id="adults">
+                        <h2 class="category-title" data-translate="product_adults">Disposable Mask for Adults</h2>
+                        
+                        <div class="products-grid">
+                            <!-- 第一个产品 - 占据两列 -->
+                            <div class="product-card featured">
+                                <div class="product-image">
+                                    <img src="images/products/adult-mask-1.jpg" alt="3-Ply Surgical Mask for Adults" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <span class="product-badge bestseller">Bestseller</span>
+                                    <h3 class="product-title" data-translate="product_adults_title">3-Ply Surgical Mask for Adults</h3>
+                                    <p class="product-description" data-translate="product_adults_desc">CE/FDA certified surgical mask with 99% bacterial filtration efficiency. Perfect for daily protection and medical use.</p>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_bfe">99% BFE Efficiency</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_3layer">3-Layer Protection</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_certified">CE/FDA/SGS Certified</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_size_adult">Size: 175 x 95 mm</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_breathable">Breathable & Comfortable</span></li>
+                                    </ul>
+                                    <div class="product-actions">
+                                        <a href="#inquiry" class="btn btn-primary btn-small" data-translate="btn_request_quote">Request Quote</a>
+                                        <a href="disposable-mask-for-adults.html" class="btn btn-secondary btn-small" data-translate="product_view_details">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 其他产品 -->
+			</div>
+		</div>
+
+                         
+                    <!-- 青少年口罩 -->
+                    <div class="product-category" id="teens">
+                        <h2 class="category-title" data-translate="product_teens">Disposable Mask for Teens</h2>
+                        
+                        <div class="products-grid">
+                            <div class="product-card featured">
+                                <div class="product-image">
+                                    <img src="images/products/teen-mask-1.jpg" alt="Teen Size Mask" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <span class="product-badge">Perfect Fit</span>
+                                    <h3 class="product-title" data-translate="product_teens_title">Teen Size Surgical Mask</h3>
+                                    <p class="product-description" data-translate="product_teens_desc">Specially designed for teenagers aged 13-17 with optimal fit and protection.</p>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_size_teen">Size: 145 x 90 mm</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_bfe">99% BFE Efficiency</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_comfortable">Comfortable Fit</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_certified">CE/FDA Certified</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_school">School Approved</span></li>
+                                    </ul>
+                                    <div class="product-actions">
+                                        <a href="#inquiry" class="btn btn-primary btn-small" data-translate="btn_request_quote">Request Quote</a>
+                                        <a href="disposable-mask-for-teens.html" class="btn btn-secondary btn-small" data-translate="product_view_details">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                                 <!-- 其他产品 -->
+			</div>
+		</div>
+
+     
+                    <!-- 儿童口罩 -->
+                    <div class="product-category" id="kids">
+                        <h2 class="category-title" data-translate="product_kids">Disposable Mask for Kids</h2>
+                        
+                        <div class="products-grid">
+                            <div class="product-card featured">
+                                <div class="product-image">
+                                    <img src="images/products/kid-mask-1.jpg" alt="Kids Protective Mask" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <span class="product-badge kids">Kids Favorite</span>
+                                    <h3 class="product-title" data-translate="product_kids_title">Kids Protective Mask</h3>
+                                    <p class="product-description" data-translate="product_kids_desc">Fun and colorful masks designed specifically for children aged under 6.</p>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_size_kids">Size: 120 x 85 mm</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_colors">Fun Colors & Patterns</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_soft">Soft Materials</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_bfe">99% BFE Efficiency</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_cartoon">Cartoon Designs Available</span></li>
+                                    </ul>
+                                    <div class="product-actions">
+                                        <a href="#inquiry" class="btn btn-primary btn-small" data-translate="btn_request_quote">Request Quote</a>
+                                        <a href="disposable-mask-for-kids.html" class="btn btn-secondary btn-small" data-translate="product_view_details">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <!-- 其他产品 -->
+			</div>
+		</div>
+
+
+
+
+                           <!-- 双鼻夹口罩 -->
+                    <div class="product-category" id="double-clip">
+                        <h2 class="category-title" data-translate="product_double_clip">Double Nose-Clip Mask</h2>
+                        
+                        <div class="products-grid">
+                            <div class="product-card featured">
+                                <div class="product-image">
+                                    <img src="images/products/double-clip-1.jpg" alt="Double Nose-Clip Mask" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <span class="product-badge">Enhanced Fit</span>
+                                    <h3 class="product-title" data-translate="product_double_clip_title">Double Nose-Clip Surgical Mask</h3>
+                                    <p class="product-description" data-translate="product_double_clip_desc">Premium mask with double nose-clip design for superior seal and comfort.</p>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_double_clip">Double Nose-Clip Design</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_seal">Enhanced Seal & Fit</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_bfe">99% BFE Efficiency</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_fog_free">Fog-Free for Glasses Wearers</span></li>
+                                        <li><i class="fas fa-check"></i> <span data-translate="spec_premium">Premium Comfort</span></li>
+                                    </ul>
+                                    <div class="product-actions">
+                                        <a href="#inquiry" class="btn btn-primary btn-small" data-translate="btn_request_quote">Request Quote</a>
+                                        <a href="double-nose-clip-mask.html" class="btn btn-secondary btn-small" data-translate="product_view_details">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+			</div>
+		    </div>
+		    
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="inquiry-section" id="inquiry">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="inquiry_title">Request Product Information</h2>
+                <p data-translate="inquiry_subtitle">Get detailed specifications, samples, and competitive quotes</p>
+            </div>
+            
+            <div class="form-container">
+                <form class="inquiry-form" id="product-inquiry-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-translate="form_full_name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" data-translate="form_country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="" data-translate="form_select_country">Select Country</option>
+                                <option value="JP">Japan</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="AU">Australia</option>
+                                <option value="CA">Canada</option>
+                                <option value="other" data-translate="form_other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" data-translate="form_email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-translate="form_phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-interest" data-translate="form_product_interest">Product of Interest *</label>
+                        <select id="product-interest" name="product-interest" required>
+                            <option value="" data-translate="form_select_product">Select Product Category</option>
+                            <option value="adults" data-translate="product_adults">Disposable Mask for Adults</option>
+                            <option value="teens" data-translate="product_teens">Disposable Mask for Teens</option>
+                            <option value="kids" data-translate="product_kids">Disposable Mask for Kids</option>
+                            <option value="double-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
+                            <option value="multiple" data-translate="form_multiple_products">Multiple Products</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity" data-translate="form_quantity">Estimated Quantity *</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="" data-translate="form_select_quantity">Select Quantity</option>
+                            <option value="1000-5000">1,000 - 5,000 pcs</option>
+                            <option value="5000-10000">5,000 - 10,000 pcs</option>
+                            <option value="10000-50000">10,000 - 50,000 pcs</option>
+                            <option value="50000-100000">50,000 - 100,000 pcs</option>
+                            <option value="100000-500000">100,000 - 500,000 pcs</option>
+                            <option value="500000+">500,000+ pcs</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-translate="form_additional_requirements">Additional Requirements</label>
+                        <textarea id="message" name="message" rows="4" data-translate-placeholder="form_requirements_placeholder" placeholder="Please specify any special requirements, certifications needed, or ask questions..."></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_inquiry">Submit Inquiry</span>
+                        </button>
+                        <p class="form-note" data-translate="form_response_note">We will respond within 24 hours with detailed information.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="H-Guardian Logo">
+                       
+                    </div>
+                    <p>Nanjing Freeman Health Technology Co., Ltd<br>Jialian (Hubei) Medical Protection Articles Co., Ltd</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                        <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                        <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_contact_us">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_address">Xiantao, Hubei, China</span></li>
+                        <li><i class="fas fa-phone"></i> +86 173 6191 1595</li>
+                        <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +86 173 6191 1595</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><span data-translate="footer_copyright">© 2003-2026 H-Guardian. All rights reserved.</span> | <a href="privacy-policy.html" data-translate="footer_privacy">Privacy Policy</a> | <a href="terms-of-service.html" data-translate="footer_terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    
+    <!-- Products页面特有脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 分类导航切换
+            const categoryLinks = document.querySelectorAll('.category-link');
+            const productCategories = document.querySelectorAll('.product-category');
+            
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 更新活跃链接
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应的产品类别
+                    const category = this.getAttribute('data-category');
+                    productCategories.forEach(cat => {
+                        cat.classList.remove('active');
+                        if (cat.id === category) {
+                            cat.classList.add('active');
+                            
+                            // 平滑滚动到该类别
+                            cat.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            });
+            
+            // 页面加载时根据URL锚点激活对应类别
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                const targetLink = document.querySelector(`.category-link[data-category="${hash}"]`);
+                const targetCategory = document.getElementById(hash);
+                
+                if (targetLink && targetCategory) {
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    targetLink.classList.add('active');
+                    
+                    productCategories.forEach(cat => cat.classList.remove('active'));
+                    targetCategory.classList.add('active');
+                }
+            }
+            
+            // 表单验证
+            const inquiryForm = document.getElementById('product-inquiry-form');
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // 简单的表单验证
+                    const requiredFields = this.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.style.borderColor = '#dc3545';
+                            isValid = false;
+                        } else {
+                            field.style.borderColor = '';
+                        }
+                    });
+                    
+                    // 邮箱格式验证
+                    const emailField = document.getElementById('email');
+                    if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+                        emailField.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // 显示成功消息
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                        submitBtn.disabled = true;
+                        
+                        // 模拟发送
+                        setTimeout(() => {
+                            alert('Thank you! Your inquiry has been submitted. We will contact you within 24 hours.');
+                            inquiryForm.reset();
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            
+                            // 滚动回顶部
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        }, 1500);
+                    }
+                });
+            }
+            
+            // 下拉菜单锚点链接
+            const categoryAnchors = document.querySelectorAll('.category-anchor');
+            categoryAnchors.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    // 找到对应的分类链接并点击
+                    const targetCategory = targetId.substring(1);
+                    const targetLink = document.querySelector(`.category-link[data-category="${targetCategory}"]`);
+                    
+                    if (targetLink) {
+                        targetLink.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

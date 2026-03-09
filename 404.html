@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | H-Guardian</title>
+    <meta name="description" content="The page you are looking for cannot be found.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 5px 5px 0 rgba(51, 153, 153, 0.1);
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            color: var(--primary-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-actions .btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+        
+        .error-links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .error-links h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .error-links ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .error-links a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-actions .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="H-Guardian Logo">
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link" data-translate="nav_home">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="products.html" class="nav-link" data-translate="nav_products">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="disposable-mask-for-adults.html" data-translate="product_adults">Disposable Mask for Adults</a>
+                            <a href="disposable-mask-for-teens.html" data-translate="product_teens">Disposable Mask for Teens</a>
+                            <a href="disposable-mask-for-kids.html" data-translate="product_kids">Disposable Mask for Kids</a>
+                            <a href="double-nose-clip-mask.html" data-translate="product_double_clip">Double Nose-Clip Mask</a>
+                        </div>
+                    </div>
+                    <a href="factory.html" class="nav-link" data-translate="nav_factory">Factory</a>
+                    <a href="customization.html" class="nav-link" data-translate="nav_customization">Customization</a>
+                    <a href="contact.html" class="nav-link" data-translate="nav_contact">Contact</a>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i> EN
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="fr">Français</a>
+                            <a href="#" data-lang="es">Español</a>
+                            <a href="#" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="error-page">
+        <div class="error-content">
+            <div class="error-icon">
+                <i class="fas fa-shield-virus"></i>
+            </div>
+            <div class="error-code">404</div>
+            <h1 class="error-title" data-translate="error_404_title">Page Not Found</h1>
+            <p class="error-message" data-translate="error_404_message">
+                Sorry, the page you are looking for doesn't exist or has been moved. 
+                Let's get you back on track to find the protection you need.
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> <span data-translate="error_404_home">Back to Home</span>
+                </a>
+                <a href="products.html" class="btn btn-outline">
+                    <i class="fas fa-box"></i> <span data-translate="error_404_products">View Products</span>
+                </a>
+            </div>
+            
+            <div class="error-links">
+                <h4>Popular Pages</h4>
+                <ul>
+                    <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                    <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                    <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                    <li><a href="contact.html" data-translate="nav_contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="H-Guardian Logo">
+                    </div>
+                    <p>Nanjing Freeman Health Technology Co., Ltd<br>Jialian (Hubei) Medical Products Co., Ltd</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                        <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                        <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_contact_us">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_address">Xiantao, Hubei, China</span></li>
+                        <li><i class="fas fa-phone"></i> +86 173 6191 1595</li>
+                        <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +86 173 6191 1595</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><span data-translate="footer_copyright">© 2003-2026 H-Guardian. All rights reserved.</span> | <a href="privacy-policy.html" data-translate="footer_privacy">Privacy Policy</a> | <a href="terms-of-service.html" data-translate="footer_terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
