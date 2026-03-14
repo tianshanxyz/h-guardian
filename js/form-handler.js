@@ -14,7 +14,7 @@
     // 4. 获取 Public Key, Service ID, Template ID
     const EMAILJS_CONFIG = {
         publicKey: '1_y80J3lBqJfYafV7',
-        serviceId: 'service_9zp6s9v',
+        serviceId: 'service_uv0j9z9', 
         templateId: 'template_rfge4zj',
         enabled: true
     };
