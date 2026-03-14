@@ -15,7 +15,7 @@ class FormHandler {
         // EmailJS Configuration
     const EMAILJS_CONFIG = {
         publicKey: '1_y80J3lBqJfYafV7',
-        serviceId: 'service_uv0j9z9',  // 新的 Email API 服务
+        serviceId: 'service_j0lhwp4',  // iCloud SMTP 服务
         templateId: 'template_rfge4zj',
         toEmail: 'info@h-guardian.com',
         enabled: true
