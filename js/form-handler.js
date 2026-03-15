@@ -49,202 +49,8 @@ class FormHandler {
     
     // ========== Validation System ==========
     setupFormValidation() {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-        
-        const validationRules = {
-            email: {
-                validate: (value) => emailRegex.test(value),
-                message: 'Please enter a valid email address'
-            },
-            phone: {
-                validate: (value) => phoneRegex.test(value.replace(/[\s\-\(\)]/g, '')),
-                message: 'Please enter a valid phone number'
-            },
-            required: {
-                validate: (value) => value.trim().length > 0,
-                message: 'This field is required'
-            },
-            minLength: (min) => ({
-                validate: (value) => value.length >= min,
-                message: `Minimum ${min} characters required`
-            }),
-            maxLength: (max) => ({
-                validate: (value) => value.length <= max,
-                message: `Maximum ${max} characters allowed`
-            }),
-            number: {
-                validate: (value) => !isNaN(value) && !isNaN(parseFloat(value)),
-                message: 'Please enter a valid number'
-            },
-            minValue: (min) => ({
-                validate: (value) => parseFloat(value) >= min,
-                message: `Minimum value is ${min}`
-            }),
-            maxValue: (max) => ({
-                validate: (value) => parseFloat(value) <= max,
-                message: `Maximum value is ${max}`
-            })
-        };
-        
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', (e) => this.validateForm(e));
-            
-            form.querySelectorAll('input, textarea, select').forEach(field => {
-                field.addEventListener('blur', () => this.validateField(field));
-                field.addEventListener('input', () => this.clearFieldError(field));
-            });
-        });
-    }
-    
-    validateForm(event) {
-        event.preventDefault();
-        
-        const form = event.target;
-        const fields = form.querySelectorAll('[data-validate]');
-        let isValid = true;
-        
-        this.clearFormErrors(form);
-        
-        fields.forEach(field => {
-            if (!this.validateField(field)) {
-                isValid = false;
-            }
-        });
-        
-        form.querySelectorAll('[required]').forEach(field => {
-            if (!field.value.trim() && !field.hasAttribute('data-validate')) {
-                this.showFieldError(field, 'This field is required');
-                isValid = false;
-            }
-        });
-        
-        if (isValid) {
-            // Trigger form submission through the async handler
-            const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
-            form.dispatchEvent(submitEvent);
-        } else {
-            const firstError = form.querySelector('.error');
-            if (firstError) {
-                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-        
-        return isValid;
-    }
-    
-    validateField(field) {
-        const rules = field.getAttribute('data-validate');
-        if (!rules) return true;
-        
-        const value = field.value.trim();
-        const ruleList = rules.split('|');
-        let isValid = true;
-        
-        for (const rule of ruleList) {
-            const [ruleName, ruleParam] = rule.split(':');
-            
-            switch (ruleName) {
-                case 'required':
-                    if (!value) {
-                        this.showFieldError(field, 'This field is required');
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'email':
-                    if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-                        this.showFieldError(field, 'Please enter a valid email address');
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'phone':
-                    if (value && !/^[\+]?[1-9][\d]{0,15}$/.test(value.replace(/[\s\-\(\)]/g, ''))) {
-                        this.showFieldError(field, 'Please enter a valid phone number');
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'min':
-                    if (value && parseFloat(value) < parseFloat(ruleParam)) {
-                        this.showFieldError(field, `Minimum value is ${ruleParam}`);
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'max':
-                    if (value && parseFloat(value) > parseFloat(ruleParam)) {
-                        this.showFieldError(field, `Maximum value is ${ruleParam}`);
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'minlength':
-                    if (value && value.length < parseInt(ruleParam)) {
-                        this.showFieldError(field, `Minimum ${ruleParam} characters required`);
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'maxlength':
-                    if (value && value.length > parseInt(ruleParam)) {
-                        this.showFieldError(field, `Maximum ${ruleParam} characters allowed`);
-                        isValid = false;
-                    }
-                    break;
-                    
-                case 'numeric':
-                    if (value && isNaN(value)) {
-                        this.showFieldError(field, 'Please enter a valid number');
-                        isValid = false;
-                    }
-                    break;
-            }
-        }
-        
-        if (isValid) {
-            this.clearFieldError(field);
-        }
-        
-        return isValid;
-    }
-    
-    showFieldError(field, message) {
-        this.clearFieldError(field);
-        
-        field.classList.add('error');
-        
-        const errorElement = document.createElement('div');
-        errorElement.className = 'error-message';
-        errorElement.textContent = message;
-        errorElement.style.color = '#dc3545';
-        errorElement.style.fontSize = '0.875rem';
-        errorElement.style.marginTop = '5px';
-        
-        field.parentNode.insertBefore(errorElement, field.nextSibling);
-        
-        const clearError = () => this.clearFieldError(field);
-        field.addEventListener('input', clearError, { once: true });
-    }
-    
-    clearFieldError(field) {
-        field.classList.remove('error');
-        
-        const errorMessage = field.parentNode.querySelector('.error-message');
-        if (errorMessage) {
-            errorMessage.remove();
-        }
-    }
-    
-    clearFormErrors(form) {
-        form.querySelectorAll('.error').forEach(field => {
-            field.classList.remove('error');
-        });
-        
-        form.querySelectorAll('.error-message').forEach(msg => {
-            msg.remove();
-        });
+        // Validation rules are used by validateFormLegacy in handleFormSubmit
+        // No need to add submit event listeners here as they're added in setupFormSubmission
     }
     
     // ========== Form Submission ==========
@@ -336,19 +142,23 @@ class FormHandler {
     
     validateFormLegacy(form) {
         const errors = [];
-        const emailInput = form.querySelector('input[type="email"]');
         const requiredInputs = form.querySelectorAll('[required]');
         
         requiredInputs.forEach(input => {
-            if (!input.value.trim()) {
+            if (!input.value || !input.value.trim()) {
                 const label = form.querySelector(`label[for="${input.id}"]`);
-                const fieldName = label ? label.textContent.replace('*', '').trim() : input.id;
+                const fieldName = label ? label.textContent.replace('*', '').replace('required', '').trim() : input.id;
                 errors.push(`${fieldName} is required`);
             }
         });
         
-        if (emailInput && emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            errors.push('Please enter a valid email address');
+        // Validate email format if email field exists and has value
+        const emailInput = form.querySelector('input[type="email"]');
+        if (emailInput && emailInput.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                errors.push('Please enter a valid email address');
+            }
         }
         
         return errors;
