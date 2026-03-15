@@ -120,7 +120,9 @@ class FormHandler {
         });
         
         if (isValid) {
-            this.submitForm(form);
+            // Trigger form submission through the async handler
+            const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
+            form.dispatchEvent(submitEvent);
         } else {
             const firstError = form.querySelector('.error');
             if (firstError) {
@@ -356,13 +358,100 @@ class FormHandler {
         const formData = {};
         const inputs = form.querySelectorAll('input, textarea, select');
         
+        // Helper function to set field value with priority
+        const setField = (fieldNames, value) => {
+            if (!value || !value.trim()) return;
+            // Use the first field name as primary
+            const primaryField = Array.isArray(fieldNames) ? fieldNames[0] : fieldNames;
+            if (!formData[primaryField]) {
+                formData[primaryField] = value.trim();
+            }
+        };
+        
         inputs.forEach(input => {
-            const label = input.id || input.name;
-            if (label && input.value) {
-                formData[label] = input.value.trim();
+            if (!input.value || !input.value.trim()) return;
+            
+            const value = input.value.trim();
+            const id = input.id;
+            
+            // Map different field IDs to standardized names
+            switch(id) {
+                // Name fields
+                case 'inquiry-name':
+                case 'contact-person':
+                case 'name':
+                    setField('inquiry-name', value);
+                    break;
+                    
+                // Email fields
+                case 'inquiry-email':
+                case 'email':
+                case 'quote-email':
+                    setField('inquiry-email', value);
+                    break;
+                    
+                // Company fields
+                case 'inquiry-company':
+                case 'company-name':
+                case 'company':
+                    setField('inquiry-company', value);
+                    break;
+                    
+                // Phone fields
+                case 'inquiry-phone':
+                case 'phone':
+                case 'quote-phone':
+                    setField('inquiry-phone', value);
+                    break;
+                    
+                // Country fields
+                case 'inquiry-country':
+                case 'country':
+                case 'quote-country':
+                    setField('inquiry-country', value);
+                    break;
+                    
+                // Subject/Inquiry type
+                case 'inquiry-subject':
+                case 'product-type':
+                case 'product-interest':
+                    setField('inquiry-subject', value);
+                    break;
+                    
+                // Message fields
+                case 'inquiry-message':
+                case 'customization-details':
+                case 'message':
+                case 'quote-message':
+                    setField('inquiry-message', value);
+                    break;
+                    
+                // Quantity fields
+                case 'order-quantity':
+                case 'quantity':
+                    setField('order-quantity', value);
+                    break;
+                    
+                // Sample fields
+                case 'sample-needed':
+                    setField('sample-needed', value);
+                    break;
+                    
+                // Additional notes
+                case 'additional-notes':
+                    setField('additional-notes', value);
+                    break;
+                    
+                // Default: use the field ID as-is
+                default:
+                    if (id) {
+                        formData[id] = value;
+                    }
+                    break;
             }
         });
         
+        // Add metadata
         formData.page_url = window.location.href;
         formData.page_title = document.title;
         formData.submission_time = new Date().toLocaleString('en-US', {
@@ -390,18 +479,24 @@ class FormHandler {
         });
         
         const templateParams = {
-            from_name: formData['inquiry-name'] || formData['quote-name'] || 'Website Visitor',
-            from_email: formData['inquiry-email'] || formData['quote-email'] || '',
-            reply_to: formData['inquiry-email'] || formData['quote-email'] || '',
-            company: formData['inquiry-company'] || formData['quote-company'] || 'Not provided',
+            from_name: formData['inquiry-name'] || 'Website Visitor',
+            from_email: formData['inquiry-email'] || '',
+            reply_to: formData['inquiry-email'] || '',
+            company: formData['inquiry-company'] || 'Not provided',
             subject: formData['inquiry-subject'] || 'Website Inquiry',
-            message: formData['inquiry-message'] || formData['quote-message'] || '',
-            phone: formData['inquiry-phone'] || formData['quote-phone'] || 'Not provided',
-            country: formData['inquiry-country'] || formData['quote-country'] || 'Not provided',
-            product_interest: formData['product-interest'] || 'Not specified',
+            message: formData['inquiry-message'] || '',
+            phone: formData['inquiry-phone'] || 'Not provided',
+            country: formData['inquiry-country'] || 'Not provided',
+            product_interest: formData['inquiry-subject'] || 'Not specified',
+            order_quantity: formData['order-quantity'] || 'Not specified',
+            sample_needed: formData['sample-needed'] || 'Not specified',
+            additional_notes: formData['additional-notes'] || 'Not specified',
+            customization_details: formData['inquiry-message'] || 'Not provided',
             page_url: formData.page_url,
+            page_title: formData.page_title,
             submission_time: formData.submission_time,
-            user_agent: formData.user_agent
+            user_agent: formData.user_agent,
+            language: formData.language
         };
         
         console.log('Template params:', templateParams);
