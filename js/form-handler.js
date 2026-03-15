@@ -28,31 +28,90 @@
         enabled: false  // 设置为 true 启用 Formspree
     };
     
-    // 收集表单数据
-    function collectFormData(form) {
-        const formData = {};
-        const inputs = form.querySelectorAll('input, textarea, select');
+   // 收集表单数据 - 支持多页面
+function collectFormData(form) {
+    const formData = {};
+    const inputs = form.querySelectorAll('input, textarea, select');
+    
+    inputs.forEach(input => {
+        const id = input.id;
+        const name = input.name;
+        const value = input.value.trim();
         
-        inputs.forEach(input => {
-            const label = input.id || input.name;
-            if (label && input.value) {
-                formData[label] = input.value.trim();
+        if (id || name) {
+            const key = id || name;
+            
+            // 智能映射不同页面的字段
+            if (id === 'company-name' || name === 'company-name') {
+                formData['company'] = value;
+            } else if (id === 'contact-person' || name === 'contact-person') {
+                formData['from_name'] = value;
+            } else if (id === 'name' || name === 'name') {
+                formData['from_name'] = value;
+            } else if (id === 'email' || name === 'email') {
+                formData['from_email'] = value;
+            } else if (id === 'phone' || name === 'phone') {
+                formData['phone'] = value;
+            } else if (id === 'country' || name === 'country') {
+                formData['country'] = value;
+            } else if (id === 'product-type' || name === 'product-type') {
+                formData['product_interest'] = value;
+            } else if (id === 'product-interest' || name === 'product-interest') {
+                formData['product_interest'] = value;
+            } else if (id === 'order-quantity' || name === 'order-quantity') {
+                formData['quantity'] = value;
+            } else if (id === 'quantity' || name === 'quantity') {
+                formData['quantity'] = value;
+            } else if (id === 'sample-needed' || name === 'sample-needed') {
+                formData['sample_needed'] = value;
+            } else if (id === 'customization-details' || name === 'customization-details') {
+                formData['message'] = value;
+            } else if (id === 'additional-notes' || name === 'additional-notes') {
+                formData['additional_notes'] = value;
+            } else if (id === 'message' || name === 'message') {
+                formData['message'] = value;
+            } else if (id === 'website' || name === 'website') {
+                formData['website'] = value;
+            } else if (id === 'inquiry-name' || name === 'inquiry-name') {
+                formData['from_name'] = value;
+            } else if (id === 'inquiry-email' || name === 'inquiry-email') {
+                formData['from_email'] = value;
+            } else if (id === 'inquiry-company' || name === 'inquiry-company') {
+                formData['company'] = value;
+            } else if (id === 'inquiry-phone' || name === 'inquiry-phone') {
+                formData['phone'] = value;
+            } else if (id === 'inquiry-country' || name === 'inquiry-country') {
+                formData['country'] = value;
+            } else if (id === 'inquiry-subject' || name === 'inquiry-subject') {
+                formData['subject'] = value;
+            } else if (id === 'inquiry-message' || name === 'inquiry-message') {
+                formData['message'] = value;
+            } else {
+                formData[key] = value;
             }
-        });
+        }
+    });
+    
+    // 添加页面信息
+    formData.page_url = window.location.href;
+    formData.page_title = document.title;
+    formData.submission_time = new Date().toLocaleString('en-US', {
+        timeZone: 'Asia/Shanghai',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    
+    formData.user_agent = navigator.userAgent;
+    formData.language = navigator.language;
+    
+    return formData;
+}
         
-        // 添加页面信息
-        formData.page_url = window.location.href;
-        formData.page_title = document.title;
-        formData.submission_time = new Date().toLocaleString('en-US', {
-            timeZone: 'Asia/Shanghai',
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
-        
+      
         // 添加用户代理信息
         formData.user_agent = navigator.userAgent;
         formData.language = navigator.language;
