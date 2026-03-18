@@ -1,0 +1,10 @@
+# Cloudflare Pages Redirect Rules
+# Learn more: https://developers.cloudflare.com/pages/platform/redirects/
+
+# Remove trailing slashes for consistent URLs
+/* /:slug 200
+
+# 404 custom page
+/404.html 404
+
+# Force HTTPS (handled by Cloudflare automatically)
