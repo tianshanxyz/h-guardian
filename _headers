@@ -1,23 +1,17 @@
 # Cloudflare Pages Security Headers
-# This file configures security headers for all responses
-# Learn more: https://developers.cloudflare.com/pages/platform/headers/
+# Simplified for compatibility
 
 # ============================================
-# SECURITY HEADERS - Apply to all pages
+# SECURITY HEADERS - Core security
 # ============================================
 
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
 
 # ============================================
-# Content Security Policy (CSP)
+# Content Security Policy (CSP) - Simplified
 # ============================================
 
 /*
@@ -30,7 +24,6 @@
     connect-src 'self' https://api.emailjs.com https://www.emailjs.com;
     frame-src 'self' https://www.youtube.com https://player.vimeo.com;
     object-src 'none';
-    base-uri 'self';
     form-action 'self' https://api.emailjs.com;
     upgrade-insecure-requests;
 
@@ -38,7 +31,6 @@
 # CACHE HEADERS (for performance)
 # ============================================
 
-# Static assets - long cache
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -47,7 +39,3 @@
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
-
-# HTML pages - short cache
-*.html
-  Cache-Control: public, max-age=3600, must-revalidate

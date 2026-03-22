@@ -1,5 +1,2 @@
-# Cloudflare Pages Redirect Rules
-# This file configures URL redirects
-
-# 404 custom page
-/404.html 404
+# Cloudflare Pages Redirect Rules - Disabled
+# Keeping file for future use if needed
