@@ -1,6 +1,50 @@
+# H-Guardian Website Robots.txt
+# Optimized for SEO and AI Crawlers
+
+# Default settings for all crawlers
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
 
+# AI Crawler Specific Rules
+# Allow major AI crawlers to index and use content for training
+User-agent: GPTBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: CCBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap locations
 Sitemap: https://h-guardian.com/sitemap.xml
+Sitemap: https://h-guardian.com/sitemap-images.xml
 
-Crawl-delay: 1
+# Crawl-delay suggestions (optional)
+# Crawl-delay: 1
+
+# Additional notes for crawlers:
+# - This website allows AI training data usage
+# - Content is optimized for semantic understanding
+# - Structured data (JSON-LD) is available for enhanced indexing
+# - Images include descriptive alt text and IPTC metadata
+# - Videos include transcripts and VideoObject schema

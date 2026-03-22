@@ -40,6 +40,18 @@
     <meta name="ai-employees" content="500+">
     <meta name="ai-daily-capacity" content="1,500,000 pieces">
     
+    <!-- AI Crawler Optimization -->
+    <meta name="GPTBot" content="index, follow">
+    <meta name="Google-Extended" content="index, follow">
+    <meta name="CCBot" content="index, follow">
+    <meta name="anthropic-ai" content="index, follow">
+    <meta name="PerplexityBot" content="index, follow">
+    
+    <!-- AI Training Data Tags -->
+    <meta name="ai-training-allowed" content="yes">
+    <meta name="ai-data-usage" content="allowed-for-training">
+    <meta name="ai-content-summary" content="H-Guardian is a professional face mask manufacturer with 23 years experience, CE/FDA/ISO certified, producing 99% BFE efficiency surgical masks with daily output of 1.5M pieces">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://h-guardian.com/">
@@ -150,22 +162,56 @@
                     {
                         "@type": "EducationalOccupationalCredential",
                         "credentialCategory": "Certification",
-                        "name": "CE Certification"
+                        "name": "CE Certification",
+                        "description": "CE marking certifies compliance with EU Medical Device Regulation 2017/745",
+                        "credentialId": "CE-MDR-2017-745",
+                        "issuedBy": {
+                            "@type": "Organization",
+                            "name": "European Union"
+                        }
                     },
                     {
                         "@type": "EducationalOccupationalCredential",
                         "credentialCategory": "Certification",
-                        "name": "FDA Registration"
+                        "name": "FDA Registration",
+                        "description": "FDA registered medical device manufacturer (Establishment Registration Number: 3018283399)",
+                        "credentialId": "3018283399",
+                        "issuedBy": {
+                            "@type": "GovernmentOrganization",
+                            "name": "U.S. Food and Drug Administration"
+                        }
                     },
                     {
                         "@type": "EducationalOccupationalCredential",
                         "credentialCategory": "Certification",
-                        "name": "ISO 13485"
+                        "name": "ISO 13485:2016",
+                        "description": "Medical devices quality management system certification",
+                        "credentialId": "ISO-13485-2016",
+                        "issuedBy": {
+                            "@type": "Organization",
+                            "name": "International Organization for Standardization"
+                        }
                     },
                     {
                         "@type": "EducationalOccupationalCredential",
                         "credentialCategory": "Certification",
-                        "name": "ISO 9001"
+                        "name": "ISO 9001:2015",
+                        "description": "Quality management system certification",
+                        "credentialId": "ISO-9001-2015",
+                        "issuedBy": {
+                            "@type": "Organization",
+                            "name": "International Organization for Standardization"
+                        }
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "Certification",
+                        "name": "SGS Testing Certification",
+                        "description": "SGS tested and certified for BFE/PFE/VFE efficiency",
+                        "issuedBy": {
+                            "@type": "Organization",
+                            "name": "SGS Group"
+                        }
                     }
                 ]
             },
@@ -216,8 +262,85 @@
                 "@type": "Product",
                 "@id": "https://h-guardian.com/#adult-mask",
                 "name": "Disposable Surgical Mask for Adults",
-                "description": "CE/FDA certified 3-ply disposable surgical mask for adults with 99% BFE efficiency. Made in 100,000-class clean room.",
-                "image": "https://h-guardian.com/images/products/adult-mask.jpg",
+                "description": "CE/FDA certified 3-ply disposable surgical mask for adults with 99% BFE/PFE/VFE efficiency. Made in ISO Class 8 clean room. Latex-free, hypoallergenic with adjustable aluminum nose bridge.",
+                "image": [
+                    "https://h-guardian.com/images/products/adult-mask.jpg",
+                    "https://h-guardian.com/images/products/adult-mask-2.jpg",
+                    "https://h-guardian.com/images/products/adult-mask-3.jpg"
+                ],
+                "brand": {
+                    "@type": "Brand",
+                    "name": "H-Guardian"
+                },
+                "manufacturer": {
+                    "@id": "https://h-guardian.com/#organization"
+                },
+                "material": "3-layer non-woven fabric (spunbond + meltblown + spunbond)",
+                "color": "Blue, White, Green, Pink, Customizable",
+                "size": "17.5cm x 9.5cm (Adult Size)",
+                "weight": "3-4 grams per piece",
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedAge": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 18,
+                        "maxValue": 99
+                    }
+                },
+                "hasMeasurement": [
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "Bacterial Filtration Efficiency (BFE)",
+                        "value": 99,
+                        "unitText": "%"
+                    },
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "Particle Filtration Efficiency (PFE)",
+                        "value": 99,
+                        "unitText": "%"
+                    },
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "Viral Filtration Efficiency (VFE)",
+                        "value": 99,
+                        "unitText": "%"
+                    },
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "Fluid Resistance",
+                        "value": 120,
+                        "unitText": "mmHg"
+                    }
+                ],
+                "certification": [
+                    "CE",
+                    "FDA",
+                    "ISO 13485",
+                    "SGS"
+                ],
+                "category": "Medical Device Class I",
+                "sku": "HG-ADULT-001",
+                "mpn": "HG-ADULT-001",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "USD",
+                    "minPrice": "0.03",
+                    "maxPrice": "0.08",
+                    "priceValidUntil": "2026-12-31",
+                    "eligibleRegion": "Worldwide"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": "https://h-guardian.com/#teen-mask",
+                "name": "Disposable Surgical Mask for Teens",
+                "description": "CE/FDA certified 3-ply disposable surgical mask for teenagers (ages 13-17) with ≥99% filtration efficiency. Comfortable fit for smaller face sizes.",
+                "image": [
+                    "https://h-guardian.com/images/products/teen-mask.jpg",
+                    "https://h-guardian.com/images/products/teen-mask-2.jpg"
+                ],
                 "brand": {
                     "@type": "Brand",
                     "name": "H-Guardian"
@@ -226,11 +349,15 @@
                     "@id": "https://h-guardian.com/#organization"
                 },
                 "material": "3-layer non-woven fabric",
+                "color": "Blue, White, Pink, Customizable",
+                "size": "14.5cm x 9.0cm (Teen Size)",
+                "weight": "2.5-3 grams per piece",
                 "audience": {
                     "@type": "PeopleAudience",
                     "suggestedAge": {
                         "@type": "QuantitativeValue",
-                        "minValue": 18
+                        "minValue": 13,
+                        "maxValue": 17
                     }
                 },
                 "hasMeasurement": [
@@ -242,11 +369,118 @@
                     },
                     {
                         "@type": "QuantitativeValue",
-                        "name": "Daily Production Capacity",
-                        "value": 1500000,
-                        "unitText": "pieces"
+                        "name": "PFE Efficiency",
+                        "value": 99,
+                        "unitText": "%"
                     }
-                ]
+                ],
+                "certification": ["CE", "FDA", "ISO 13485"],
+                "sku": "HG-TEEN-001",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "USD",
+                    "minPrice": "0.03",
+                    "maxPrice": "0.08"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": "https://h-guardian.com/#kids-mask",
+                "name": "Disposable Surgical Mask for Kids",
+                "description": "CE/FDA certified 3-ply disposable surgical mask for children with soft ear loops and colorful designs. Safe, comfortable, and effective protection.",
+                "image": [
+                    "https://h-guardian.com/images/products/kids-mask.jpg",
+                    "https://h-guardian.com/images/products/kids-mask-2.jpg"
+                ],
+                "brand": {
+                    "@type": "Brand",
+                    "name": "H-Guardian"
+                },
+                "manufacturer": {
+                    "@id": "https://h-guardian.com/#organization"
+                },
+                "material": "3-layer non-woven fabric",
+                "color": "Blue, Pink, Green, Yellow, Multi-color",
+                "size": "12.0cm x 8.0cm (Kids Size)",
+                "weight": "2-2.5 grams per piece",
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedAge": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 3,
+                        "maxValue": 12
+                    }
+                },
+                "hasMeasurement": [
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "BFE Efficiency",
+                        "value": 99,
+                        "unitText": "%"
+                    }
+                ],
+                "certification": ["CE", "FDA", "ISO 13485"],
+                "sku": "HG-KIDS-001",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "USD",
+                    "minPrice": "0.03",
+                    "maxPrice": "0.08"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": "https://h-guardian.com/#double-clip-mask",
+                "name": "Double Nose-Clip Mask",
+                "description": "Specialized dual nose bridge mask designed for glasses wearers and large build individuals. Enhanced seal and comfort with 99% BFE efficiency.",
+                "image": [
+                    "https://h-guardian.com/images/products/double-clip-mask.jpg",
+                    "https://h-guardian.com/images/products/double-clip-mask-2.jpg"
+                ],
+                "brand": {
+                    "@type": "Brand",
+                    "name": "H-Guardian"
+                },
+                "manufacturer": {
+                    "@id": "https://h-guardian.com/#organization"
+                },
+                "material": "3-layer non-woven fabric with dual aluminum nose clips",
+                "color": "Blue, White",
+                "size": "17.5cm x 9.5cm (Enhanced Size)",
+                "weight": "4-5 grams per piece",
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedAge": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 18
+                    },
+                    "additionalFeature": "Especially designed for glasses wearers and large build people"
+                },
+                "hasMeasurement": [
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "BFE Efficiency",
+                        "value": 99,
+                        "unitText": "%"
+                    },
+                    {
+                        "@type": "QuantitativeValue",
+                        "name": "Seal Enhancement",
+                        "value": 40,
+                        "unitText": "% improvement over single nose clip"
+                    }
+                ],
+                "certification": ["CE", "FDA", "ISO 13485"],
+                "sku": "HG-DOUBLE-001",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "USD",
+                    "minPrice": "0.05",
+                    "maxPrice": "0.10"
+                }
             },
             {
                 "@type": "FAQPage",
@@ -978,8 +1212,8 @@
 
 
     <!-- JavaScript -->
-    <script src="js/language.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/language.js" defer></script>
+    <script src="js/main.js" defer></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
