@@ -4,14 +4,14 @@
   
   <!-- Homepage Images -->
   <url>
-    <loc>https://h-guardian.com/</loc>
+    <loc>https://www.h-guardian.com/</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/home/hero-bg.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/home/hero-bg.jpg</image:loc>
       <image:title>H-Guardian Professional Face Mask Manufacturing Facility</image:title>
       <image:caption>State-of-the-art 100,000-class clean room manufacturing facility with daily output of 1.5 million masks</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/logo.png</image:loc>
+      <image:loc>https://www.h-guardian.com/images/logo.png</image:loc>
       <image:title>H-Guardian Company Logo</image:title>
       <image:caption>Official logo of H-Guardian - Nanjing Freeman Health Technology Co., Ltd</image:caption>
     </image:image>
@@ -19,19 +19,19 @@
   
   <!-- Product Images - Adults -->
   <url>
-    <loc>https://h-guardian.com/disposable-mask-for-adults.html</loc>
+    <loc>https://www.h-guardian.com/disposable-mask-for-adults.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/adult-mask.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/adult-mask.jpg</image:loc>
       <image:title>CE FDA Certified Disposable Surgical Mask for Adults</image:title>
       <image:caption>3-ply surgical mask with 99% BFE efficiency for adult use</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/adult-mask-2.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/adult-mask-2.jpg</image:loc>
       <image:title>Adult Surgical Mask Side View</image:title>
       <image:caption>Detailed view showing 3-layer non-woven fabric construction</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/adult-mask-3.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/adult-mask-3.jpg</image:loc>
       <image:title>Adult Mask Packaging</image:title>
       <image:caption>Bulk packaging options for wholesale orders</image:caption>
     </image:image>
@@ -39,14 +39,14 @@
   
   <!-- Product Images - Teens -->
   <url>
-    <loc>https://h-guardian.com/disposable-mask-for-teens.html</loc>
+    <loc>https://www.h-guardian.com/disposable-mask-for-teens.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/teen-mask.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/teen-mask.jpg</image:loc>
       <image:title>Disposable Surgical Mask for Teenagers Ages 13-17</image:title>
       <image:caption>Comfortable fit surgical mask designed specifically for teenagers</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/teen-mask-2.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/teen-mask-2.jpg</image:loc>
       <image:title>Teen Mask Size Comparison</image:title>
       <image:caption>Size comparison showing teen mask dimensions (14.5cm x 9.0cm)</image:caption>
     </image:image>
@@ -54,14 +54,14 @@
   
   <!-- Product Images - Kids -->
   <url>
-    <loc>https://h-guardian.com/disposable-mask-for-kids.html</loc>
+    <loc>https://www.h-guardian.com/disposable-mask-for-kids.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/kids-mask.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/kids-mask.jpg</image:loc>
       <image:title>Colorful Disposable Surgical Masks for Kids</image:title>
       <image:caption>Safe and comfortable masks with soft ear loops for children ages 3-12</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/kids-mask-2.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/kids-mask-2.jpg</image:loc>
       <image:title>Kids Mask Colorful Designs</image:title>
       <image:caption>Multiple color options including blue, pink, green, and yellow</image:caption>
     </image:image>
@@ -69,14 +69,14 @@
   
   <!-- Product Images - Double Nose Clip -->
   <url>
-    <loc>https://h-guardian.com/double-nose-clip-mask.html</loc>
+    <loc>https://www.h-guardian.com/double-nose-clip-mask.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/double-clip-mask.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/double-clip-mask.jpg</image:loc>
       <image:title>Double Nose-Clip Mask for Glasses Wearers</image:title>
       <image:caption>Innovative dual nose bridge design provides enhanced seal for glasses wearers</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/products/double-clip-mask-2.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/products/double-clip-mask-2.jpg</image:loc>
       <image:title>Double Nose Clip Detail</image:title>
       <image:caption>Close-up view of dual aluminum nose clips for superior fit</image:caption>
     </image:image>
@@ -84,24 +84,24 @@
   
   <!-- Factory Images -->
   <url>
-    <loc>https://h-guardian.com/factory.html</loc>
+    <loc>https://www.h-guardian.com/factory.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/factory/plant1.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/factory/plant1.jpg</image:loc>
       <image:title>H-Guardian Factory Building</image:title>
       <image:caption>Modern manufacturing facility located in Xiantao, Hubei</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/factory/plant2.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/factory/plant2.jpg</image:loc>
       <image:title>Automated Production Lines</image:title>
       <image:caption>15 fully automated mask production lines with quality control systems</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/factory/plant3.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/factory/plant3.jpg</image:loc>
       <image:title>100,000-Class Clean Room</image:title>
       <image:caption>ISO 14644-1 Class 8 clean room environment for sterile production</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/factory/plant4.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/factory/plant4.jpg</image:loc>
       <image:title>Quality Control Laboratory</image:title>
       <image:caption>In-house testing facility for BFE, PFE, and VFE efficiency verification</image:caption>
     </image:image>
@@ -109,24 +109,24 @@
   
   <!-- Certification Images -->
   <url>
-    <loc>https://h-guardian.com/factory.html#certifications</loc>
+    <loc>https://www.h-guardian.com/factory.html#certifications</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/certificates/ce-mark.png</image:loc>
+      <image:loc>https://www.h-guardian.com/images/certificates/ce-mark.png</image:loc>
       <image:title>CE Certification Mark</image:title>
       <image:caption>CE marking certifying compliance with EU Medical Device Regulation 2017/745</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/certificates/fda-mark.png</image:loc>
+      <image:loc>https://www.h-guardian.com/images/certificates/fda-mark.png</image:loc>
       <image:title>FDA Registration Certificate</image:title>
       <image:caption>US FDA registration (Establishment Registration Number: 3018283399)</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/certificates/sgs-mark.png</image:loc>
+      <image:loc>https://www.h-guardian.com/images/certificates/sgs-mark.png</image:loc>
       <image:title>SGS Testing Certification</image:title>
       <image:caption>SGS tested and certified for filtration efficiency</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/certificates/iso-mark.png</image:loc>
+      <image:loc>https://www.h-guardian.com/images/certificates/iso-mark.png</image:loc>
       <image:title>ISO 9001:2015 and ISO 13485:2016 Certifications</image:title>
       <image:caption>Quality management system certifications for medical device manufacturing</image:caption>
     </image:image>
@@ -134,14 +134,14 @@
   
   <!-- Customization Images -->
   <url>
-    <loc>https://h-guardian.com/customization.html</loc>
+    <loc>https://www.h-guardian.com/customization.html</loc>
     <image:image>
-      <image:loc>https://h-guardian.com/images/customization/oem-service.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/customization/oem-service.jpg</image:loc>
       <image:title>OEM/ODM Customization Services</image:title>
       <image:caption>Custom mask manufacturing with your branding and specifications</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://h-guardian.com/images/customization/packaging-design.jpg</image:loc>
+      <image:loc>https://www.h-guardian.com/images/customization/packaging-design.jpg</image:loc>
       <image:title>Custom Packaging Design</image:title>
       <image:caption>Personalized packaging solutions for retail and wholesale</image:caption>
     </image:image>
