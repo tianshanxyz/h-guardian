@@ -963,50 +963,6 @@
         </div>
     </section>
 
-    <!-- Quick Quote Widget -->
-    <section class="quick-quote-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 60px 0;">
-        <div class="container">
-            <div class="quick-quote-widget" style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="text-align: center; margin-bottom: 25px; color: #339999;">Get Instant Quote</h3>
-                <form class="mini-quote-form" id="quick-quote-form" style="display: grid; gap: 15px;">
-                    <div class="form-group">
-                        <label for="quick-product" style="display: block; margin-bottom: 8px; font-weight: 500;">Product Type</label>
-                        <select id="quick-product" name="product" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
-                            <option value="">Select Product</option>
-                            <option value="adult-mask">Disposable Mask for Adults</option>
-                            <option value="teen-mask">Disposable Mask for Teens</option>
-                            <option value="kids-mask">Disposable Mask for Kids</option>
-                            <option value="double-clip">Double Nose-Clip Mask</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="quick-quantity" style="display: block; margin-bottom: 8px; font-weight: 500;">Quantity (Minimum: 100,000)</label>
-                        <input type="number" id="quick-quantity" name="quantity" min="100000" step="10000" placeholder="Enter quantity" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="quick-email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address</label>
-                        <input type="email" id="quick-email" name="email" placeholder="your@email.com" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; background: #339999; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer;">
-                        Get Instant Quote
-                    </button>
-                    
-                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
-                        We'll respond within 2 hours with a detailed quotation
-                    </p>
-                </form>
-                
-                <div class="quote-results" id="quick-quote-results" style="display: none; margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                    <h4 style="color: #339999; margin-bottom: 10px;">Estimated Quote</h4>
-                    <div id="quote-details"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
@@ -1122,6 +1078,60 @@
                         <h3 data-translate="product_double_clip">Double Nose-clip Mask</h3>
                         <p data-translate="product_double_clip_desc">Duo nose bridge, especially designed for large build people</p>
                         <a href="double-nose-clip-mask.html" class="btn btn-primary" data-translate="product_view_details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Quote Section - 重新设计布局 -->
+    <section class="quick-quote-section" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: #339999; margin-bottom: 15px;">Get Your Instant Quote</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Ready to get started? Fill out the form below and receive your personalized quote within 2 hours.
+                </p>
+            </div>
+            
+            <div class="quick-quote-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="quick-quote-widget" style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <form class="mini-quote-form" id="quick-quote-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="quick-product" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Product Type</label>
+                            <select id="quick-product" name="product" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                <option value="">Select Product</option>
+                                <option value="adult-mask">Disposable Mask for Adults</option>
+                                <option value="teen-mask">Disposable Mask for Teens</option>
+                                <option value="kids-mask">Disposable Mask for Kids</option>
+                                <option value="double-clip">Double Nose-Clip Mask</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quick-quantity" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Quantity (Minimum: 100,000)</label>
+                            <input type="number" id="quick-quantity" name="quantity" min="100000" step="10000" placeholder="Enter quantity" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quick-email" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Email Address</label>
+                            <input type="email" id="quick-email" name="email" placeholder="your.email@company.com" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: span 2;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; background: #339999; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+                                Get Instant Quote
+                            </button>
+                            
+                            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                                We'll respond within 2 hours with a detailed quotation
+                            </p>
+                        </div>
+                    </form>
+                    
+                    <div class="quote-results" id="quick-quote-results" style="display: none; margin-top: 30px; padding: 25px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #339999;">
+                        <h4 style="color: #339999; margin-bottom: 15px;">Estimated Quote</h4>
+                        <div id="quote-details" style="line-height: 1.8;"></div>
                     </div>
                 </div>
             </div>

@@ -889,7 +889,7 @@
         </div>
     </section>
 
-    <!-- 优化询盘表格 - 多步骤设计 -->
+    <!-- Optimized Inquiry Form - Multi-step Design -->
     <section class="inquiry-section" id="inquiry-form">
         <div class="container">
             <div class="section-header">
@@ -916,7 +916,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤1: 基本信息 -->
+                    <!-- Step 1: Basic Information -->
                     <div class="step-content active" data-step="1">
                         <h4 class="step-title">Step 1: Tell Us About Yourself</h4>
                         
@@ -944,7 +944,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤2: 咨询详情 -->
+                    <!-- Step 2: Inquiry Details -->
                     <div class="step-content" data-step="2">
                         <h4 class="step-title">Step 2: What Can We Help You With?</h4>
                         
@@ -976,7 +976,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤3: 确认提交 -->
+                    <!-- Step 3: Review & Submit -->
                     <div class="step-content" data-step="3">
                         <h4 class="step-title">Step 3: Review Your Information</h4>
                         
@@ -1232,7 +1232,7 @@
                 });
             });
             
-            // 多步骤表单功能
+            // Multi-step form functionality
             const multiStepForm = document.getElementById('general-inquiry-form');
             
             // 下一步按钮功能
@@ -1318,13 +1318,13 @@
             });
         });
         
-        // 多步骤表单辅助函数
+        // Multi-step form helper function
         function goToNextStep(form) {
             const currentStep = form.querySelector('.step-content.active');
             const nextStep = currentStep.nextElementSibling;
             
             if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
+                // Validate current step
                 if (validateCurrentStep(currentStep)) {
                     currentStep.classList.remove('active');
                     nextStep.classList.add('active');

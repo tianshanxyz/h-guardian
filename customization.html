@@ -651,7 +651,7 @@
         </div>
     </section>
 
-    <!-- OEM Process - 6个步骤完美布局 -->
+    <!-- OEM Process - 6 Steps Perfect Layout -->
     <section class="oem-process-section">
         <div class="container">
             <div class="section-header">
@@ -906,7 +906,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤1: 公司信息 -->
+                    <!-- Step 1: Company Information -->
                     <div class="step-content active" data-step="1">
                         <h4 class="step-title">Step 1: Your Company Information</h4>
                         
@@ -942,7 +942,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤2: 产品规格 -->
+                    <!-- Step 2: Product Specifications -->
                     <div class="step-content" data-step="2">
                         <h4 class="step-title">Step 2: Product Specifications</h4>
                         
@@ -995,7 +995,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤3: 定制详情 -->
+                    <!-- Step 3: Customization Details -->
                     <div class="step-content" data-step="3">
                         <h4 class="step-title">Step 3: Customization Details</h4>
                         
@@ -1028,7 +1028,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤4: 确认提交 -->
+                    <!-- Step 4: Review & Submit -->
                     <div class="step-content" data-step="4">
                         <h4 class="step-title">Step 4: Review Your Customization Request</h4>
                         
@@ -1139,7 +1139,7 @@
     <!-- Customization页面特有脚本 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 多步骤表单功能
+            // Multi-step form functionality
             const multiStepForm = document.getElementById('customization-form');
             
             // 下一步按钮功能
@@ -1215,13 +1215,13 @@
             }
         });
         
-        // 定制页面多步骤表单辅助函数
+        // Customization page multi-step form helper function
         function goToNextStepCustom(form) {
             const currentStep = form.querySelector('.step-content.active');
             const nextStep = currentStep.nextElementSibling;
             
             if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
+                // Validate current step
                 if (validateCurrentStep(currentStep)) {
                     currentStep.classList.remove('active');
                     nextStep.classList.add('active');

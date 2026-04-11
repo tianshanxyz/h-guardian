@@ -657,7 +657,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤1: 联系信息 -->
+                    <!-- Step 1: Contact Information -->
                     <div class="step-content active" data-step="1">
                         <h4 class="step-title">Step 1: Your Contact Information</h4>
                         
@@ -701,7 +701,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤2: 产品详情 -->
+                    <!-- Step 2: Product Details -->
                     <div class="step-content" data-step="2">
                         <h4 class="step-title">Step 2: Product Requirements</h4>
                         
@@ -745,7 +745,7 @@
                         </div>
                     </div>
                     
-                    <!-- 步骤3: 确认提交 -->
+                    <!-- Step 3: Review & Submit -->
                     <div class="step-content" data-step="3">
                         <h4 class="step-title">Step 3: Review Your Inquiry</h4>
                         
@@ -902,7 +902,7 @@
                 }
             }
             
-            // 多步骤表单功能
+            // Multi-step form functionality
             const inquiryForm = document.getElementById('product-inquiry-form');
             if (inquiryForm) {
                 // 下一步按钮功能
@@ -968,13 +968,13 @@
             });
         });
         
-        // 产品页面多步骤表单辅助函数
+        // Products page multi-step form helper function
         function goToNextStepProduct(form) {
             const currentStep = form.querySelector('.step-content.active');
             const nextStep = currentStep.nextElementSibling;
             
             if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
+                // Validate current step
                 if (validateCurrentStep(currentStep)) {
                     currentStep.classList.remove('active');
                     nextStep.classList.add('active');
