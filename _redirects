@@ -1,9 +1,8 @@
 # Cloudflare Pages Redirects
-# Redirect root domain to www subdomain
+# Force redirect root domain to www subdomain
 
-# Redirect h-guardian.com to www.h-guardian.com
-http://h-guardian.com/* https://www.h-guardian.com/:splat 301!
-https://h-guardian.com/* https://www.h-guardian.com/:splat 301!
+# Redirect h-guardian.com to www.h-guardian.com (force)
+h-guardian.com/* https://www.h-guardian.com/:splat 301!
 
 # Also redirect www.h-guardian.com with http to https
 http://www.h-guardian.com/* https://www.h-guardian.com/:splat 301!
