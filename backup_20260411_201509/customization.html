@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEM & ODM Customization | H-Guardian</title>
+    <meta name="description" content="Custom OEM/ODM mask manufacturing services with your branding, packaging, and specifications.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.h-guardian.com/customization.html">
+    <meta property="og:title" content="OEM & ODM Customization | H-Guardian">
+    <meta property="og:description" content="Custom OEM/ODM mask manufacturing services with your branding, packaging, and specifications.">
+    <meta property="og:image" content="https://www.h-guardian.com/images/customization/hero-bg.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.h-guardian.com/customization.html">
+    <meta name="twitter:title" content="OEM & ODM Customization | H-Guardian">
+    <meta name="twitter:description" content="Custom OEM/ODM mask manufacturing services with your branding, packaging, and specifications.">
+    <meta name="twitter:image" content="https://www.h-guardian.com/images/customization/hero-bg.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.h-guardian.com/customization.html">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/form-optimizer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Customization页面特有样式 */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/customization/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* OEM Process部分 - 6个卡片完美布局 */
+        .oem-process-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+            position: relative;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        /* 6个卡片完美2行3列布局 */
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
+        }
+        
+        .step-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .process-step:hover .step-image img {
+            transform: scale(1.1);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .step-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .step-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .step-content h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            min-height: 50px;
+        }
+        
+        .step-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .step-features {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .step-features li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .step-features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 连接线装饰 */
+        .oem-process-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 5%, 
+                var(--primary-light) 20%, 
+                var(--primary-color) 50%, 
+                var(--primary-light) 80%, 
+                transparent 95%);
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        /* 定制选项部分 - 4个卡片完美布局 */
+        .customization-options {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        /* 添加连接线装饰 */
+        .options-grid::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 15%, 
+                var(--primary-light) 25%, 
+                var(--primary-color) 50%, 
+                var(--primary-light) 75%, 
+                transparent 85%);
+            z-index: 0;
+            opacity: 0.15;
+        }
+        
+        .options-grid::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent 15%, 
+                var(--primary-light) 25%, 
+                var(--primary-color) 50%, 
+                var(--primary-light) 75%, 
+                transparent 85%);
+            z-index: 0;
+            opacity: 0.15;
+            transform: translateX(-50%);
+        }
+        
+        .option-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .option-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-light);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .option-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            background: linear-gradient(135deg, rgba(51, 153, 153, 0.1), rgba(51, 153, 153, 0.05));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .option-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .option-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .option-list {
+            text-align: left;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .option-list li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .option-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* 样品请求部分 - 优化为3个特性 */
+        .samples-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(51, 153, 153, 0.9), rgba(38, 122, 122, 0.9));
+            color: white;
+            position: relative;
+        }
+        
+        .samples-section .section-header h2 {
+            color: white;
+        }
+        
+        .samples-section .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .samples-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .samples-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .sample-feature {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .sample-feature i {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .sample-feature h4 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .sample-feature p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        .samples-cta {
+            margin-top: 40px;
+        }
+        
+        .samples-cta .btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .samples-cta .btn:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* 报价请求表单 */
+        .quote-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .quote-form-container {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .form-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .form-header h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .form-header p {
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .quote-form {
+            padding: 40px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(51, 153, 153, 0.1);
+        }
+        
+        .form-control.select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-note {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .form-submit .btn {
+            padding: 15px 50px;
+            font-size: 1.1rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            /* OEM Process: 在大屏平板改为2列 */
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .options-grid::before,
+            .options-grid::after {
+                opacity: 0.08;
+            }
+            
+            .samples-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .process-step {
+                min-height: auto;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .options-grid::before {
+                display: none;
+            }
+            
+            .options-grid::after {
+                display: none;
+            }
+            
+            .samples-features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .oem-process-section::before {
+                opacity: 0.05;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .step-content, .quote-form {
+                padding: 25px;
+            }
+            
+            .samples-features {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .option-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .step-image {
+                height: 180px;
+            }
+            
+            .form-header {
+                padding: 20px;
+            }
+            
+            .quote-form {
+                padding: 20px;
+            }
+            
+            .option-icon {
+                height: 50px;
+                width: 50px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="H-Guardian Logo">
+                   
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link" data-translate="nav_home">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="products.html" class="nav-link" data-translate="nav_products">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="disposable-mask-for-adults.html" data-translate="product_adults">Disposable Mask for Adults</a>
+                            <a href="disposable-mask-for-teens.html" data-translate="product_teens">Disposable Mask for Teens</a>
+                            <a href="disposable-mask-for-kids.html" data-translate="product_kids">Disposable Mask for Kids</a>
+                            <a href="double-nose-clip-mask.html" data-translate="product_double_clip">Double Nose-Clip Mask</a>
+                        </div>
+                    </div>
+                    <a href="factory.html" class="nav-link" data-translate="nav_factory">Factory</a>
+                    <a href="customization.html" class="nav-link active" data-translate="nav_customization">Customization</a>
+                    <a href="contact.html" class="nav-link" data-translate="nav_contact">Contact</a>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i> EN
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="fr">Français</a>
+                            <a href="#" data-lang="es">Español</a>
+                            <a href="#" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-translate="customization_hero_title">OEM & ODM Customization</h1>
+            <p data-translate="customization_hero_subtitle">Create your branded masks with our professional manufacturing capabilities</p>
+        </div>
+    </section>
+
+    <!-- OEM Process - 6个步骤完美布局 -->
+    <section class="oem-process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="oem_process_title">Our OEM/ODM Process</h2>
+                <p data-translate="oem_process_subtitle">A complete 6-step process from concept to after-sales support</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-1.jpg" alt="Consultation & Design">
+                        <div class="step-number">01</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-comments step-icon"></i>
+                        <h3 data-translate="oem_step1_title">Consultation & Design</h3>
+                        <p data-translate="oem_step1_desc">We discuss your requirements, target market, and branding needs. Our design team creates concepts based on your specifications.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step1_1">Market analysis consultation</li>
+                            <li data-translate="oem_step1_2">Custom design creation</li>
+                            <li data-translate="oem_step1_3">Material selection guidance</li>
+                            <li data-translate="oem_step1_4">Prototype specifications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-2.jpg" alt="Sample Production">
+                        <div class="step-number">02</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-mask-face step-icon"></i>
+                        <h3 data-translate="oem_step2_title">Sample Production</h3>
+                        <p data-translate="oem_step2_desc">We produce physical samples for your evaluation. You can test quality, fit, and design before mass production.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step2_1">3-5 working days for samples</li>
+                            <li data-translate="oem_step2_2">Multiple sample options</li>
+                            <li data-translate="oem_step2_3">Quality testing included</li>
+                            <li data-translate="oem_step2_4">Feedback and revisions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-3.jpg" alt="Mass Production">
+                        <div class="step-number">03</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-industry step-icon"></i>
+                        <h3 data-translate="oem_step3_title">Mass Production</h3>
+                        <p data-translate="oem_step3_desc">Once samples are approved, we begin mass production with strict quality control at every stage.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step3_1">15 automated production lines</li>
+                            <li data-translate="oem_step3_2">Real-time quality monitoring</li>
+                            <li data-translate="oem_step3_3">Daily production capacity: 1.5M pieces</li>
+                            <li data-translate="oem_step3_4">Flexible order quantities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-4.jpg" alt="Custom Packaging">
+                        <div class="step-number">04</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-box step-icon"></i>
+                        <h3 data-translate="oem_step4_title">Custom Packaging</h3>
+                        <p data-translate="oem_step4_desc">We offer various packaging options with your branding. From individual packaging to bulk boxes.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step4_1">Custom box design</li>
+                            <li data-translate="oem_step4_2">Individual mask packaging</li>
+                            <li data-translate="oem_step4_3">Multi-pack options</li>
+                            <li data-translate="oem_step4_4">Display-ready packaging</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-5.jpg" alt="Quality Control & Shipping">
+                        <div class="step-number">05</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-shipping-fast step-icon"></i>
+                        <h3 data-translate="oem_step5_title">Quality Control & Shipping</h3>
+                        <p data-translate="oem_step5_desc">Final inspection and quality assurance before organized logistics and worldwide shipping.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step5_1">Final quality inspection</li>
+                            <li data-translate="oem_step5_2">Certificates of conformity</li>
+                            <li data-translate="oem_step5_3">Global logistics network</li>
+                            <li data-translate="oem_step5_4">Door-to-door delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 新增：售后服务 -->
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="images/customization/process-6.jpg" alt="After-Sales Support">
+                        <div class="step-number">06</div>
+                    </div>
+                    <div class="step-content">
+                        <i class="fas fa-phone step-icon"></i>
+                        <h3 data-translate="oem_step6_title">After-Sales Support</h3>
+                        <p data-translate="oem_step6_desc">Comprehensive after-sales service including order tracking, customer support, and quality follow-up.</p>
+                        <ul class="step-features">
+                            <li data-translate="oem_step6_1">Order tracking and updates</li>
+                            <li data-translate="oem_step6_2">Dedicated customer support</li>
+                            <li data-translate="oem_step6_3">Quality issue resolution</li>
+                            <li data-translate="oem_step6_4">Re-order assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Options -->
+    <section class="customization-options">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="customization_options_title">Customization Options</h2>
+                <p data-translate="customization_options_subtitle">Complete control over every aspect of your branded masks</p>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 data-translate="option_material_title">Material Selection</h3>
+                    <p data-translate="option_material_desc">Choose from various non-woven fabric grades and layers for optimal protection and comfort</p>
+                    <ul class="option-list">
+                        <li data-translate="option_material_1">2-layer, 3-layer, 4-layer options</li>
+                        <li data-translate="option_material_2">Meltblown filtration layers (BFE ≥99%)</li>
+                        <li data-translate="option_material_3">Skin-friendly spunbond inner layers</li>
+                        <li data-translate="option_material_4">Water-resistant SMS outer layers</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 data-translate="option_colors_title">Colors & Printing</h3>
+                    <p data-translate="option_colors_desc">Custom colors and branding options to match your corporate identity</p>
+                    <ul class="option-list">
+                        <li data-translate="option_colors_1">Mask body colors (white, blue, black, pink, etc.)</li>
+                        <li data-translate="option_colors_2">Earband colors matching or contrasting</li>
+                        <li data-translate="option_colors_3">Logo printing (any color as required, up to 5cm × 5cm)</li>
+                        <li data-translate="option_colors_4">Text and graphics printing capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 data-translate="option_branding_title">Branding & Packaging</h3>
+                    <p data-translate="option_branding_desc">Complete branding solutions from product to packaging</p>
+                    <ul class="option-list">
+                        <li data-translate="option_branding_1">Custom logo placement (front center/side)</li>
+                        <li data-translate="option_branding_2">Branded individual PE/PP packaging</li>
+                        <li data-translate="option_branding_3">Retail box design (10pcs/20pcs/50pcs)</li>
+                        <li data-translate="option_branding_4">Display cartons with window viewing</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 data-translate="option_sizes_title">Sizes & Specifications</h3>
+                    <p data-translate="option_sizes_desc">Tailored to your specific market requirements and user demographics</p>
+                    <ul class="option-list">
+                        <li data-translate="option_sizes_1">Adult (175mm × 95mm), Teen (145mm × 85mm), Kids (125mm × 75mm)</li>
+                        <li data-translate="option_sizes_2">Custom dimensions upon request (up to 195mm × 95mm)</li>
+                        <li data-translate="option_sizes_3">Special nose bridge designs (double wire, foam padded)</li>
+                        <li data-translate="option_sizes_4">Adjustable earband length options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Samples - 优化为3个特性 -->
+    <section class="samples-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="samples_title">Request Free Samples</h2>
+                <p data-translate="samples_subtitle">Test our quality before placing your order</p>
+            </div>
+            
+            <div class="samples-content">
+                <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 30px;" data-translate="samples_desc">We provide free samples of our standard products or custom prototypes for serious buyers. Experience our quality firsthand before making your decision.</p>
+                
+                <div class="samples-features">
+                    <div class="sample-feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4 data-translate="sample_free_title">Free Samples</h4>
+                        <p data-translate="sample_free_desc">Samples are free of charge</p>
+                    </div>
+                    
+                    <div class="sample-feature">
+                        <i class="fas fa-clock"></i>
+                        <h4 data-translate="sample_quick_title">Quick Turnaround</h4>
+                        <p data-translate="sample_quick_desc">Ready in 3-5 working days</p>
+                    </div>
+                    
+                    <div class="sample-feature">
+                        <i class="fas fa-cogs"></i>
+                        <h4 data-translate="sample_custom_title">Custom Options</h4>
+                        <p data-translate="sample_custom_desc">Tailored to your specifications with technical support</p>
+                    </div>
+                </div>
+                
+                <div class="samples-cta">
+                    <a href="#quote-form" class="btn" data-translate="sample_request_btn">Request Free Samples Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Request Form -->
+    <section class="quote-section" id="quote-form">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="quote_title">Get a Custom Quote</h2>
+                <p data-translate="quote_subtitle">Fill out the form below and our team will contact you within 24 hours</p>
+            </div>
+            
+            <div class="quote-form-container">
+                <div class="form-header">
+                    <h3 data-translate="quote_form_title">Customization Inquiry Form</h3>
+                    <p data-translate="quote_form_subtitle">Provide details about your customization needs for an accurate quotation</p>
+                </div>
+                
+                <form class="multi-step-form quote-form" id="customization-form">
+                    <!-- 进度条 -->
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <span class="step active" data-step="1">Company Info</span>
+                            <span class="step" data-step="2">Product Specs</span>
+                            <span class="step" data-step="3">Custom Details</span>
+                            <span class="step" data-step="4">Review & Submit</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤1: 公司信息 -->
+                    <div class="step-content active" data-step="1">
+                        <h4 class="step-title">Step 1: Your Company Information</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company-name" data-translate="form_company_name">Company Name <span class="required">*</span></label>
+                                <input type="text" id="company-name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-person" data-translate="form_contact_person">Contact Person <span class="required">*</span></label>
+                                <input type="text" id="contact-person" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" data-translate="form_email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" data-translate="form_phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                                <small class="form-text">Optional, for faster communication</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn next-step">
+                                Next Step <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤2: 产品规格 -->
+                    <div class="step-content" data-step="2">
+                        <h4 class="step-title">Step 2: Product Specifications</h4>
+                        
+                        <div class="form-group">
+                            <label for="product-type" data-translate="form_product_type">Product Type <span class="required">*</span></label>
+                            <select id="product-type" class="form-control select" required>
+                                <option value="" data-translate="form_select_product">Select a product type</option>
+                                <option value="adult-mask" data-translate="product_adults">Disposable Mask for Adults</option>
+                                <option value="teen-mask" data-translate="product_teens">Disposable Mask for Teens</option>
+                                <option value="kids-mask" data-translate="product_kids">Disposable Mask for Kids</option>
+                                <option value="double-nose-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
+                                <option value="kn95">KN95 Respirator Mask</option>
+                                <option value="surgical-mask">3-Ply Surgical Mask</option>
+                                <option value="other" data-translate="form_other">Other (specify in message)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="order-quantity" data-translate="form_order_quantity">Estimated Order Quantity <span class="required">*</span></label>
+                                <select id="order-quantity" class="form-control select" required>
+                                    <option value="" data-translate="form_select_quantity">Select quantity range</option>
+                                    <option value="100000-200000">100,000 - 200,000 pieces</option>
+                                    <option value="200000-500000">200,000 - 500,000 pieces</option>
+                                    <option value="500000-1000000">500,000 - 1,000,000 pieces</option>
+                                    <option value="1000000-2000000">1,000,000 - 2,000,000 pieces</option>
+                                    <option value="2000000+">2,000,000+ pieces</option>
+                                </select>
+                                <small class="form-text">Minimum order quantity: 100,000 pieces per design</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sample-needed" data-translate="form_sample_needed">Sample Needed? <span class="required">*</span></label>
+                                <select id="sample-needed" class="form-control select" required>
+                                    <option value="" data-translate="form_select_option">Select an option</option>
+                                    <option value="yes-free" data-translate="form_sample_free">Yes, free samples (shipping charges apply)</option>
+                                    <option value="yes-paid" data-translate="form_sample_paid">Yes, paid samples including shipping</option>
+                                    <option value="no" data-translate="form_sample_no">No samples needed at this time</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="step-btn next-step">
+                                Next Step <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤3: 定制详情 -->
+                    <div class="step-content" data-step="3">
+                        <h4 class="step-title">Step 3: Customization Details</h4>
+                        
+                        <div class="form-group">
+                            <label for="customization-details" data-translate="form_customization_details">Customization Requirements <span class="required">*</span></label>
+                            <textarea id="customization-details" class="form-control" required data-translate-placeholder="form_customization_placeholder" placeholder="Please describe your customization requirements in detail:
+• Logo details (size, colors, placement)
+• Mask colors (body and earbands)
+• Material specifications
+• Packaging requirements
+• Any other special requests" rows="5"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additional-notes" data-translate="form_additional_notes">Additional Notes</label>
+                            <textarea id="additional-notes" class="form-control" data-translate-placeholder="form_additional_placeholder" placeholder="Any other information you'd like to share, such as:
+• Target market/country
+• Timeline requirements
+• Budget considerations
+• Previous supplier experiences" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="step-btn next-step">
+                                Review & Submit <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤4: 确认提交 -->
+                    <div class="step-content" data-step="4">
+                        <h4 class="step-title">Step 4: Review Your Customization Request</h4>
+                        
+                        <div class="review-section">
+                            <div class="review-item">
+                                <strong>Company Information:</strong>
+                                <div id="review-custom-company" class="review-content"></div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <strong>Product Specifications:</strong>
+                                <div id="review-custom-product" class="review-content"></div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <strong>Customization Details:</strong>
+                                <div id="review-custom-details" class="review-content"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agree-custom-terms" required>
+                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me.
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Back to Edit
+                            </button>
+                            <button type="submit" class="step-btn submit-btn">
+                                <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_request">Submit Customization Request</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 成功消息 -->
+                    <div class="success-message" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3>Thank You!</h3>
+                        <p>Your customization request has been submitted successfully. Our team will contact you within 24 hours with a detailed quotation.</p>
+                        <button type="button" class="step-btn" onclick="resetCustomForm()">
+                            <i class="fas fa-plus"></i> Submit Another Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="H-Guardian Logo">
+                    </div>
+                    <p>Nanjing Freeman Health Technology Co., Ltd<br>Jialian (Hubei) Medical Products Co., Ltd</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                        <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                        <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_contact_us">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_address">Xiantao, Hubei, China</span></li>
+                        <li><i class="fas fa-phone"></i> +86 173 6191 1595</li>
+                        <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +86 173 6191 1595</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><span data-translate="footer_copyright">© 2003-2026 H-Guardian. All rights reserved.</span> | <a href="privacy-policy.html" data-translate="footer_privacy">Privacy Policy</a> | <a href="terms-of-service.html" data-translate="footer_terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+	
+    <!-- JavaScript -->
+    <script src="js/language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/form-optimizer.js"></script>
+    
+    <!-- Customization页面特有脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 多步骤表单功能
+            const multiStepForm = document.getElementById('customization-form');
+            
+            // 下一步按钮功能
+            const nextButtons = multiStepForm.querySelectorAll('.next-step');
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    goToNextStepCustom(multiStepForm);
+                });
+            });
+            
+            // 上一步按钮功能
+            const prevButtons = multiStepForm.querySelectorAll('.prev-step');
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    goToPrevStepCustom(multiStepForm);
+                });
+            });
+            
+            // 表单提交处理
+            multiStepForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 显示加载状态
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // 模拟发送过程
+                setTimeout(() => {
+                    // 隐藏表单，显示成功消息
+                    this.style.display = 'none';
+                    this.querySelector('.success-message').style.display = 'block';
+                    
+                    // 这里可以添加实际的表单提交逻辑
+                    console.log('Customization form submitted successfully');
+                }, 2000);
+            });
+            
+            // 实时更新确认信息
+            document.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('change', updateCustomReview);
+                field.addEventListener('input', updateCustomReview);
+            });
+            
+            // 重置输入框边框颜色
+            const inputs = multiStepForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.style.borderColor = '#ddd';
+                });
+            });
+            
+            // 平滑滚动到表单
+            document.querySelector('.samples-cta a').addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+            
+            // 更新年份显示
+            const footerYear = document.querySelector('.footer-bottom p');
+            if (footerYear) {
+                const currentYear = new Date().getFullYear();
+                footerYear.innerHTML = footerYear.innerHTML.replace('2003-2026', `2003-${currentYear}`);
+            }
+        });
+        
+        // 定制页面多步骤表单辅助函数
+        function goToNextStepCustom(form) {
+            const currentStep = form.querySelector('.step-content.active');
+            const nextStep = currentStep.nextElementSibling;
+            
+            if (nextStep && nextStep.classList.contains('step-content')) {
+                // 验证当前步骤
+                if (validateCurrentStep(currentStep)) {
+                    currentStep.classList.remove('active');
+                    nextStep.classList.add('active');
+                    updateProgressBarCustom(form, nextStep.dataset.step);
+                }
+            }
+        }
+        
+        function goToPrevStepCustom(form) {
+            const currentStep = form.querySelector('.step-content.active');
+            const prevStep = currentStep.previousElementSibling;
+            
+            if (prevStep && prevStep.classList.contains('step-content')) {
+                currentStep.classList.remove('active');
+                prevStep.classList.add('active');
+                updateProgressBarCustom(form, prevStep.dataset.step);
+            }
+        }
+        
+        function updateProgressBarCustom(form, stepNumber) {
+            const progressFill = form.querySelector('.progress-fill');
+            const progressSteps = form.querySelectorAll('.progress-steps .step');
+            
+            const progressPercentage = (stepNumber / 4) * 100;
+            progressFill.style.width = `${progressPercentage}%`;
+            
+            progressSteps.forEach((step, index) => {
+                if (index + 1 <= stepNumber) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+        
+        function updateCustomReview() {
+            const companyInfo = [
+                document.getElementById('company-name')?.value,
+                document.getElementById('contact-person')?.value,
+                document.getElementById('email')?.value,
+                document.getElementById('phone')?.value
+            ].filter(Boolean).join(' • ');
+            
+            const productInfo = [
+                document.getElementById('product-type')?.selectedOptions[0]?.text,
+                document.getElementById('order-quantity')?.selectedOptions[0]?.text,
+                document.getElementById('sample-needed')?.selectedOptions[0]?.text
+            ].filter(Boolean).join(' • ');
+            
+            const customDetails = [
+                document.getElementById('customization-details')?.value ? 'Details provided' : 'No details',
+                document.getElementById('additional-notes')?.value ? 'Notes added' : 'No notes'
+            ].filter(Boolean).join(' • ');
+            
+            document.getElementById('review-custom-company').textContent = companyInfo || 'Not provided';
+            document.getElementById('review-custom-product').textContent = productInfo || 'Not specified';
+            document.getElementById('review-custom-details').textContent = customDetails || 'Not specified';
+        }
+        
+        function resetCustomForm() {
+            const form = document.getElementById('customization-form');
+            const successMessage = form.querySelector('.success-message');
+            
+            form.reset();
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+            
+            // 重置到第一步
+            const stepContents = form.querySelectorAll('.step-content');
+            stepContents.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+            
+            // 重置进度条
+            const progressFill = form.querySelector('.progress-fill');
+            progressFill.style.width = '25%';
+            
+            const steps = form.querySelectorAll('.progress-steps .step');
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -905,97 +905,16 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-controls">
-                    <button class="video-btn play-btn" id="play-btn">
+                    <button class="video-btn" id="play-btn">
                         <i class="fas fa-play"></i> <span data-translate="video_play">Play Video</span>
                     </button>
-                    <button class="video-btn pause-btn" id="pause-btn" style="display: none;">
+                    <button class="video-btn" id="pause-btn">
                         <i class="fas fa-pause"></i> <span data-translate="video_pause">Pause</span>
                     </button>
-                    <button class="video-btn fullscreen-btn" id="fullscreen-btn">
+                    <button class="video-btn" id="fullscreen-btn">
                         <i class="fas fa-expand"></i> <span data-translate="video_fullscreen">Fullscreen</span>
                     </button>
-                    <div class="video-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
-                        <span class="current-time">0:00</span>
-                        <span class="duration">0:00</span>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 设备展示画廊 -->
-    <section class="equipment-gallery-section" style="padding: 80px 0; background: white;">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-translate="equipment_gallery_title">Advanced Production Equipment</h2>
-                <p data-translate="equipment_gallery_subtitle">State-of-the-art machinery for precision manufacturing</p>
-            </div>
-            
-            <div class="equipment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                <div class="equipment-item" style="background: #f8f9fa; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="equipment-image" style="height: 200px; overflow: hidden;">
-                        <img src="images/factory/plant1.jpg" alt="Automated Mask Production Line" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="equipment-info" style="padding: 25px;">
-                        <h3 style="color: #339999; margin-bottom: 10px;">Automated Production Line</h3>
-                        <p style="color: #666; line-height: 1.6;">Fully automated mask production with precision control and quality monitoring</p>
-                        <div class="equipment-specs" style="margin-top: 15px;">
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057; margin-right: 8px;">Speed: 120pcs/min</span>
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057;">Accuracy: 99.9%</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="equipment-item" style="background: #f8f9fa; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="equipment-image" style="height: 200px; overflow: hidden;">
-                        <img src="images/factory/plant2.jpg" alt="Quality Control Station" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="equipment-info" style="padding: 25px;">
-                        <h3 style="color: #339999; margin-bottom: 10px;">Quality Control Station</h3>
-                        <p style="color: #666; line-height: 1.6;">Advanced inspection systems ensuring every mask meets international standards</p>
-                        <div class="equipment-specs" style="margin-top: 15px;">
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057; margin-right: 8px;">Defect Rate: <0.1%</span>
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057;">100% Inspection</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="equipment-item" style="background: #f8f9fa; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="equipment-image" style="height: 200px; overflow: hidden;">
-                        <img src="images/factory/plant3.jpg" alt="Clean Room Environment" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="equipment-info" style="padding: 25px;">
-                        <h3 style="color: #339999; margin-bottom: 10px;">Clean Room Environment</h3>
-                        <p style="color: #666; line-height: 1.6;">ISO Class 8 clean room for contamination-free manufacturing process</p>
-                        <div class="equipment-specs" style="margin-top: 15px;">
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057; margin-right: 8px;">ISO 14644-1</span>
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057;">100,000 Class</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="equipment-item" style="background: #f8f9fa; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="equipment-image" style="height: 200px; overflow: hidden;">
-                        <img src="images/factory/plant4.jpg" alt="Packaging Automation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="equipment-info" style="padding: 25px;">
-                        <h3 style="color: #339999; margin-bottom: 10px;">Packaging Automation</h3>
-                        <p style="color: #666; line-height: 1.6;">High-speed packaging systems for efficient order fulfillment</p>
-                        <div class="equipment-specs" style="margin-top: 15px;">
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057; margin-right: 8px;">Capacity: 1.5M/day</span>
-                            <span class="spec-tag" style="background: #e9ecef; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #495057;">Multi-format</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-cta" style="text-align: center; margin-top: 40px;">
-                <a href="contact.html" class="btn btn-primary" style="background: #339999; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600;">
-                    <i class="fas fa-camera"></i> Request Factory Tour
-                </a>
             </div>
         </div>
     </section>
@@ -1328,6 +1247,41 @@
     <!-- Factory页面特有脚本 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 视频播放控制
+            const video = document.getElementById('factory-video');
+            const playBtn = document.getElementById('play-btn');
+            const pauseBtn = document.getElementById('pause-btn');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            
+            playBtn.addEventListener('click', function() {
+                video.play();
+                playBtn.innerHTML = '<i class="fas fa-play"></i> Playing';
+                playBtn.disabled = true;
+                pauseBtn.disabled = false;
+            });
+            
+            pauseBtn.addEventListener('click', function() {
+                video.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i> Play Video';
+                playBtn.disabled = false;
+                pauseBtn.disabled = true;
+            });
+            
+            fullscreenBtn.addEventListener('click', function() {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            });
+            
+            video.addEventListener('ended', function() {
+                playBtn.innerHTML = '<i class="fas fa-play"></i> Play Video';
+                playBtn.disabled = false;
+                pauseBtn.disabled = true;
+            });
             
             // 计数器动画
             const counters = document.querySelectorAll('.counter-number');
@@ -1550,92 +1504,6 @@
             if (footerYear) {
                 const currentYear = new Date().getFullYear();
                 footerYear.innerHTML = footerYear.innerHTML.replace('2003-2023', `2003-${currentYear}`);
-            }
-            
-            // 设备展示画廊交互效果
-            const equipmentItems = document.querySelectorAll('.equipment-item');
-            equipmentItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
-                    const img = this.querySelector('img');
-                    if (img) img.style.transform = 'scale(1.1)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                    const img = this.querySelector('img');
-                    if (img) img.style.transform = 'scale(1)';
-                });
-            });
-            
-            // 视频播放控制功能
-            const video = document.getElementById('factory-video');
-            const playBtn = document.getElementById('play-btn');
-            const pauseBtn = document.getElementById('pause-btn');
-            const fullscreenBtn = document.getElementById('fullscreen-btn');
-            const progressFill = document.querySelector('.progress-fill');
-            const currentTime = document.querySelector('.current-time');
-            const duration = document.querySelector('.duration');
-            
-            if (video) {
-                // 播放/暂停功能
-                playBtn.addEventListener('click', function() {
-                    video.play();
-                    playBtn.style.display = 'none';
-                    pauseBtn.style.display = 'inline-block';
-                });
-                
-                pauseBtn.addEventListener('click', function() {
-                    video.pause();
-                    pauseBtn.style.display = 'none';
-                    playBtn.style.display = 'inline-block';
-                });
-                
-                // 全屏功能
-                fullscreenBtn.addEventListener('click', function() {
-                    if (video.requestFullscreen) {
-                        video.requestFullscreen();
-                    } else if (video.webkitRequestFullscreen) {
-                        video.webkitRequestFullscreen();
-                    } else if (video.msRequestFullscreen) {
-                        video.msRequestFullscreen();
-                    }
-                });
-                
-                // 进度条更新
-                video.addEventListener('timeupdate', function() {
-                    const progress = (video.currentTime / video.duration) * 100;
-                    progressFill.style.width = `${progress}%`;
-                    
-                    // 更新时间显示
-                    currentTime.textContent = formatTime(video.currentTime);
-                    duration.textContent = formatTime(video.duration);
-                });
-                
-                // 点击进度条跳转
-                const progressBar = document.querySelector('.progress-bar');
-                if (progressBar) {
-                    progressBar.addEventListener('click', function(e) {
-                        const rect = this.getBoundingClientRect();
-                        const percent = (e.clientX - rect.left) / rect.width;
-                        video.currentTime = percent * video.duration;
-                    });
-                }
-                
-                // 视频结束重置
-                video.addEventListener('ended', function() {
-                    pauseBtn.style.display = 'none';
-                    playBtn.style.display = 'inline-block';
-                });
-                
-                // 格式化时间函数
-                function formatTime(seconds) {
-                    const mins = Math.floor(seconds / 60);
-                    const secs = Math.floor(seconds % 60);
-                    return `${mins}:${secs.toString().padStart(2, '0')}`;
-                }
             }
         });
     </script>

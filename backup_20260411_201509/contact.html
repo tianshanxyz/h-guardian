@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | H-Guardian Medical Mask Manufacturer</title>
+    <meta name="description" content="Contact H-Guardian for OEM mask manufacturing, factory visits, or business inquiries. Get in touch with our professional team.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.h-guardian.com/contact.html">
+    <meta property="og:title" content="Contact Us | H-Guardian Medical Mask Manufacturer">
+    <meta property="og:description" content="Contact H-Guardian for OEM mask manufacturing, factory visits, or business inquiries. Get in touch with our professional team.">
+    <meta property="og:image" content="https://www.h-guardian.com/images/contact/hero-bg.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.h-guardian.com/contact.html">
+    <meta name="twitter:title" content="Contact Us | H-Guardian Medical Mask Manufacturer">
+    <meta name="twitter:description" content="Contact H-Guardian for OEM mask manufacturing, factory visits, or business inquiries. Get in touch with our professional team.">
+    <meta name="twitter:image" content="https://www.h-guardian.com/images/contact/hero-bg.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.h-guardian.com/contact.html">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/form-optimizer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Contact页面特有样式 */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* 联系信息部分 */
+        .contact-info-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .contact-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-details {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .contact-item-content h4 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .contact-item-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* 地图和交通指引部分 - 优化布局 */
+        .map-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: start;
+        }
+        
+        /* 左侧：地图 + 虚拟参观 */
+        .map-side {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .map-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            height: 400px;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+        
+        .map-placeholder h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .map-placeholder p {
+            color: var(--text-light);
+            max-width: 300px;
+        }
+        
+        /* 虚拟参观卡片 */
+        .virtual-tour-card {
+            background: linear-gradient(135deg, rgba(51, 153, 153, 0.05), rgba(51, 153, 153, 0.02));
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(51, 153, 153, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .virtual-tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--primary-light);
+        }
+        
+        .virtual-tour-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .virtual-tour-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .virtual-tour-header h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .virtual-tour-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .virtual-tour-features {
+            margin-bottom: 25px;
+        }
+        
+        .virtual-tour-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .virtual-tour-features li i {
+            color: var(--primary-color);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .virtual-tour-cta {
+            text-align: center;
+        }
+        
+        /* 右侧：交通指引 */
+        .transportation-guide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        
+        .transportation-guide h3 {
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .transportation-option {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .transportation-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .transport-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f9f9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .transportation-option h4 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .transportation-option p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .transportation-option ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .transportation-option li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .transportation-option li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 简单询盘表格部分 */
+        .inquiry-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .inquiry-form-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .inquiry-form-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .inquiry-form-header h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .inquiry-form-header p {
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .inquiry-form {
+            padding: 40px;
+        }
+        
+        .inquiry-form .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .inquiry-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .inquiry-form label .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+        
+        .inquiry-form .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .inquiry-form .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(51, 153, 153, 0.1);
+        }
+        
+        .inquiry-form textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .form-submit .btn {
+            padding: 15px 50px;
+            font-size: 1.1rem;
+        }
+        
+        /* Q&A部分 */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+        }
+        
+        .faq-question h4 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-question i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .faq-toggle {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 25px 30px;
+            max-height: 1000px;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .faq-answer li {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .faq-answer li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .map-container {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .map-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .map-side {
+                order: 2;
+            }
+            
+            .transportation-guide {
+                order: 1;
+            }
+            
+            .map-wrapper {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-card {
+                padding: 30px 20px;
+            }
+            
+            .transportation-guide {
+                padding: 30px;
+            }
+            
+            .inquiry-form {
+                padding: 30px;
+            }
+            
+            .faq-question,
+            .faq-answer {
+                padding: 20px;
+            }
+            
+            .virtual-tour-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            .map-wrapper {
+                height: 250px;
+            }
+            
+            .inquiry-form {
+                padding: 20px;
+            }
+            
+            .form-submit .btn {
+                padding: 12px 30px;
+                width: 100%;
+            }
+            
+            .virtual-tour-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="H-Guardian Logo">
+                   
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link" data-translate="nav_home">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="products.html" class="nav-link" data-translate="nav_products">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="disposable-mask-for-adults.html" data-translate="product_adults">Disposable Mask for Adults</a>
+                            <a href="disposable-mask-for-teens.html" data-translate="product_teens">Disposable Mask for Teens</a>
+                            <a href="disposable-mask-for-kids.html" data-translate="product_kids">Disposable Mask for Kids</a>
+                            <a href="double-nose-clip-mask.html" data-translate="product_double_clip">Double Nose-Clip Mask</a>
+                        </div>
+                    </div>
+                    <a href="factory.html" class="nav-link" data-translate="nav_factory">Factory</a>
+                    <a href="customization.html" class="nav-link" data-translate="nav_customization">Customization</a>
+                    <a href="contact.html" class="nav-link active" data-translate="nav_contact">Contact</a>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i> EN
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="fr">Français</a>
+                            <a href="#" data-lang="es">Español</a>
+                            <a href="#" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-translate="contact_hero_title">Contact Us</h1>
+            <p data-translate="contact_hero_subtitle">Get in touch with our professional team for OEM manufacturing, factory visits, or business inquiries</p>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="contact_section_title">Get in Touch</h2>
+                <p data-translate="contact_section_subtitle">Connect with our team through multiple channels</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 data-translate="contact_address_title">Factory Address</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-factory"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_factory_main">Main Manufacturing Facility</h4>
+                                <p data-translate="contact_factory_address">Textile Industrial Park, Xiantao City, Hubei Province, China 433000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-warehouse"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_warehouse_title">Warehouse & Logistics Center</h4>
+                                <p data-translate="contact_warehouse_address">The Industrial Park NO.8 Guohe, Xiantao City, Hubei Province, China</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-translate="contact_details_title">Contact Details</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_phone">Phone</h4>
+                                <p><a href="tel:+8617361911595">+86 173 6191 1595</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_email">Email</h4>
+                                <p><a href="mailto:info@h-guardian.com">info@h-guardian.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_whatsapp">WhatsApp</h4>
+                                <p><a href="https://wa.me/8617361911595">+86 173 6191 1595</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 data-translate="contact_hours_title">Business Hours</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_working_days">Working Days</h4>
+                                <p data-translate="contact_hours_weekday">Monday - Friday: 8:00 AM - 6:00 PM (GMT+8)</p>
+                                <p data-translate="contact_hours_weekend">Saturday - Sunday: 9:00 AM - 5:00 PM (GMT+8)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div class="contact-item-content">
+                                <h4 data-translate="contact_timezone">Time Zone</h4>
+                                <p data-translate="contact_timezone_cst">China Standard Time (GMT+8)</p>
+                                <p data-translate="contact_response_time">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 地图和交通指引 -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="contact_location_title">Factory Location & Transportation</h2>
+                <p data-translate="contact_location_subtitle">How to reach our manufacturing facility in Xiantao, Hubei</p>
+            </div>
+            
+            <div class="map-container">
+                <!-- 左侧：地图 + 虚拟参观 -->
+                <div class="map-side">
+                    <div class="map-wrapper">
+                        <!-- 方案4: 静态图片 + 链接 (最稳定) -->
+                        <a href="https://maps.google.com/maps?q=THE+INDUSTRIAL+PARK+NO.8,+GUOHE,+XIANTAO,+HUBEI,+CHINA&hl=en&t=m&z=15" target="_blank" style="display: block; width: 100%; height: 100%;">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3 data-translate="map_view_google">View on Google Maps</h3>
+                                <p data-translate="map_click_open">Click to open interactive map</p>
+                                <p style="font-size: 0.9rem; margin-top: 10px; color: var(--primary-color);">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="map_new_window">Opens in new window</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- 虚拟参观卡片 -->
+                    <div class="virtual-tour-card">
+                        <div class="virtual-tour-header">
+                            <div class="virtual-tour-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 data-translate="virtual_tour_title">Virtual Factory Tour</h3>
+                        </div>
+                        
+                        <p data-translate="virtual_tour_desc">Can't visit in person? Experience our factory through a virtual tour:</p>
+                        
+                        <ul class="virtual-tour-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="virtual_tour_1">Live video tour of production facilities</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="virtual_tour_2">Interactive Q&A with technical team</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="virtual_tour_3">Flexible scheduling across time zones</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="virtual_tour_4">No travel required - join from anywhere</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="virtual_tour_5">See quality control processes in real-time</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="virtual-tour-cta">
+                            <a href="#inquiry-form" class="btn btn-primary">
+                                <i class="fas fa-calendar-alt"></i> <span data-translate="virtual_tour_schedule">Schedule Virtual Tour</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：交通指引 -->
+                <div class="transportation-guide">
+                    <h3><i class="fas fa-route"></i> <span data-translate="transport_how_to_reach">How to Reach Our Factory</span></h3>
+                    
+                    <div class="transportation-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h4 data-translate="transport_by_air">By Air</h4>
+                        <p><strong data-translate="transport_airport">Recommended Airport:</strong> <span data-translate="transport_airport_name">Wuhan Tianhe International Airport (WUH)</span></p>
+                        <ul>
+                            <li data-translate="transport_air_1">Fly directly to Wuhan Tianhe Airport (major international hub)</li>
+                            <li data-translate="transport_air_2">From airport to factory: 110km (approximately 1.5 hours by car)</li>
+                            <li data-translate="transport_air_3">We provide airport pickup service upon request</li>
+                            <li data-translate="transport_air_4">Direct flights from major Asian, European, and Middle Eastern cities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transportation-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <h4 data-translate="transport_by_rail">By High-Speed Rail</h4>
+                        <p><strong data-translate="transport_station">Recommended Station:</strong> <span data-translate="transport_station_name">Wuhan Railway Station or Hankou Railway Station</span></p>
+                        <ul>
+                            <li data-translate="transport_rail_1">Take high-speed train to Wuhan (connected to all major Chinese cities)</li>
+                            <li data-translate="transport_rail_2">From Beijing: ~4-5 hours | From Shanghai: ~4-5 hours | From Guangzhou: ~3-4 hours</li>
+                            <li data-translate="transport_rail_3">From Wuhan station to factory: 1.5-2 hours by car</li>
+                            <li data-translate="transport_rail_4">Station pickup service available with prior arrangement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transportation-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4 data-translate="transport_local">Local Transportation</h4>
+                        <p><strong data-translate="transport_from_wuhan">From Wuhan to Xiantao:</strong></p>
+                        <ul>
+                            <li data-translate="transport_local_1"><strong>By Car:</strong> 110km via Wuhan Ring Expressway and Huhan Expressway. Travel Time: Approximately 1.5 hours depending on traffic</li>
+                            <li data-translate="transport_local_2"><strong>By High-speed Rail:</strong> Take high-speed train from Wuhan Railway Station or Hankou Railway Station to Xiantaoxi Railway Station or Tianmennan Railway Station:~40-60 minutes. Take another 40 minutes to the factory by car</li>
+                            <li data-translate="transport_local_3"><strong>Our Service:</strong> We arrange all ground transportation upon confirmation of your visit</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                            <i class="fas fa-info-circle" style="color: var(--primary-color);"></i>
+                            <strong data-translate="transport_tip">Travel Tip:</strong> <span data-translate="transport_tip_text">We recommend arriving in Wuhan the day before your factory visit to ensure a relaxed schedule.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优化询盘表格 - 多步骤设计 -->
+    <section class="inquiry-section" id="inquiry-form">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="inquiry_send_message">Send Us a Message</h2>
+                <p data-translate="inquiry_send_subtitle">Our optimized multi-step form makes contacting us quick and easy</p>
+            </div>
+            
+            <div class="inquiry-form-container">
+                <div class="inquiry-form-header">
+                    <h3 data-translate="inquiry_form_title">Quick Contact Form</h3>
+                    <p data-translate="inquiry_form_subtitle">Complete in just 3 simple steps - we'll respond within 24 hours</p>
+                </div>
+                
+                <form class="multi-step-form inquiry-form" id="general-inquiry-form">
+                    <!-- 进度条 -->
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 33.33%"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <span class="step active" data-step="1">Basic Info</span>
+                            <span class="step" data-step="2">Inquiry Details</span>
+                            <span class="step" data-step="3">Review & Send</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤1: 基本信息 -->
+                    <div class="step-content active" data-step="1">
+                        <h4 class="step-title">Step 1: Tell Us About Yourself</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inquiry-name" data-translate="form_your_name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="inquiry-name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inquiry-email" data-translate="form_email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="inquiry-email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-company" data-translate="form_company">Company/Organization</label>
+                            <input type="text" id="inquiry-company" class="form-control">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn next-step">
+                                Next Step <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤2: 咨询详情 -->
+                    <div class="step-content" data-step="2">
+                        <h4 class="step-title">Step 2: What Can We Help You With?</h4>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-subject" data-translate="form_subject">Inquiry Type <span class="required">*</span></label>
+                            <select id="inquiry-subject" class="form-control" required>
+                                <option value="" data-translate="form_select_inquiry">Select inquiry type</option>
+                                <option value="general" data-translate="inquiry_general">General Inquiry</option>
+                                <option value="product-info" data-translate="inquiry_product_info">Product Information</option>
+                                <option value="customization" data-translate="inquiry_customization">Customization Inquiry</option>
+                                <option value="factory-visit" data-translate="inquiry_factory_visit">Factory Visit Request</option>
+                                <option value="partnership" data-translate="inquiry_partnership">Business Partnership</option>
+                                <option value="other" data-translate="form_other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-message" data-translate="form_your_message">Your Message <span class="required">*</span></label>
+                            <textarea id="inquiry-message" class="form-control" required data-translate-placeholder="form_message_placeholder" placeholder="Please describe your inquiry in detail..." rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="step-btn next-step">
+                                Review & Send <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤3: 确认提交 -->
+                    <div class="step-content" data-step="3">
+                        <h4 class="step-title">Step 3: Review Your Information</h4>
+                        
+                        <div class="review-section">
+                            <div class="review-item">
+                                <strong>Contact Information:</strong>
+                                <div id="review-contact" class="review-content"></div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <strong>Inquiry Details:</strong>
+                                <div id="review-inquiry" class="review-content"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agree-terms" required>
+                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me.
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Back to Edit
+                            </button>
+                            <button type="submit" class="step-btn submit-btn">
+                                <i class="fas fa-paper-plane"></i> <span data-translate="form_send_message">Send Message</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 成功消息 -->
+                    <div class="success-message" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3>Thank You!</h3>
+                        <p>Your inquiry has been submitted successfully. Our team will contact you within 24 hours.</p>
+                        <button type="button" class="step-btn" onclick="resetContactForm()">
+                            <i class="fas fa-plus"></i> Submit Another Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A部分 -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="faq_title">Frequently Asked Questions</h2>
+                <p data-translate="faq_subtitle">Quick answers to common questions about our company and services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h4><i class="fas fa-building"></i> <span data-translate="faq_q1">Are you a factory, or a trading company?</span></h4>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a1_1">We are the <strong>factory directly</strong>. Established in 2003, we are a certified manufacturer with over 20 years of experience in non-woven products manufacturing.</p>
+                        <p data-translate="faq_a1_2">We are authorized by Chinese law to conduct import and export business, which means you work directly with the source, ensuring:</p>
+                        <ul>
+                            <li data-translate="faq_a1_3">Better pricing without middleman markup</li>
+                            <li data-translate="faq_a1_4">Direct quality control from production line</li>
+                            <li data-translate="faq_a1_5">Faster communication and decision-making</li>
+                            <li data-translate="faq_a1_6">Full transparency in manufacturing process</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4><i class="fas fa-industry"></i> <span data-translate="faq_q2">What do you mainly produce?</span></h4>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a2_1">We specialize in <strong>disposable medical mask manufacturing</strong> with comprehensive capabilities:</p>
+                        <ul>
+                            <li data-translate="faq_a2_2"><strong>OEM/ODM Production:</strong> Custom masks with your branding and specifications</li>
+                            <li data-translate="faq_a2_3"><strong>Our Own Brands:</strong> 恒佳保for Chinese market; KAEI for Japanese market</li>
+                            <li data-translate="faq_a2_4"><strong>Custom Branding:</strong> Logo printing on mask outer layer (any color as required)</li>
+                            <li data-translate="faq_a2_5"><strong>Packaging Customization:</strong> Individual, retail, and bulk packaging options</li>
+                            <li data-translate="faq_a2_6"><strong>Product Range:</strong> Adult, teen, and kids sizes; 2-4 layer options</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4><i class="fas fa-tachometer-alt"></i> <span data-translate="faq_q3">What's your production capacity?</span></h4>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a3_1">Our manufacturing facility operates at high efficiency with substantial capacity:</p>
+                        <ul>
+                            <li data-translate="faq_a3_2"><strong>Daily Output:</strong> Up to 1.5 million pieces per day</li>
+                            <li data-translate="faq_a3_3"><strong>Production Lines:</strong> 15 fully automated lines</li>
+                            <li data-translate="faq_a3_4"><strong>Factory Area:</strong> 100,000 square meters with 3 modern buildings</li>
+                            <li data-translate="faq_a3_5"><strong>Clean Room:</strong> 100,000-class ISO-certified environment</li>
+                            <li data-translate="faq_a3_6"><strong>Scalability:</strong> Can increase capacity based on order requirements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4><i class="fas fa-medal"></i> <span data-translate="faq_q4">What are your competitive advantages?</span></h4>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a4_1">We differentiate ourselves through three key advantages:</p>
+                        
+                        <p data-translate="faq_a4_2"><strong>1. Certified Manufacturing Excellence</strong></p>
+                        <ul>
+                            <li data-translate="faq_a4_3">Chinese government-licensed medical device manufacturer</li>
+                            <li data-translate="faq_a4_4">Class 2 medical device registration for disposable masks</li>
+                            <li data-translate="faq_a4_5">CE and FDA certifications completed for EU and US markets</li>
+                            <li data-translate="faq_a4_6">ISO 9001:2015 quality management system certified</li>
+                        </ul>
+                        
+                        <p data-translate="faq_a4_7"><strong>2. Unparalleled Geographic Advantage</strong></p>
+                        <ul>
+                            <li data-translate="faq_a4_8">Located in Xiantao - world's largest non-woven protective equipment production base</li>
+                            <li data-translate="faq_a4_9">China's only national non-woven production promotion center</li>
+                            <li data-translate="faq_a4_10">National emergency medical protective material production and storage base</li>
+                            <li data-translate="faq_a4_11">Complete industrial chain integration from raw materials to finished products</li>
+                        </ul>
+                        
+                        <p data-translate="faq_a4_12"><strong>3. 20+ Years of Manufacturing Expertise</strong></p>
+                        <ul>
+                            <li data-translate="faq_a4_13">Established in 2003 with continuous operation since</li>
+                            <li data-translate="faq_a4_14">One of the largest mask exporters to Japan (known for stringent quality standards)</li>
+                            <li data-translate="faq_a4_15">Deep understanding of every detail in the supply chain</li>
+                            <li data-translate="faq_a4_16">Proven track record with international clients</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4><i class="fas fa-plane-departure"></i> <span data-translate="faq_q5">Can we visit your factory?</span></h4>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a5_1"><strong>Absolutely! We warmly welcome business visits to our factory.</strong></p>
+                        
+                        <p data-translate="faq_a5_2"><strong>Factory Address:</strong><br>
+                        No.72, Textile Industrial Park, Yuanshi Avenue, Xiantao City, Hubei Province, China</p>
+                        
+                        <p data-translate="faq_a5_3"><strong>Location Advantage:</strong><br>
+                        Our facility is conveniently located just 110km from Wuhan - the provincial capital and largest transportation hub in central China.</p>
+                        
+                        <p data-translate="faq_a5_4"><strong>Travel Options:</strong></p>
+                        <ul>
+                            <li data-translate="faq_a5_5"><strong>By Air:</strong> Fly directly to Wuhan Tianhe International Airport (WUH)</li>
+                            <li data-translate="faq_a5_6"><strong>By Train:</strong> Take high-speed rail to Wuhan Railway Station or Hankou Railway Station, or even nearer: Xiantaoxi Railway Station or Tianmennan Railway Station</li>
+                            <li data-translate="faq_a5_7"><strong>Ground Transportation:</strong> We arrange all onward travel from Wuhan to our factory</li>
+                        </ul>
+                        
+                        <p data-translate="faq_a5_8"><strong>Visit Arrangements:</strong></p>
+                        <ul>
+                            <li data-translate="faq_a5_9">Factory tour of production lines and quality control facilities</li>
+                            <li data-translate="faq_a5_10">Meeting with technical and management teams</li>
+                            <li data-translate="faq_a5_11">Sample inspection and testing demonstration</li>
+                            <li data-translate="faq_a5_12">Lunch and local transportation arrangements</li>
+                        </ul>
+                        
+                        <p data-translate="faq_a5_13"><strong>Virtual Alternative:</strong><br>
+                        If travel is not convenient, we offer comprehensive virtual factory tours via video conference with live demonstrations and Q&A sessions.</p>
+                        
+                        <p data-translate="faq_a5_14"><strong>To Schedule:</strong> Please contact our sales manager or use the inquiry form above to arrange your visit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="H-Guardian Logo">
+                    </div>
+                    <p>Nanjing Freeman Health Technology Co., Ltd<br>Jialian (Hubei) Medical Products Co., Ltd</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                        <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                        <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-translate="footer_contact_us">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_address">Xiantao, Hubei, China</span></li>
+                        <li><i class="fas fa-phone"></i> +86 173 6191 1595</li>
+                        <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +86 173 6191 1595</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><span data-translate="footer_copyright">© 2003-2026 H-Guardian. All rights reserved.</span> | <a href="privacy-policy.html" data-translate="footer_privacy">Privacy Policy</a> | <a href="terms-of-service.html" data-translate="footer_terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/form-optimizer.js"></script>
+    
+    <!-- Contact页面特有脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ切换功能
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // 关闭其他打开的FAQ
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // 切换当前FAQ
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // 多步骤表单功能
+            const multiStepForm = document.getElementById('general-inquiry-form');
+            
+            // 下一步按钮功能
+            const nextButtons = multiStepForm.querySelectorAll('.next-step');
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    goToNextStep(multiStepForm);
+                });
+            });
+            
+            // 上一步按钮功能
+            const prevButtons = multiStepForm.querySelectorAll('.prev-step');
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    goToPrevStep(multiStepForm);
+                });
+            });
+            
+            // 表单提交处理
+            multiStepForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 显示加载状态
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // 模拟发送过程
+                setTimeout(() => {
+                    // 隐藏表单，显示成功消息
+                    this.style.display = 'none';
+                    this.querySelector('.success-message').style.display = 'block';
+                    
+                    // 这里可以添加实际的表单提交逻辑
+                    console.log('Form submitted successfully');
+                }, 2000);
+            });
+            
+            // 实时更新确认信息
+            document.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('change', updateContactReview);
+                field.addEventListener('input', updateContactReview);
+            });
+            
+            // 重置输入框边框颜色
+            const inputs = multiStepForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.style.borderColor = '#ddd';
+                });
+            });
+            
+            // 点击WhatsApp链接时提示
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (!confirm('Open WhatsApp to start a conversation?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            // 更新年份显示
+            const footerYear = document.querySelector('.footer-bottom p');
+            if (footerYear) {
+                const currentYear = new Date().getFullYear();
+                footerYear.innerHTML = footerYear.innerHTML.replace('2003-2026', `2003-${currentYear}`);
+            }
+            
+            // 平滑滚动到表单（虚拟参观CTA）
+            document.querySelector('.virtual-tour-cta .btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 多步骤表单辅助函数
+        function goToNextStep(form) {
+            const currentStep = form.querySelector('.step-content.active');
+            const nextStep = currentStep.nextElementSibling;
+            
+            if (nextStep && nextStep.classList.contains('step-content')) {
+                // 验证当前步骤
+                if (validateCurrentStep(currentStep)) {
+                    currentStep.classList.remove('active');
+                    nextStep.classList.add('active');
+                    updateProgressBar(form, nextStep.dataset.step);
+                }
+            }
+        }
+        
+        function goToPrevStep(form) {
+            const currentStep = form.querySelector('.step-content.active');
+            const prevStep = currentStep.previousElementSibling;
+            
+            if (prevStep && prevStep.classList.contains('step-content')) {
+                currentStep.classList.remove('active');
+                prevStep.classList.add('active');
+                updateProgressBar(form, prevStep.dataset.step);
+            }
+        }
+        
+        function validateCurrentStep(step) {
+            const requiredFields = step.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#e74c3c';
+                    
+                    // 显示错误提示
+                    let errorMsg = field.parentNode.querySelector('.field-error');
+                    if (!errorMsg) {
+                        errorMsg = document.createElement('div');
+                        errorMsg.className = 'field-error';
+                        errorMsg.style.color = '#e74c3c';
+                        errorMsg.style.fontSize = '0.875rem';
+                        errorMsg.style.marginTop = '5px';
+                        field.parentNode.appendChild(errorMsg);
+                    }
+                    errorMsg.textContent = 'This field is required';
+                } else {
+                    field.style.borderColor = '#ddd';
+                    const errorMsg = field.parentNode.querySelector('.field-error');
+                    if (errorMsg) {
+                        errorMsg.remove();
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+        
+        function updateProgressBar(form, stepNumber) {
+            const progressFill = form.querySelector('.progress-fill');
+            const progressSteps = form.querySelectorAll('.progress-steps .step');
+            
+            const progressPercentage = (stepNumber / 3) * 100;
+            progressFill.style.width = `${progressPercentage}%`;
+            
+            progressSteps.forEach((step, index) => {
+                if (index + 1 <= stepNumber) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+        
+        function updateContactReview() {
+            const contactInfo = [
+                document.getElementById('inquiry-name')?.value,
+                document.getElementById('inquiry-email')?.value,
+                document.getElementById('inquiry-company')?.value
+            ].filter(Boolean).join(' • ');
+            
+            const inquiryInfo = [
+                document.getElementById('inquiry-subject')?.selectedOptions[0]?.text,
+                document.getElementById('inquiry-message')?.value ? 'Message provided' : 'No message'
+            ].filter(Boolean).join(' • ');
+            
+            document.getElementById('review-contact').textContent = contactInfo || 'Not provided';
+            document.getElementById('review-inquiry').textContent = inquiryInfo || 'Not specified';
+        }
+        
+        function resetContactForm() {
+            const form = document.getElementById('general-inquiry-form');
+            const successMessage = form.querySelector('.success-message');
+            
+            form.reset();
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+            
+            // 重置到第一步
+            const stepContents = form.querySelectorAll('.step-content');
+            stepContents.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+            
+            // 重置进度条
+            const progressFill = form.querySelector('.progress-fill');
+            progressFill.style.width = '33.33%';
+            
+            const steps = form.querySelectorAll('.progress-steps .step');
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+        }
+    </script>
+</body>
+</html>

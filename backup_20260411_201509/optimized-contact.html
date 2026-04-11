@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Optimized Form | H-Guardian Medical Mask Manufacturer</title>
+    <meta name="description" content="Contact H-Guardian with our optimized multi-step form. Quick and easy inquiry process for medical mask manufacturing.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/form-optimizer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        /* 优化联系页面样式 */
+        .optimized-contact-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .form-header h2 {
+            color: var(--text-dark);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .form-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 多步骤表单样式 */
+        .multi-step-form {
+            position: relative;
+        }
+        
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .step-content.active {
+            display: block;
+        }
+        
+        .step-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 15px;
+        }
+        
+        /* 成功状态 */
+        .success-message {
+            text-align: center;
+            padding: 60px 40px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .success-message h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .success-message p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部组件 -->
+    <div id="header"></div>
+
+    <!-- 优化联系表单部分 -->
+    <section class="optimized-contact-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Get in Touch with H-Guardian</h2>
+                    <p>Our optimized multi-step form makes it easy to contact us. Complete the form in just a few minutes.</p>
+                </div>
+                
+                <!-- 多步骤表单 -->
+                <form class="multi-step-form" id="optimized-contact-form">
+                    <!-- 进度条 -->
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 33.33%"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <span class="step active" data-step="1">Basic Info</span>
+                            <span class="step" data-step="2">Inquiry Details</span>
+                            <span class="step" data-step="3">Review & Submit</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤1: 基本信息 -->
+                    <div class="step-content active" data-step="1">
+                        <h3 class="step-title">Step 1: Tell Us About Yourself</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="full-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="full-name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                                <small class="form-text">Optional, for faster response</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn next-step">
+                                Next Step <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤2: 咨询详情 -->
+                    <div class="step-content" data-step="2">
+                        <h3 class="step-title">Step 2: What Can We Help You With?</h3>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-type">Inquiry Type <span class="required">*</span></label>
+                            <select id="inquiry-type" class="form-control" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product-info">Product Information</option>
+                                <option value="customization">Customization Request</option>
+                                <option value="factory-visit">Factory Visit</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="quote">Request Quote</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-interest">Product of Interest</label>
+                            <select id="product-interest" class="form-control">
+                                <option value="">Select product (if applicable)</option>
+                                <option value="adult-mask">Disposable Mask for Adults</option>
+                                <option value="teen-mask">Disposable Mask for Teens</option>
+                                <option value="kids-mask">Disposable Mask for Kids</option>
+                                <option value="double-clip">Double Nose-Clip Mask</option>
+                                <option value="multiple">Multiple Products</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="estimated-quantity">Estimated Quantity</label>
+                            <select id="estimated-quantity" class="form-control">
+                                <option value="">Select quantity range</option>
+                                <option value="1000-5000">1,000 - 5,000 pieces</option>
+                                <option value="5000-10000">5,000 - 10,000 pieces</option>
+                                <option value="10000-50000">10,000 - 50,000 pieces</option>
+                                <option value="50000-100000">50,000 - 100,000 pieces</option>
+                                <option value="100000+">100,000+ pieces</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" class="form-control" rows="4" required placeholder="Please describe your inquiry in detail..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="step-btn next-step">
+                                Review & Submit <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 步骤3: 确认提交 -->
+                    <div class="step-content" data-step="3">
+                        <h3 class="step-title">Step 3: Review Your Information</h3>
+                        
+                        <div class="review-section">
+                            <div class="review-item">
+                                <strong>Contact Information:</strong>
+                                <div id="review-contact" class="review-content"></div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <strong>Inquiry Details:</strong>
+                                <div id="review-inquiry" class="review-content"></div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <strong>Message:</strong>
+                                <div id="review-message" class="review-content"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agree-terms" required>
+                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me regarding my inquiry.
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="step-btn prev-step">
+                                <i class="fas fa-arrow-left"></i> Back to Edit
+                            </button>
+                            <button type="submit" class="step-btn submit-btn">
+                                <i class="fas fa-paper-plane"></i> Submit Inquiry
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 成功消息 -->
+                    <div class="success-message" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3>Thank You!</h3>
+                        <p>Your inquiry has been submitted successfully. Our team will contact you within 24 hours.</p>
+                        <button type="button" class="step-btn" onclick="resetForm()">
+                            <i class="fas fa-plus"></i> Submit Another Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部组件 -->
+    <div id="footer"></div>
+
+    <!-- 脚本 -->
+    <script src="js/load-components.js"></script>
+    <script src="js/form-optimizer.js"></script>
+    <script>
+        // 表单提交处理
+        document.getElementById('optimized-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 显示加载状态
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // 模拟发送过程
+            setTimeout(() => {
+                // 隐藏表单，显示成功消息
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+                
+                // 这里可以添加实际的表单提交逻辑
+                console.log('Form submitted successfully');
+            }, 2000);
+        });
+        
+        // 重置表单
+        function resetForm() {
+            const form = document.getElementById('optimized-contact-form');
+            const successMessage = form.nextElementSibling;
+            
+            form.reset();
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+            
+            // 重置到第一步
+            const stepContents = form.querySelectorAll('.step-content');
+            stepContents.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+            
+            // 重置进度条
+            const progressFill = form.querySelector('.progress-fill');
+            progressFill.style.width = '33.33%';
+            
+            const steps = form.querySelectorAll('.progress-steps .step');
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === 0);
+            });
+        }
+        
+        // 实时更新确认信息
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('change', updateReview);
+            field.addEventListener('input', updateReview);
+        });
+        
+        function updateReview() {
+            const contactInfo = [
+                document.getElementById('full-name')?.value,
+                document.getElementById('email')?.value,
+                document.getElementById('company')?.value,
+                document.getElementById('phone')?.value
+            ].filter(Boolean).join(' • ');
+            
+            const inquiryInfo = [
+                document.getElementById('inquiry-type')?.selectedOptions[0]?.text,
+                document.getElementById('product-interest')?.selectedOptions[0]?.text,
+                document.getElementById('estimated-quantity')?.selectedOptions[0]?.text
+            ].filter(Boolean).join(' • ');
+            
+            const message = document.getElementById('message')?.value || 'No message provided';
+            
+            document.getElementById('review-contact').textContent = contactInfo || 'Not provided';
+            document.getElementById('review-inquiry').textContent = inquiryInfo || 'Not specified';
+            document.getElementById('review-message').textContent = message;
+        }
+    </script>
+</body>
+</html>
