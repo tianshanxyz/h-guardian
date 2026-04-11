@@ -25,7 +25,6 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/form-optimizer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -889,135 +888,58 @@
         </div>
     </section>
 
-    <!-- 优化询盘表格 - 多步骤设计 -->
+    <!-- 简单询盘表格 -->
     <section class="inquiry-section" id="inquiry-form">
         <div class="container">
             <div class="section-header">
                 <h2 data-translate="inquiry_send_message">Send Us a Message</h2>
-                <p data-translate="inquiry_send_subtitle">Our optimized multi-step form makes contacting us quick and easy</p>
+                <p data-translate="inquiry_send_subtitle">Have questions or want to discuss business opportunities? Send us a message</p>
             </div>
             
             <div class="inquiry-form-container">
                 <div class="inquiry-form-header">
-                    <h3 data-translate="inquiry_form_title">Quick Contact Form</h3>
-                    <p data-translate="inquiry_form_subtitle">Complete in just 3 simple steps - we'll respond within 24 hours</p>
+                    <h3 data-translate="inquiry_form_title">General Inquiry Form</h3>
+                    <p data-translate="inquiry_form_subtitle">Fill out this simple form and we'll get back to you soon</p>
                 </div>
                 
-                <form class="multi-step-form inquiry-form" id="general-inquiry-form">
-                    <!-- 进度条 -->
-                    <div class="form-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 33.33%"></div>
-                        </div>
-                        <div class="progress-steps">
-                            <span class="step active" data-step="1">Basic Info</span>
-                            <span class="step" data-step="2">Inquiry Details</span>
-                            <span class="step" data-step="3">Review & Send</span>
-                        </div>
+                <form class="inquiry-form" id="general-inquiry-form">
+                    <div class="form-group">
+                        <label for="inquiry-name" data-translate="form_your_name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="inquiry-name" class="form-control" required>
                     </div>
                     
-                    <!-- 步骤1: 基本信息 -->
-                    <div class="step-content active" data-step="1">
-                        <h4 class="step-title">Step 1: Tell Us About Yourself</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="inquiry-name" data-translate="form_your_name">Your Name <span class="required">*</span></label>
-                                <input type="text" id="inquiry-name" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="inquiry-email" data-translate="form_email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="inquiry-email" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="inquiry-company" data-translate="form_company">Company/Organization</label>
-                            <input type="text" id="inquiry-company" class="form-control">
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn next-step">
-                                Next Step <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <label for="inquiry-email" data-translate="form_email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="inquiry-email" class="form-control" required>
                     </div>
                     
-                    <!-- 步骤2: 咨询详情 -->
-                    <div class="step-content" data-step="2">
-                        <h4 class="step-title">Step 2: What Can We Help You With?</h4>
-                        
-                        <div class="form-group">
-                            <label for="inquiry-subject" data-translate="form_subject">Inquiry Type <span class="required">*</span></label>
-                            <select id="inquiry-subject" class="form-control" required>
-                                <option value="" data-translate="form_select_inquiry">Select inquiry type</option>
-                                <option value="general" data-translate="inquiry_general">General Inquiry</option>
-                                <option value="product-info" data-translate="inquiry_product_info">Product Information</option>
-                                <option value="customization" data-translate="inquiry_customization">Customization Inquiry</option>
-                                <option value="factory-visit" data-translate="inquiry_factory_visit">Factory Visit Request</option>
-                                <option value="partnership" data-translate="inquiry_partnership">Business Partnership</option>
-                                <option value="other" data-translate="form_other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="inquiry-message" data-translate="form_your_message">Your Message <span class="required">*</span></label>
-                            <textarea id="inquiry-message" class="form-control" required data-translate-placeholder="form_message_placeholder" placeholder="Please describe your inquiry in detail..." rows="4"></textarea>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Previous
-                            </button>
-                            <button type="button" class="step-btn next-step">
-                                Review & Send <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <label for="inquiry-company" data-translate="form_company">Company Name</label>
+                        <input type="text" id="inquiry-company" class="form-control">
                     </div>
                     
-                    <!-- 步骤3: 确认提交 -->
-                    <div class="step-content" data-step="3">
-                        <h4 class="step-title">Step 3: Review Your Information</h4>
-                        
-                        <div class="review-section">
-                            <div class="review-item">
-                                <strong>Contact Information:</strong>
-                                <div id="review-contact" class="review-content"></div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <strong>Inquiry Details:</strong>
-                                <div id="review-inquiry" class="review-content"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="agree-terms" required>
-                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me.
-                            </label>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Back to Edit
-                            </button>
-                            <button type="submit" class="step-btn submit-btn">
-                                <i class="fas fa-paper-plane"></i> <span data-translate="form_send_message">Send Message</span>
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <label for="inquiry-subject" data-translate="form_subject">Subject <span class="required">*</span></label>
+                        <select id="inquiry-subject" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23333\" viewBox=\"0 0 16 16\"><path d=\"M8 11L3 6h10z\"/></svg>'); background-repeat: no-repeat; background-position: right 15px center; background-size: 16px; padding-right: 40px;">
+                            <option value="" data-translate="form_select_inquiry">Select inquiry type</option>
+                            <option value="general" data-translate="inquiry_general">General Inquiry</option>
+                            <option value="factory-visit" data-translate="inquiry_factory_visit">Factory Visit Request</option>
+                            <option value="virtual-tour" data-translate="inquiry_virtual_tour">Virtual Factory Tour</option>
+                            <option value="product-info" data-translate="inquiry_product_info">Product Information</option>
+                            <option value="customization" data-translate="inquiry_customization">Customization Inquiry</option>
+                            <option value="partnership" data-translate="inquiry_partnership">Business Partnership</option>
+                            <option value="other" data-translate="form_other">Other</option>
+                        </select>
                     </div>
                     
-                    <!-- 成功消息 -->
-                    <div class="success-message" style="display: none;">
-                        <div class="success-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <h3>Thank You!</h3>
-                        <p>Your inquiry has been submitted successfully. Our team will contact you within 24 hours.</p>
-                        <button type="button" class="step-btn" onclick="resetContactForm()">
-                            <i class="fas fa-plus"></i> Submit Another Inquiry
+                    <div class="form-group">
+                        <label for="inquiry-message" data-translate="form_your_message">Your Message <span class="required">*</span></label>
+                        <textarea id="inquiry-message" class="form-control" required data-translate-placeholder="form_message_placeholder" placeholder="Please describe your inquiry in detail..."></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> <span data-translate="form_send_message">Send Message</span>
                         </button>
                     </div>
                 </form>
@@ -1208,7 +1130,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/form-handler.js"></script>
-    <script src="js/form-optimizer.js"></script>
     
     <!-- Contact页面特有脚本 -->
     <script>
@@ -1232,55 +1153,47 @@
                 });
             });
             
-            // 多步骤表单功能
-            const multiStepForm = document.getElementById('general-inquiry-form');
-            
-            // 下一步按钮功能
-            const nextButtons = multiStepForm.querySelectorAll('.next-step');
-            nextButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    goToNextStep(multiStepForm);
-                });
-            });
-            
-            // 上一步按钮功能
-            const prevButtons = multiStepForm.querySelectorAll('.prev-step');
-            prevButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    goToPrevStep(multiStepForm);
-                });
-            });
-            
             // 表单提交处理
-            multiStepForm.addEventListener('submit', function(e) {
+            const form = document.getElementById('general-inquiry-form');
+            
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // 显示加载状态
-                const submitBtn = this.querySelector('.submit-btn');
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
+                // 简单的表单验证
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
                 
-                // 模拟发送过程
-                setTimeout(() => {
-                    // 隐藏表单，显示成功消息
-                    this.style.display = 'none';
-                    this.querySelector('.success-message').style.display = 'block';
-                    
-                    // 这里可以添加实际的表单提交逻辑
-                    console.log('Form submitted successfully');
-                }, 2000);
-            });
-            
-            // 实时更新确认信息
-            document.querySelectorAll('input, select, textarea').forEach(field => {
-                field.addEventListener('change', updateContactReview);
-                field.addEventListener('input', updateContactReview);
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#e74c3c';
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill in all required fields marked with *');
+                    return;
+                }
+                
+                // 这里可以添加AJAX提交到服务器的代码
+                // 暂时用模拟提交
+                alert('Thank you for your inquiry! We will contact you within 24 hours.');
+                form.reset();
+                
+                // 重置第一个FAQ为打开状态
+                faqItems.forEach((item, index) => {
+                    if (index === 0) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
             });
             
             // 重置输入框边框颜色
-            const inputs = multiStepForm.querySelectorAll('input, select, textarea');
+            const inputs = form.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 input.addEventListener('input', function() {
                     this.style.borderColor = '#ddd';
@@ -1317,120 +1230,6 @@
                 }
             });
         });
-        
-        // 多步骤表单辅助函数
-        function goToNextStep(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const nextStep = currentStep.nextElementSibling;
-            
-            if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
-                if (validateCurrentStep(currentStep)) {
-                    currentStep.classList.remove('active');
-                    nextStep.classList.add('active');
-                    updateProgressBar(form, nextStep.dataset.step);
-                }
-            }
-        }
-        
-        function goToPrevStep(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const prevStep = currentStep.previousElementSibling;
-            
-            if (prevStep && prevStep.classList.contains('step-content')) {
-                currentStep.classList.remove('active');
-                prevStep.classList.add('active');
-                updateProgressBar(form, prevStep.dataset.step);
-            }
-        }
-        
-        function validateCurrentStep(step) {
-            const requiredFields = step.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#e74c3c';
-                    
-                    // 显示错误提示
-                    let errorMsg = field.parentNode.querySelector('.field-error');
-                    if (!errorMsg) {
-                        errorMsg = document.createElement('div');
-                        errorMsg.className = 'field-error';
-                        errorMsg.style.color = '#e74c3c';
-                        errorMsg.style.fontSize = '0.875rem';
-                        errorMsg.style.marginTop = '5px';
-                        field.parentNode.appendChild(errorMsg);
-                    }
-                    errorMsg.textContent = 'This field is required';
-                } else {
-                    field.style.borderColor = '#ddd';
-                    const errorMsg = field.parentNode.querySelector('.field-error');
-                    if (errorMsg) {
-                        errorMsg.remove();
-                    }
-                }
-            });
-            
-            return isValid;
-        }
-        
-        function updateProgressBar(form, stepNumber) {
-            const progressFill = form.querySelector('.progress-fill');
-            const progressSteps = form.querySelectorAll('.progress-steps .step');
-            
-            const progressPercentage = (stepNumber / 3) * 100;
-            progressFill.style.width = `${progressPercentage}%`;
-            
-            progressSteps.forEach((step, index) => {
-                if (index + 1 <= stepNumber) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-        }
-        
-        function updateContactReview() {
-            const contactInfo = [
-                document.getElementById('inquiry-name')?.value,
-                document.getElementById('inquiry-email')?.value,
-                document.getElementById('inquiry-company')?.value
-            ].filter(Boolean).join(' • ');
-            
-            const inquiryInfo = [
-                document.getElementById('inquiry-subject')?.selectedOptions[0]?.text,
-                document.getElementById('inquiry-message')?.value ? 'Message provided' : 'No message'
-            ].filter(Boolean).join(' • ');
-            
-            document.getElementById('review-contact').textContent = contactInfo || 'Not provided';
-            document.getElementById('review-inquiry').textContent = inquiryInfo || 'Not specified';
-        }
-        
-        function resetContactForm() {
-            const form = document.getElementById('general-inquiry-form');
-            const successMessage = form.querySelector('.success-message');
-            
-            form.reset();
-            form.style.display = 'block';
-            successMessage.style.display = 'none';
-            
-            // 重置到第一步
-            const stepContents = form.querySelectorAll('.step-content');
-            stepContents.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-            
-            // 重置进度条
-            const progressFill = form.querySelector('.progress-fill');
-            progressFill.style.width = '33.33%';
-            
-            const steps = form.querySelectorAll('.progress-steps .step');
-            steps.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-        }
     </script>
 </body>
 </html>

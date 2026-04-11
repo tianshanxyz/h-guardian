@@ -25,7 +25,6 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/form-optimizer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -892,189 +891,105 @@
                     <p data-translate="quote_form_subtitle">Provide details about your customization needs for an accurate quotation</p>
                 </div>
                 
-                <form class="multi-step-form quote-form" id="customization-form">
-                    <!-- 进度条 -->
-                    <div class="form-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 25%"></div>
+                <form class="quote-form" id="customization-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company-name" data-translate="form_company_name">Company Name <span class="required">*</span></label>
+                            <input type="text" id="company-name" class="form-control" required>
                         </div>
-                        <div class="progress-steps">
-                            <span class="step active" data-step="1">Company Info</span>
-                            <span class="step" data-step="2">Product Specs</span>
-                            <span class="step" data-step="3">Custom Details</span>
-                            <span class="step" data-step="4">Review & Submit</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 步骤1: 公司信息 -->
-                    <div class="step-content active" data-step="1">
-                        <h4 class="step-title">Step 1: Your Company Information</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="company-name" data-translate="form_company_name">Company Name <span class="required">*</span></label>
-                                <input type="text" id="company-name" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="contact-person" data-translate="form_contact_person">Contact Person <span class="required">*</span></label>
-                                <input type="text" id="contact-person" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email" data-translate="form_email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" data-translate="form_phone">Phone Number</label>
-                                <input type="tel" id="phone" class="form-control">
-                                <small class="form-text">Optional, for faster communication</small>
-                            </div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn next-step">
-                                Next Step <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- 步骤2: 产品规格 -->
-                    <div class="step-content" data-step="2">
-                        <h4 class="step-title">Step 2: Product Specifications</h4>
                         
                         <div class="form-group">
-                            <label for="product-type" data-translate="form_product_type">Product Type <span class="required">*</span></label>
-                            <select id="product-type" class="form-control select" required>
-                                <option value="" data-translate="form_select_product">Select a product type</option>
-                                <option value="adult-mask" data-translate="product_adults">Disposable Mask for Adults</option>
-                                <option value="teen-mask" data-translate="product_teens">Disposable Mask for Teens</option>
-                                <option value="kids-mask" data-translate="product_kids">Disposable Mask for Kids</option>
-                                <option value="double-nose-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
-                                <option value="kn95">KN95 Respirator Mask</option>
-                                <option value="surgical-mask">3-Ply Surgical Mask</option>
-                                <option value="other" data-translate="form_other">Other (specify in message)</option>
+                            <label for="contact-person" data-translate="form_contact_person">Contact Person <span class="required">*</span></label>
+                            <input type="text" id="contact-person" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" data-translate="form_email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" data-translate="form_phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                            <p class="form-note" data-translate="form_phone_note">Optional, but helpful for quick communication</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country" data-translate="form_country">Country</label>
+                            <input type="text" id="country" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website" data-translate="form_website">Website (Optional)</label>
+                            <input type="url" id="website" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-type" data-translate="form_product_type">Product Type <span class="required">*</span></label>
+                        <select id="product-type" class="form-control select" required>
+                            <option value="" data-translate="form_select_product">Select a product type</option>
+                            <option value="adult-mask" data-translate="product_adults">Disposable Mask for Adults</option>
+                            <option value="teen-mask" data-translate="product_teens">Disposable Mask for Teens</option>
+                            <option value="kids-mask" data-translate="product_kids">Disposable Mask for Kids</option>
+                            <option value="double-nose-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
+                            <option value="kn95">KN95 Respirator Mask</option>
+                            <option value="surgical-mask">3-Ply Surgical Mask</option>
+                            <option value="other" data-translate="form_other">Other (specify in message)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="order-quantity" data-translate="form_order_quantity">Estimated Order Quantity <span class="required">*</span></label>
+                            <select id="order-quantity" class="form-control select" required>
+                                <option value="" data-translate="form_select_quantity">Select quantity range</option>
+                                <option value="100000-200000">100,000 - 200,000 pieces</option>
+                                <option value="200000-500000">200,000 - 500,000 pieces</option>
+                                <option value="500000-1000000">500,000 - 1,000,000 pieces</option>
+                                <option value="1000000-2000000">1,000,000 - 2,000,000 pieces</option>
+                                <option value="2000000+">2,000,000+ pieces</option>
+                            </select>
+                            <p class="form-note" data-translate="form_moq_note">Minimum order quantity: 100,000 pieces per design</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sample-needed" data-translate="form_sample_needed">Sample Needed? <span class="required">*</span></label>
+                            <select id="sample-needed" class="form-control select" required>
+                                <option value="" data-translate="form_select_option">Select an option</option>
+                                <option value="yes-free" data-translate="form_sample_free">Yes, free samples (shipping charges apply)</option>
+                                <option value="yes-paid" data-translate="form_sample_paid">Yes, paid samples including shipping</option>
+                                <option value="no" data-translate="form_sample_no">No samples needed at this time</option>
                             </select>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="order-quantity" data-translate="form_order_quantity">Estimated Order Quantity <span class="required">*</span></label>
-                                <select id="order-quantity" class="form-control select" required>
-                                    <option value="" data-translate="form_select_quantity">Select quantity range</option>
-                                    <option value="100000-200000">100,000 - 200,000 pieces</option>
-                                    <option value="200000-500000">200,000 - 500,000 pieces</option>
-                                    <option value="500000-1000000">500,000 - 1,000,000 pieces</option>
-                                    <option value="1000000-2000000">1,000,000 - 2,000,000 pieces</option>
-                                    <option value="2000000+">2,000,000+ pieces</option>
-                                </select>
-                                <small class="form-text">Minimum order quantity: 100,000 pieces per design</small>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="sample-needed" data-translate="form_sample_needed">Sample Needed? <span class="required">*</span></label>
-                                <select id="sample-needed" class="form-control select" required>
-                                    <option value="" data-translate="form_select_option">Select an option</option>
-                                    <option value="yes-free" data-translate="form_sample_free">Yes, free samples (shipping charges apply)</option>
-                                    <option value="yes-paid" data-translate="form_sample_paid">Yes, paid samples including shipping</option>
-                                    <option value="no" data-translate="form_sample_no">No samples needed at this time</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Previous
-                            </button>
-                            <button type="button" class="step-btn next-step">
-                                Next Step <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
                     </div>
                     
-                    <!-- 步骤3: 定制详情 -->
-                    <div class="step-content" data-step="3">
-                        <h4 class="step-title">Step 3: Customization Details</h4>
-                        
-                        <div class="form-group">
-                            <label for="customization-details" data-translate="form_customization_details">Customization Requirements <span class="required">*</span></label>
-                            <textarea id="customization-details" class="form-control" required data-translate-placeholder="form_customization_placeholder" placeholder="Please describe your customization requirements in detail:
+                    <div class="form-group">
+                        <label for="customization-details" data-translate="form_customization_details">Customization Details <span class="required">*</span></label>
+                        <textarea id="customization-details" class="form-control" required data-translate-placeholder="form_customization_placeholder" placeholder="Please describe your customization requirements in detail:
 • Logo details (size, colors, placement)
 • Mask colors (body and earbands)
 • Material specifications
 • Packaging requirements
-• Any other special requests" rows="5"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="additional-notes" data-translate="form_additional_notes">Additional Notes</label>
-                            <textarea id="additional-notes" class="form-control" data-translate-placeholder="form_additional_placeholder" placeholder="Any other information you'd like to share, such as:
+• Any other special requests"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-notes" data-translate="form_additional_notes">Additional Notes</label>
+                        <textarea id="additional-notes" class="form-control" data-translate-placeholder="form_additional_placeholder" placeholder="Any other information you'd like to share, such as:
 • Target market/country
 • Timeline requirements
 • Budget considerations
-• Previous supplier experiences" rows="3"></textarea>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Previous
-                            </button>
-                            <button type="button" class="step-btn next-step">
-                                Review & Submit <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
+• Previous supplier experiences"></textarea>
                     </div>
                     
-                    <!-- 步骤4: 确认提交 -->
-                    <div class="step-content" data-step="4">
-                        <h4 class="step-title">Step 4: Review Your Customization Request</h4>
-                        
-                        <div class="review-section">
-                            <div class="review-item">
-                                <strong>Company Information:</strong>
-                                <div id="review-custom-company" class="review-content"></div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <strong>Product Specifications:</strong>
-                                <div id="review-custom-product" class="review-content"></div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <strong>Customization Details:</strong>
-                                <div id="review-custom-details" class="review-content"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="agree-custom-terms" required>
-                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me.
-                            </label>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Back to Edit
-                            </button>
-                            <button type="submit" class="step-btn submit-btn">
-                                <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_request">Submit Customization Request</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- 成功消息 -->
-                    <div class="success-message" style="display: none;">
-                        <div class="success-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <h3>Thank You!</h3>
-                        <p>Your customization request has been submitted successfully. Our team will contact you within 24 hours with a detailed quotation.</p>
-                        <button type="button" class="step-btn" onclick="resetCustomForm()">
-                            <i class="fas fa-plus"></i> Submit Another Request
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_request">Submit Customization Request</span>
                         </button>
                     </div>
                 </form>
@@ -1134,60 +1049,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/form-handler.js"></script>
-    <script src="js/form-optimizer.js"></script>
     
     <!-- Customization页面特有脚本 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 多步骤表单功能
-            const multiStepForm = document.getElementById('customization-form');
-            
-            // 下一步按钮功能
-            const nextButtons = multiStepForm.querySelectorAll('.next-step');
-            nextButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    goToNextStepCustom(multiStepForm);
-                });
-            });
-            
-            // 上一步按钮功能
-            const prevButtons = multiStepForm.querySelectorAll('.prev-step');
-            prevButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    goToPrevStepCustom(multiStepForm);
-                });
-            });
-            
             // 表单提交处理
-            multiStepForm.addEventListener('submit', function(e) {
+            const form = document.getElementById('customization-form');
+            
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // 显示加载状态
-                const submitBtn = this.querySelector('.submit-btn');
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
+                // 简单的表单验证
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
                 
-                // 模拟发送过程
-                setTimeout(() => {
-                    // 隐藏表单，显示成功消息
-                    this.style.display = 'none';
-                    this.querySelector('.success-message').style.display = 'block';
-                    
-                    // 这里可以添加实际的表单提交逻辑
-                    console.log('Customization form submitted successfully');
-                }, 2000);
-            });
-            
-            // 实时更新确认信息
-            document.querySelectorAll('input, select, textarea').forEach(field => {
-                field.addEventListener('change', updateCustomReview);
-                field.addEventListener('input', updateCustomReview);
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#e74c3c';
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill in all required fields marked with *');
+                    return;
+                }
+                
+                // 这里可以添加AJAX提交到服务器的代码
+                // 暂时用模拟提交
+                alert('Thank you for your customization request! We will contact you within 24 hours.');
+                form.reset();
             });
             
             // 重置输入框边框颜色
-            const inputs = multiStepForm.querySelectorAll('input, select, textarea');
+            const inputs = form.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 input.addEventListener('input', function() {
                     this.style.borderColor = '#ddd';
@@ -1214,96 +1111,6 @@
                 footerYear.innerHTML = footerYear.innerHTML.replace('2003-2026', `2003-${currentYear}`);
             }
         });
-        
-        // 定制页面多步骤表单辅助函数
-        function goToNextStepCustom(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const nextStep = currentStep.nextElementSibling;
-            
-            if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
-                if (validateCurrentStep(currentStep)) {
-                    currentStep.classList.remove('active');
-                    nextStep.classList.add('active');
-                    updateProgressBarCustom(form, nextStep.dataset.step);
-                }
-            }
-        }
-        
-        function goToPrevStepCustom(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const prevStep = currentStep.previousElementSibling;
-            
-            if (prevStep && prevStep.classList.contains('step-content')) {
-                currentStep.classList.remove('active');
-                prevStep.classList.add('active');
-                updateProgressBarCustom(form, prevStep.dataset.step);
-            }
-        }
-        
-        function updateProgressBarCustom(form, stepNumber) {
-            const progressFill = form.querySelector('.progress-fill');
-            const progressSteps = form.querySelectorAll('.progress-steps .step');
-            
-            const progressPercentage = (stepNumber / 4) * 100;
-            progressFill.style.width = `${progressPercentage}%`;
-            
-            progressSteps.forEach((step, index) => {
-                if (index + 1 <= stepNumber) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-        }
-        
-        function updateCustomReview() {
-            const companyInfo = [
-                document.getElementById('company-name')?.value,
-                document.getElementById('contact-person')?.value,
-                document.getElementById('email')?.value,
-                document.getElementById('phone')?.value
-            ].filter(Boolean).join(' • ');
-            
-            const productInfo = [
-                document.getElementById('product-type')?.selectedOptions[0]?.text,
-                document.getElementById('order-quantity')?.selectedOptions[0]?.text,
-                document.getElementById('sample-needed')?.selectedOptions[0]?.text
-            ].filter(Boolean).join(' • ');
-            
-            const customDetails = [
-                document.getElementById('customization-details')?.value ? 'Details provided' : 'No details',
-                document.getElementById('additional-notes')?.value ? 'Notes added' : 'No notes'
-            ].filter(Boolean).join(' • ');
-            
-            document.getElementById('review-custom-company').textContent = companyInfo || 'Not provided';
-            document.getElementById('review-custom-product').textContent = productInfo || 'Not specified';
-            document.getElementById('review-custom-details').textContent = customDetails || 'Not specified';
-        }
-        
-        function resetCustomForm() {
-            const form = document.getElementById('customization-form');
-            const successMessage = form.querySelector('.success-message');
-            
-            form.reset();
-            form.style.display = 'block';
-            successMessage.style.display = 'none';
-            
-            // 重置到第一步
-            const stepContents = form.querySelectorAll('.step-content');
-            stepContents.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-            
-            // 重置进度条
-            const progressFill = form.querySelector('.progress-fill');
-            progressFill.style.width = '25%';
-            
-            const steps = form.querySelectorAll('.progress-steps .step');
-            steps.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-        }
     </script>
 </body>
 </html>

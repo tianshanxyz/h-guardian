@@ -1,53 +1,7 @@
-# ============================================
-# Git ignore - Only deploy website files
-# ============================================
-
-# macOS/Windows system files
+# Git ignore
 .DS_Store
 Thumbs.db
 *.log
-*.swp
-*.swo
-*~
-
-# Development files (exclude from deployment)
-*.md
-*.txt
-*.sh
-*.json (except lang/*.json)
-test*
-*TEMP*
-*BACKUP*
-*OLD*
-
-# IDE and editor files
-.vscode/
-.idea/
-*.sublime-*
-*.sublime-*
-.project
-.settings/
-
-# Environment and secrets
+node_modules/
 .env
 .env.local
-.env.*.local
-*.pem
-*.key
-credentials*
-
-# Documentation
-README*
-docs/
-documentation/
-
-# Git
-.git/
-.gitignore (already tracked)
-
-# Trae AI
-.trae/
-
-# Cloudflare (these are config files, not for deployment)
-_headers
-_redirects

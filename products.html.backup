@@ -25,7 +25,6 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/form-optimizer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +40,7 @@
             text-align: center;
             padding: 120px 0 80px;
             position: relative;
+);
         }
         
         .products-main {
@@ -644,156 +644,74 @@
             </div>
             
             <div class="form-container">
-                <form class="multi-step-form inquiry-form" id="product-inquiry-form">
-                    <!-- 进度条 -->
-                    <div class="form-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 33.33%"></div>
-                        </div>
-                        <div class="progress-steps">
-                            <span class="step active" data-step="1">Contact Info</span>
-                            <span class="step" data-step="2">Product Details</span>
-                            <span class="step" data-step="3">Review & Submit</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 步骤1: 联系信息 -->
-                    <div class="step-content active" data-step="1">
-                        <h4 class="step-title">Step 1: Your Contact Information</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name" data-translate="form_full_name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" data-translate="form_email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="country" data-translate="form_country">Country</label>
-                                <select id="country" name="country">
-                                    <option value="" data-translate="form_select_country">Select Country</option>
-                                    <option value="JP">Japan</option>
-                                    <option value="US">United States</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="DE">Germany</option>
-                                    <option value="FR">France</option>
-                                    <option value="AU">Australia</option>
-                                    <option value="CA">Canada</option>
-                                    <option value="other" data-translate="form_other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone" data-translate="form_phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                                <small class="form-text">Optional, for faster response</small>
-                            </div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn next-step">
-                                Next Step <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- 步骤2: 产品详情 -->
-                    <div class="step-content" data-step="2">
-                        <h4 class="step-title">Step 2: Product Requirements</h4>
-                        
+                <form class="inquiry-form" id="product-inquiry-form">
+                    <div class="form-row">
                         <div class="form-group">
-                            <label for="product-interest" data-translate="form_product_interest">Product of Interest *</label>
-                            <select id="product-interest" name="product-interest" required>
-                                <option value="" data-translate="form_select_product">Select Product Category</option>
-                                <option value="adults" data-translate="product_adults">Disposable Mask for Adults</option>
-                                <option value="teens" data-translate="product_teens">Disposable Mask for Teens</option>
-                                <option value="kids" data-translate="product_kids">Disposable Mask for Kids</option>
-                                <option value="double-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
-                                <option value="multiple" data-translate="form_multiple_products">Multiple Products</option>
+                            <label for="name" data-translate="form_full_name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" data-translate="form_country">Country</label>
+                            <select id="country" name="country">
+                                <option value="" data-translate="form_select_country">Select Country</option>
+                                <option value="JP">Japan</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="AU">Australia</option>
+                                <option value="CA">Canada</option>
+                                <option value="other" data-translate="form_other">Other</option>
                             </select>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
-                            <label for="quantity" data-translate="form_quantity">Estimated Quantity *</label>
-                            <select id="quantity" name="quantity" required>
-                                <option value="" data-translate="form_select_quantity">Select Quantity</option>
-                                <option value="1000-5000">1,000 - 5,000 pcs</option>
-                                <option value="5000-10000">5,000 - 10,000 pcs</option>
-                                <option value="10000-50000">10,000 - 50,000 pcs</option>
-                                <option value="50000-100000">50,000 - 100,000 pcs</option>
-                                <option value="100000-500000">100,000 - 500,000 pcs</option>
-                                <option value="500000+">500,000+ pcs</option>
-                            </select>
+                            <label for="email" data-translate="form_email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="message" data-translate="form_additional_requirements">Additional Requirements</label>
-                            <textarea id="message" name="message" rows="4" data-translate-placeholder="form_requirements_placeholder" placeholder="Please specify any special requirements, certifications needed, or ask questions..."></textarea>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Previous
-                            </button>
-                            <button type="button" class="step-btn next-step">
-                                Review & Submit <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <label for="phone" data-translate="form_phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                     </div>
                     
-                    <!-- 步骤3: 确认提交 -->
-                    <div class="step-content" data-step="3">
-                        <h4 class="step-title">Step 3: Review Your Inquiry</h4>
-                        
-                        <div class="review-section">
-                            <div class="review-item">
-                                <strong>Contact Information:</strong>
-                                <div id="review-product-contact" class="review-content"></div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <strong>Product Details:</strong>
-                                <div id="review-product-details" class="review-content"></div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <strong>Additional Requirements:</strong>
-                                <div id="review-product-message" class="review-content"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="agree-product-terms" required>
-                                I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to H-Guardian contacting me.
-                            </label>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" class="step-btn prev-step">
-                                <i class="fas fa-arrow-left"></i> Back to Edit
-                            </button>
-                            <button type="submit" class="step-btn submit-btn">
-                                <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_inquiry">Submit Inquiry</span>
-                            </button>
-                        </div>
-                        <p class="form-note" data-translate="form_response_note">We will respond within 24 hours with detailed information.</p>
+                    <div class="form-group">
+                        <label for="product-interest" data-translate="form_product_interest">Product of Interest *</label>
+                        <select id="product-interest" name="product-interest" required>
+                            <option value="" data-translate="form_select_product">Select Product Category</option>
+                            <option value="adults" data-translate="product_adults">Disposable Mask for Adults</option>
+                            <option value="teens" data-translate="product_teens">Disposable Mask for Teens</option>
+                            <option value="kids" data-translate="product_kids">Disposable Mask for Kids</option>
+                            <option value="double-clip" data-translate="product_double_clip">Double Nose-Clip Mask</option>
+                            <option value="multiple" data-translate="form_multiple_products">Multiple Products</option>
+                        </select>
                     </div>
                     
-                    <!-- 成功消息 -->
-                    <div class="success-message" style="display: none;">
-                        <div class="success-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <h3>Thank You!</h3>
-                        <p>Your product inquiry has been submitted successfully. Our team will contact you within 24 hours with detailed information.</p>
-                        <button type="button" class="step-btn" onclick="resetProductForm()">
-                            <i class="fas fa-plus"></i> Submit Another Inquiry
+                    <div class="form-group">
+                        <label for="quantity" data-translate="form_quantity">Estimated Quantity *</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="" data-translate="form_select_quantity">Select Quantity</option>
+                            <option value="1000-5000">1,000 - 5,000 pcs</option>
+                            <option value="5000-10000">5,000 - 10,000 pcs</option>
+                            <option value="10000-50000">10,000 - 50,000 pcs</option>
+                            <option value="50000-100000">50,000 - 100,000 pcs</option>
+                            <option value="100000-500000">100,000 - 500,000 pcs</option>
+                            <option value="500000+">500,000+ pcs</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-translate="form_additional_requirements">Additional Requirements</label>
+                        <textarea id="message" name="message" rows="4" data-translate-placeholder="form_requirements_placeholder" placeholder="Please specify any special requirements, certifications needed, or ask questions..."></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> <span data-translate="form_submit_inquiry">Submit Inquiry</span>
                         </button>
+                        <p class="form-note" data-translate="form_response_note">We will respond within 24 hours with detailed information.</p>
                     </div>
                 </form>
             </div>
@@ -853,7 +771,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/form-handler.js"></script>
-    <script src="js/form-optimizer.js"></script>
     
     <!-- Products页面特有脚本 -->
     <script>
@@ -902,51 +819,53 @@
                 }
             }
             
-            // 多步骤表单功能
+            // 表单验证
             const inquiryForm = document.getElementById('product-inquiry-form');
             if (inquiryForm) {
-                // 下一步按钮功能
-                const nextButtons = inquiryForm.querySelectorAll('.next-step');
-                nextButtons.forEach(button => {
-                    button.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        goToNextStepProduct(inquiryForm);
-                    });
-                });
-                
-                // 上一步按钮功能
-                const prevButtons = inquiryForm.querySelectorAll('.prev-step');
-                prevButtons.forEach(button => {
-                    button.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        goToPrevStepProduct(inquiryForm);
-                    });
-                });
-                
-                // 表单提交处理
                 inquiryForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // 显示加载状态
-                    const submitBtn = this.querySelector('.submit-btn');
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
+                    // 简单的表单验证
+                    const requiredFields = this.querySelectorAll('[required]');
+                    let isValid = true;
                     
-                    // 模拟发送过程
-                    setTimeout(() => {
-                        // 隐藏表单，显示成功消息
-                        this.style.display = 'none';
-                        this.querySelector('.success-message').style.display = 'block';
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.style.borderColor = '#dc3545';
+                            isValid = false;
+                        } else {
+                            field.style.borderColor = '';
+                        }
+                    });
+                    
+                    // 邮箱格式验证
+                    const emailField = document.getElementById('email');
+                    if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+                        emailField.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // 显示成功消息
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                        submitBtn.disabled = true;
                         
-                        // 这里可以添加实际的表单提交逻辑
-                        console.log('Product inquiry form submitted successfully');
-                    }, 2000);
-                });
-                
-                // 实时更新确认信息
-                document.querySelectorAll('input, select, textarea').forEach(field => {
-                    field.addEventListener('change', updateProductReview);
-                    field.addEventListener('input', updateProductReview);
+                        // 模拟发送
+                        setTimeout(() => {
+                            alert('Thank you! Your inquiry has been submitted. We will contact you within 24 hours.');
+                            inquiryForm.reset();
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            
+                            // 滚动回顶部
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        }, 1500);
+                    }
                 });
             }
             
@@ -967,93 +886,6 @@
                 });
             });
         });
-        
-        // 产品页面多步骤表单辅助函数
-        function goToNextStepProduct(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const nextStep = currentStep.nextElementSibling;
-            
-            if (nextStep && nextStep.classList.contains('step-content')) {
-                // 验证当前步骤
-                if (validateCurrentStep(currentStep)) {
-                    currentStep.classList.remove('active');
-                    nextStep.classList.add('active');
-                    updateProgressBarProduct(form, nextStep.dataset.step);
-                }
-            }
-        }
-        
-        function goToPrevStepProduct(form) {
-            const currentStep = form.querySelector('.step-content.active');
-            const prevStep = currentStep.previousElementSibling;
-            
-            if (prevStep && prevStep.classList.contains('step-content')) {
-                currentStep.classList.remove('active');
-                prevStep.classList.add('active');
-                updateProgressBarProduct(form, prevStep.dataset.step);
-            }
-        }
-        
-        function updateProgressBarProduct(form, stepNumber) {
-            const progressFill = form.querySelector('.progress-fill');
-            const progressSteps = form.querySelectorAll('.progress-steps .step');
-            
-            const progressPercentage = (stepNumber / 3) * 100;
-            progressFill.style.width = `${progressPercentage}%`;
-            
-            progressSteps.forEach((step, index) => {
-                if (index + 1 <= stepNumber) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-        }
-        
-        function updateProductReview() {
-            const contactInfo = [
-                document.getElementById('name')?.value,
-                document.getElementById('email')?.value,
-                document.getElementById('phone')?.value,
-                document.getElementById('company')?.value
-            ].filter(Boolean).join(' • ');
-            
-            const productInfo = [
-                document.getElementById('product-interest')?.selectedOptions[0]?.text,
-                document.getElementById('quantity')?.value ? `${document.getElementById('quantity')?.value} pieces` : 'Not specified',
-                document.getElementById('target-market')?.value
-            ].filter(Boolean).join(' • ');
-            
-            const messageInfo = document.getElementById('message')?.value || 'No additional message';
-            
-            document.getElementById('review-contact').textContent = contactInfo || 'Not provided';
-            document.getElementById('review-product').textContent = productInfo || 'Not specified';
-            document.getElementById('review-message').textContent = messageInfo;
-        }
-        
-        function resetProductForm() {
-            const form = document.getElementById('product-inquiry-form');
-            const successMessage = form.querySelector('.success-message');
-            
-            form.reset();
-            form.style.display = 'block';
-            successMessage.style.display = 'none';
-            
-            // 重置到第一步
-            const stepContents = form.querySelectorAll('.step-content');
-            stepContents.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-            
-            // 重置进度条
-            const progressFill = form.querySelector('.progress-fill');
-            progressFill.style.width = '33.33%';
-            
-            const steps = form.querySelectorAll('.progress-steps .step');
-            steps.forEach((step, index) => {
-                step.classList.toggle('active', index === 0);
-            });
-        }
     </script>
 </body>
 </html>
