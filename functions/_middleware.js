@@ -1,11 +1,11 @@
 // Cloudflare Pages Functions Middleware
-// Handles root domain redirect and HTTPS enforcement
+// 处理根域名重定向到 www，解决访问慢问题
 
 export async function onRequest(context) {
   const { request } = context;
   const url = new URL(request.url);
   
-  // 1. 根域名重定向到 www
+  // 1. 根域名立即重定向到 www（最高优先级）
   if (url.hostname === 'h-guardian.com') {
     url.hostname = 'www.h-guardian.com';
     url.protocol = 'https:';
@@ -34,7 +34,7 @@ export async function onRequest(context) {
     });
   }
   
-  // 继续处理请求
+  // 继续处理其他请求
   const response = await context.next();
   
   // 添加安全响应头
