@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
-        /* Contact页面特有样式 */
+        /* Contact page specific styles */
         .page-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact/hero-bg.jpg');
             background-size: cover;
@@ -54,7 +54,7 @@
             opacity: 0.9;
         }
         
-        /* 联系信息部分 */
+        /* Contact information section */
         .contact-info-section {
             padding: 100px 0;
             background: #f8f9fa;
@@ -150,12 +150,12 @@
             text-decoration: underline;
         }
         
-        /* 地图和交通指引部分 - 优化布局 */
+        /* Map and transportation section - optimized layout */
         .map-section {
             padding: 100px 0;
             background: white;
         }
-        
+
         .map-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -163,8 +163,8 @@
             margin-top: 50px;
             align-items: start;
         }
-        
-        /* 左侧：地图 + 虚拟参观 */
+
+        /* Left side: Map + Virtual tour */
         .map-side {
             display: flex;
             flex-direction: column;
@@ -208,7 +208,7 @@
             max-width: 300px;
         }
         
-        /* 虚拟参观卡片 */
+        /* Virtual tour card */
         .virtual-tour-card {
             background: linear-gradient(135deg, rgba(51, 153, 153, 0.05), rgba(51, 153, 153, 0.02));
             border-radius: 15px;
@@ -276,7 +276,7 @@
             text-align: center;
         }
         
-        /* 右侧：交通指引 */
+        /* Right side: Transportation guide */
         .transportation-guide {
             background: white;
             border-radius: 15px;
@@ -351,7 +351,7 @@
             left: 0;
         }
         
-        /* 简单询盘表格部分 */
+        /* Simple inquiry form section */
         .inquiry-section {
             padding: 100px 0;
             background: #f8f9fa;
@@ -436,7 +436,7 @@
             font-size: 1.1rem;
         }
         
-        /* Q&A部分 */
+        /* FAQ section */
         .faq-section {
             padding: 100px 0;
             background: white;
@@ -532,7 +532,7 @@
             left: 0;
         }
         
-        /* 响应式设计 */
+        /* Responsive design */
         @media (max-width: 1200px) {
             .map-container {
                 gap: 40px;
@@ -674,7 +674,7 @@
         </div>
     </section>
 
-    <!-- 联系信息 -->
+    <!-- Contact Information -->
     <section class="contact-info-section">
         <div class="container">
             <div class="section-header">
@@ -768,19 +768,19 @@
         </div>
     </section>
 
-    <!-- 地图和交通指引 -->
+    <!-- Map and Transportation -->
     <section class="map-section">
         <div class="container">
             <div class="section-header">
                 <h2 data-translate="contact_location_title">Factory Location & Transportation</h2>
                 <p data-translate="contact_location_subtitle">How to reach our manufacturing facility in Xiantao, Hubei</p>
             </div>
-            
+
             <div class="map-container">
-                <!-- 左侧：地图 + 虚拟参观 -->
+                <!-- Left side: Map + Virtual tour -->
                 <div class="map-side">
                     <div class="map-wrapper">
-                        <!-- 方案4: 静态图片 + 链接 (最稳定) -->
+                        <!-- Static image + link (most stable) -->
                         <a href="https://maps.google.com/maps?q=THE+INDUSTRIAL+PARK+NO.8,+GUOHE,+XIANTAO,+HUBEI,+CHINA&hl=en&t=m&z=15" target="_blank" style="display: block; width: 100%; height: 100%;">
                             <div class="map-placeholder">
                                 <i class="fas fa-map-marked-alt"></i>
@@ -792,8 +792,8 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <!-- 虚拟参观卡片 -->
+
+                    <!-- Virtual tour card -->
                     <div class="virtual-tour-card">
                         <div class="virtual-tour-header">
                             <div class="virtual-tour-icon">
@@ -835,7 +835,7 @@
                     </div>
                 </div>
                 
-                <!-- 右侧：交通指引 -->
+                <!-- Right side: Transportation guide -->
                 <div class="transportation-guide">
                     <h3><i class="fas fa-route"></i> <span data-translate="transport_how_to_reach">How to Reach Our Factory</span></h3>
                     
@@ -904,7 +904,7 @@
                 </div>
                 
                 <form class="multi-step-form inquiry-form" id="general-inquiry-form">
-                    <!-- 进度条 -->
+                    <!-- Progress bar -->
                     <div class="form-progress">
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 33.33%"></div>
@@ -1009,7 +1009,7 @@
                         </div>
                     </div>
                     
-                    <!-- 成功消息 -->
+                    <!-- Success message -->
                     <div class="success-message" style="display: none;">
                         <div class="success-icon">
                             <i class="fas fa-check"></i>
@@ -1025,7 +1025,7 @@
         </div>
     </section>
 
-    <!-- Q&A部分 -->
+    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
@@ -1210,32 +1210,32 @@
     <script src="js/form-handler.js"></script>
     <script src="js/form-optimizer.js"></script>
     
-    <!-- Contact页面特有脚本 -->
+    <!-- Contact page specific scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // FAQ切换功能
+            // FAQ toggle functionality
             const faqItems = document.querySelectorAll('.faq-item');
-            
+
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
-                
+
                 question.addEventListener('click', function() {
-                    // 关闭其他打开的FAQ
+                    // Close other open FAQs
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
                         }
                     });
-                    
-                    // 切换当前FAQ
+
+                    // Toggle current FAQ
                     item.classList.toggle('active');
                 });
             });
-            
+
             // Multi-step form functionality
             const multiStepForm = document.getElementById('general-inquiry-form');
-            
-            // 下一步按钮功能
+
+            // Next step button functionality
             const nextButtons = multiStepForm.querySelectorAll('.next-step');
             nextButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -1243,8 +1243,8 @@
                     goToNextStep(multiStepForm);
                 });
             });
-            
-            // 上一步按钮功能
+
+            // Previous step button functionality
             const prevButtons = multiStepForm.querySelectorAll('.prev-step');
             prevButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -1252,42 +1252,42 @@
                     goToPrevStep(multiStepForm);
                 });
             });
-            
-            // 表单提交处理
+
+            // Form submission handling
             multiStepForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                // 显示加载状态
+
+                // Show loading state
                 const submitBtn = this.querySelector('.submit-btn');
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitBtn.disabled = true;
-                
-                // 模拟发送过程
+
+                // Simulate sending process
                 setTimeout(() => {
-                    // 隐藏表单，显示成功消息
+                    // Hide form, show success message
                     this.style.display = 'none';
                     this.querySelector('.success-message').style.display = 'block';
-                    
-                    // 这里可以添加实际的表单提交逻辑
+
+                    // Add actual form submission logic here
                     console.log('Form submitted successfully');
                 }, 2000);
             });
-            
-            // 实时更新确认信息
+
+            // Real-time confirmation info update
             document.querySelectorAll('input, select, textarea').forEach(field => {
                 field.addEventListener('change', updateContactReview);
                 field.addEventListener('input', updateContactReview);
             });
-            
-            // 重置输入框边框颜色
+
+            // Reset input border color
             const inputs = multiStepForm.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 input.addEventListener('input', function() {
                     this.style.borderColor = '#ddd';
                 });
             });
-            
-            // 点击WhatsApp链接时提示
+
+            // WhatsApp link click prompt
             const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
             whatsappLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1296,15 +1296,15 @@
                     }
                 });
             });
-            
-            // 更新年份显示
+
+            // Update year display
             const footerYear = document.querySelector('.footer-bottom p');
             if (footerYear) {
                 const currentYear = new Date().getFullYear();
                 footerYear.innerHTML = footerYear.innerHTML.replace('2003-2026', `2003-${currentYear}`);
             }
-            
-            // 平滑滚动到表单（虚拟参观CTA）
+
+            // Smooth scroll to form (Virtual tour CTA)
             document.querySelector('.virtual-tour-cta .btn').addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
@@ -1353,7 +1353,7 @@
                     isValid = false;
                     field.style.borderColor = '#e74c3c';
                     
-                    // 显示错误提示
+                    // Show error message
                     let errorMsg = field.parentNode.querySelector('.field-error');
                     if (!errorMsg) {
                         errorMsg = document.createElement('div');
@@ -1372,17 +1372,17 @@
                     }
                 }
             });
-            
+
             return isValid;
         }
-        
+
         function updateProgressBar(form, stepNumber) {
             const progressFill = form.querySelector('.progress-fill');
             const progressSteps = form.querySelectorAll('.progress-steps .step');
-            
+
             const progressPercentage = (stepNumber / 3) * 100;
             progressFill.style.width = `${progressPercentage}%`;
-            
+
             progressSteps.forEach((step, index) => {
                 if (index + 1 <= stepNumber) {
                     step.classList.add('active');
@@ -1391,41 +1391,41 @@
                 }
             });
         }
-        
+
         function updateContactReview() {
             const contactInfo = [
                 document.getElementById('inquiry-name')?.value,
                 document.getElementById('inquiry-email')?.value,
                 document.getElementById('inquiry-company')?.value
             ].filter(Boolean).join(' • ');
-            
+
             const inquiryInfo = [
                 document.getElementById('inquiry-subject')?.selectedOptions[0]?.text,
                 document.getElementById('inquiry-message')?.value ? 'Message provided' : 'No message'
             ].filter(Boolean).join(' • ');
-            
+
             document.getElementById('review-contact').textContent = contactInfo || 'Not provided';
             document.getElementById('review-inquiry').textContent = inquiryInfo || 'Not specified';
         }
-        
+
         function resetContactForm() {
             const form = document.getElementById('general-inquiry-form');
             const successMessage = form.querySelector('.success-message');
-            
+
             form.reset();
             form.style.display = 'block';
             successMessage.style.display = 'none';
-            
-            // 重置到第一步
+
+            // Reset to first step
             const stepContents = form.querySelectorAll('.step-content');
             stepContents.forEach((step, index) => {
                 step.classList.toggle('active', index === 0);
             });
-            
-            // 重置进度条
+
+            // Reset progress bar
             const progressFill = form.querySelector('.progress-fill');
             progressFill.style.width = '33.33%';
-            
+
             const steps = form.querySelectorAll('.progress-steps .step');
             steps.forEach((step, index) => {
                 step.classList.toggle('active', index === 0);

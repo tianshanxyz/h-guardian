@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
-        /* Customization页面特有样式 */
+        /* Customization page specific styles */
         .page-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/customization/hero-bg.jpg');
             background-size: cover;
@@ -54,7 +54,7 @@
             opacity: 0.9;
         }
         
-        /* OEM Process部分 - 6个卡片完美布局 */
+        /* OEM Process section - 6 cards perfect layout */
         .oem-process-section {
             padding: 100px 0;
             background: #f8f9fa;
@@ -69,7 +69,7 @@
             position: relative;
         }
         
-        /* 6个卡片完美2行3列布局 */
+        /* 6 cards perfect 2x3 grid layout */
         .process-step {
             background: white;
             border-radius: 15px;
@@ -166,7 +166,7 @@
             left: 0;
         }
         
-        /* 连接线装饰 */
+        /* Connection line decoration */
         .oem-process-section::before {
             content: '';
             position: absolute;
@@ -174,23 +174,23 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent 5%, 
-                var(--primary-light) 20%, 
-                var(--primary-color) 50%, 
-                var(--primary-light) 80%, 
+            background: linear-gradient(90deg,
+                transparent 5%,
+                var(--primary-light) 20%,
+                var(--primary-color) 50%,
+                var(--primary-light) 80%,
                 transparent 95%);
             z-index: 0;
             opacity: 0.1;
         }
-        
-        /* 定制选项部分 - 4个卡片完美布局 */
+
+        /* Customization options section - 4 cards perfect layout */
         .customization-options {
             padding: 100px 0;
             background: white;
             position: relative;
         }
-        
+
         .options-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -198,8 +198,8 @@
             margin-top: 50px;
             position: relative;
         }
-        
-        /* 添加连接线装饰 */
+
+        /* Add connection line decoration */
         .options-grid::before {
             content: '';
             position: absolute;
@@ -311,7 +311,7 @@
             font-size: 1.2rem;
         }
         
-        /* 样品请求部分 - 优化为3个特性 */
+        /* Sample request section - optimized to 3 features */
         .samples-section {
             padding: 100px 0;
             background: linear-gradient(135deg, rgba(51, 153, 153, 0.9), rgba(38, 122, 122, 0.9));
@@ -381,7 +381,7 @@
             transform: translateY(-3px);
         }
         
-        /* 报价请求表单 */
+        /* Quote request form */
         .quote-section {
             padding: 100px 0;
             background: white;
@@ -489,9 +489,9 @@
             font-size: 1.1rem;
         }
         
-        /* 响应式设计 */
+        /* Responsive design */
         @media (max-width: 1200px) {
-            /* OEM Process: 在大屏平板改为2列 */
+            /* OEM Process: 2 columns on large tablets */
             .process-steps {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -750,7 +750,7 @@
                     </div>
                 </div>
                 
-                <!-- 新增：售后服务 -->
+                <!-- After-sales support -->
                 <div class="process-step">
                     <div class="step-image">
                         <img src="images/customization/process-6.jpg" alt="After-Sales Support">
@@ -840,7 +840,7 @@
         </div>
     </section>
 
-    <!-- Free Samples - 优化为3个特性 -->
+    <!-- Free Samples - optimized to 3 features -->
     <section class="samples-section">
         <div class="container">
             <div class="section-header">
@@ -893,7 +893,7 @@
                 </div>
                 
                 <form class="multi-step-form quote-form" id="customization-form">
-                    <!-- 进度条 -->
+                    <!-- Progress bar -->
                     <div class="form-progress">
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 25%"></div>
@@ -1066,7 +1066,7 @@
                         </div>
                     </div>
                     
-                    <!-- 成功消息 -->
+                    <!-- Success message -->
                     <div class="success-message" style="display: none;">
                         <div class="success-icon">
                             <i class="fas fa-check"></i>
@@ -1136,13 +1136,13 @@
     <script src="js/form-handler.js"></script>
     <script src="js/form-optimizer.js"></script>
     
-    <!-- Customization页面特有脚本 -->
+    <!-- Customization page specific scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Multi-step form functionality
             const multiStepForm = document.getElementById('customization-form');
-            
-            // 下一步按钮功能
+
+            // Next step button functionality
             const nextButtons = multiStepForm.querySelectorAll('.next-step');
             nextButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -1150,8 +1150,8 @@
                     goToNextStepCustom(multiStepForm);
                 });
             });
-            
-            // 上一步按钮功能
+
+            // Previous step button functionality
             const prevButtons = multiStepForm.querySelectorAll('.prev-step');
             prevButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -1159,28 +1159,28 @@
                     goToPrevStepCustom(multiStepForm);
                 });
             });
-            
-            // 表单提交处理
+
+            // Form submission handling
             multiStepForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                // 显示加载状态
+
+                // Show loading state
                 const submitBtn = this.querySelector('.submit-btn');
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitBtn.disabled = true;
-                
-                // 模拟发送过程
+
+                // Simulate sending process
                 setTimeout(() => {
-                    // 隐藏表单，显示成功消息
+                    // Hide form, show success message
                     this.style.display = 'none';
                     this.querySelector('.success-message').style.display = 'block';
-                    
-                    // 这里可以添加实际的表单提交逻辑
+
+                    // Add actual form submission logic here
                     console.log('Customization form submitted successfully');
                 }, 2000);
             });
-            
-            // 实时更新确认信息
+
+            // Real-time confirmation info update
             document.querySelectorAll('input, select, textarea').forEach(field => {
                 field.addEventListener('change', updateCustomReview);
                 field.addEventListener('input', updateCustomReview);
