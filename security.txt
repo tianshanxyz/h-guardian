@@ -1,0 +1,27 @@
+# Security Policy for H-Guardian
+# Contact us for security-related issues
+
+Contact: mailto:security@h-guardian.com
+Contact: mailto:info@h-guardian.com
+Encryption: https://www.h-guardian.com/.well-known/pgp-key.txt
+
+Preferred-Languages: en, zh-CN
+
+# Security Measures Implemented:
+# - Content Security Policy (CSP) headers
+# - HTTPS enforcement via Cloudflare
+# - Input validation on all forms
+# - Regular security audits
+# - DDoS protection via Cloudflare WAF
+# - Rate limiting on API endpoints
+
+# Reporting a Vulnerability:
+# We appreciate your efforts to responsibly disclose your findings.
+# Please send security reports to security@h-guardian.com
+# We will respond within 48 hours and aim to resolve issues within 7 days.
+
+# Security Configuration:
+# - TLS 1.2 minimum
+# - HSTS enabled
+# - Modern cipher suites only
+# - No server version disclosure

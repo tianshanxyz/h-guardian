@@ -1,38 +1,28 @@
 {
-    "name": "H-Guardian - Professional Face Mask Manufacturer",
-    "short_name": "H-Guardian",
-    "description": "23 years medical mask manufacturing expert with CE, FDA, SGS certifications",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#339999",
-    "orientation": "portrait-primary",
-    "icons": [
-        {
-            "src": "images/favicon-16x16.png",
-            "sizes": "16x16",
-            "type": "image/png"
-        },
-        {
-            "src": "images/favicon-32x32.png",
-            "sizes": "32x32",
-            "type": "image/png"
-        },
-        {
-            "src": "images/apple-touch-icon.png",
-            "sizes": "180x180",
-            "type": "image/png"
-        },
-        {
-            "src": "images/logo.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
-        }
-    ],
-    "categories": ["business", "health", "medical"],
-    "lang": "en",
-    "dir": "ltr",
-    "scope": "/",
-    "prefer_related_applications": false
+  "name": "H-Guardian - Professional Face Mask Manufacturer",
+  "short_name": "H-Guardian",
+  "description": "CE/FDA certified professional face mask manufacturer with 23 years experience. Daily output 1.5 million pieces.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#339999",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "health", "shopping"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
 }

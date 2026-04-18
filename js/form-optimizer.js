@@ -1,4 +1,4 @@
-// 表单优化器 - 多步骤表单和智能字段处理
+// Form Optimizer - Multi-step forms and smart field handling
 class FormOptimizer {
     constructor() {
         this.currentStep = 1;
@@ -13,10 +13,10 @@ class FormOptimizer {
         this.setupRealTimeValidation();
     }
 
-    // 多步骤表单设置
+    // Multi-step form setup
     setupMultiStepForms() {
         const multiStepForms = document.querySelectorAll('.multi-step-form');
-        
+
         multiStepForms.forEach(form => {
             this.createProgressBar(form);
             this.setupStepNavigation(form);
@@ -24,7 +24,7 @@ class FormOptimizer {
         });
     }
 
-    // 创建进度条
+    // Create progress bar
     createProgressBar(form) {
         const progressHTML = `
             <div class="form-progress">
@@ -32,23 +32,23 @@ class FormOptimizer {
                     <div class="progress-fill" style="width: 33.33%"></div>
                 </div>
                 <div class="progress-steps">
-                    <span class="step active" data-step="1">基本信息</span>
-                    <span class="step" data-step="2">需求详情</span>
-                    <span class="step" data-step="3">完成提交</span>
+                    <span class="step active" data-step="1">Basic Info</span>
+                    <span class="step" data-step="2">Inquiry Details</span>
+                    <span class="step" data-step="3">Review & Submit</span>
                 </div>
             </div>
         `;
-        
+
         form.insertAdjacentHTML('afterbegin', progressHTML);
     }
 
-    // 步骤导航设置
+    // Step navigation setup
     setupStepNavigation(form) {
         const steps = form.querySelectorAll('.step-content');
         const nextBtns = form.querySelectorAll('.next-step');
         const prevBtns = form.querySelectorAll('.prev-step');
 
-        // 下一步按钮
+        // Next step buttons
         nextBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -58,7 +58,7 @@ class FormOptimizer {
             });
         });
 
-        // 上一步按钮
+        // Previous step buttons
         prevBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -67,22 +67,22 @@ class FormOptimizer {
         });
     }
 
-    // 智能字段设置
+    // Smart field setup
     setupSmartFields() {
-        // 邮箱自动识别公司类型
+        // Auto-detect company type from email
         this.setupEmailDomainDetection();
-        
-        // 国家选择智能显示认证要求
+
+        // Show certification requirements based on country
         this.setupCountryBasedCertifications();
-        
-        // 自动填充地理位置
+
+        // Auto-fill geographic location
         this.setupGeoLocation();
     }
 
-    // 邮箱域名检测
+    // Email domain detection
     setupEmailDomainDetection() {
         const emailInputs = document.querySelectorAll('input[type="email"]');
-        
+
         emailInputs.forEach(input => {
             input.addEventListener('blur', () => {
                 const email = input.value.trim();
@@ -94,14 +94,14 @@ class FormOptimizer {
         });
     }
 
-    // 检测公司类型
+    // Detect company type
     detectCompanyType(domain, input) {
         const hospitalDomains = ['hospital', 'clinic', 'medical', 'health'];
         const govDomains = ['gov', 'government', 'org'];
-        
+
         const form = input.closest('form');
         const companyTypeField = form?.querySelector('#company-type');
-        
+
         if (companyTypeField) {
             if (hospitalDomains.some(keyword => domain.includes(keyword))) {
                 companyTypeField.value = 'hospital';
@@ -111,10 +111,10 @@ class FormOptimizer {
         }
     }
 
-    // 基于国家显示认证要求
+    // Country-based certification requirements
     setupCountryBasedCertifications() {
         const countrySelects = document.querySelectorAll('select[name="country"]');
-        
+
         countrySelects.forEach(select => {
             select.addEventListener('change', () => {
                 this.showRelevantCertifications(select.value);
@@ -122,7 +122,7 @@ class FormOptimizer {
         });
     }
 
-    // 显示相关认证
+    // Show relevant certifications
     showRelevantCertifications(country) {
         const certs = {
             'US': ['FDA', 'NIOSH', 'ASTM'],
@@ -135,67 +135,67 @@ class FormOptimizer {
         const certificationSection = document.querySelector('.certification-requirements');
         if (certificationSection && certs[country]) {
             certificationSection.innerHTML = `
-                <h4>推荐认证: ${certs[country].join(', ')}</h4>
-                <p>基于您选择的国家，我们建议关注以下认证要求</p>
+                <h4>Recommended Certifications: ${certs[country].join(', ')}</h4>
+                <p>Based on your selected country, we recommend focusing on the following certification requirements</p>
             `;
             certificationSection.style.display = 'block';
         }
     }
 
-    // 实时验证设置
+    // Real-time validation setup
     setupRealTimeValidation() {
         const inputs = document.querySelectorAll('input, select, textarea');
-        
+
         inputs.forEach(input => {
             input.addEventListener('blur', () => this.validateField(input));
             input.addEventListener('input', () => this.clearFieldError(input));
         });
     }
 
-    // 字段验证
+    // Field validation
     validateField(field) {
         const value = field.value.trim();
         const fieldName = field.getAttribute('name') || field.id;
-        
-        // 清除之前的错误
+
+        // Clear previous errors
         this.clearFieldError(field);
-        
-        // 必填字段验证
+
+        // Required field validation
         if (field.hasAttribute('required') && !value) {
-            this.showFieldError(field, '此字段为必填项');
+            this.showFieldError(field, 'This field is required');
             return false;
         }
-        
-        // 邮箱验证
+
+        // Email validation
         if (field.type === 'email' && value && !this.isValidEmail(value)) {
-            this.showFieldError(field, '请输入有效的邮箱地址');
+            this.showFieldError(field, 'Please enter a valid email address');
             return false;
         }
-        
-        // 电话验证
+
+        // Phone validation
         if (field.type === 'tel' && value && !this.isValidPhone(value)) {
-            this.showFieldError(field, '请输入有效的电话号码');
+            this.showFieldError(field, 'Please enter a valid phone number');
             return false;
         }
-        
+
         return true;
     }
 
-    // 显示字段错误
+    // Show field error
     showFieldError(field, message) {
         field.classList.add('error');
-        
+
         let errorElement = field.parentNode.querySelector('.field-error');
         if (!errorElement) {
             errorElement = document.createElement('div');
             errorElement.className = 'field-error';
             field.parentNode.appendChild(errorElement);
         }
-        
+
         errorElement.textContent = message;
     }
 
-    // 清除字段错误
+    // Clear field error
     clearFieldError(field) {
         field.classList.remove('error');
         const errorElement = field.parentNode.querySelector('.field-error');
@@ -204,26 +204,26 @@ class FormOptimizer {
         }
     }
 
-    // 验证当前步骤
+    // Validate current step
     validateCurrentStep(form) {
         const currentStep = form.querySelector('.step-content.active');
         const fields = currentStep.querySelectorAll('[required]');
         let isValid = true;
-        
+
         fields.forEach(field => {
             if (!this.validateField(field)) {
                 isValid = false;
             }
         });
-        
+
         return isValid;
     }
 
-    // 转到下一步
+    // Go to next step
     goToNextStep(form) {
         const currentStep = form.querySelector('.step-content.active');
         const nextStep = currentStep.nextElementSibling;
-        
+
         if (nextStep && nextStep.classList.contains('step-content')) {
             currentStep.classList.remove('active');
             nextStep.classList.add('active');
@@ -231,11 +231,11 @@ class FormOptimizer {
         }
     }
 
-    // 转到上一步
+    // Go to previous step
     goToPrevStep(form) {
         const currentStep = form.querySelector('.step-content.active');
         const prevStep = currentStep.previousElementSibling;
-        
+
         if (prevStep && prevStep.classList.contains('step-content')) {
             currentStep.classList.remove('active');
             prevStep.classList.add('active');
@@ -243,14 +243,14 @@ class FormOptimizer {
         }
     }
 
-    // 更新进度条
+    // Update progress bar
     updateProgressBar(form, stepNumber) {
         const progressFill = form.querySelector('.progress-fill');
         const progressSteps = form.querySelectorAll('.progress-steps .step');
-        
+
         const progressPercentage = (stepNumber / this.totalSteps) * 100;
         progressFill.style.width = `${progressPercentage}%`;
-        
+
         progressSteps.forEach((step, index) => {
             if (index + 1 <= stepNumber) {
                 step.classList.add('active');
@@ -260,7 +260,7 @@ class FormOptimizer {
         });
     }
 
-    // 工具函数
+    // Utility functions
     isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
@@ -269,30 +269,30 @@ class FormOptimizer {
         return /^[\+\d\s\-\(\)]{10,}$/.test(phone);
     }
 
-    // 自动填充地理位置
+    // Auto-fill geographic location
     setupGeoLocation() {
         if ('geolocation' in navigator) {
             const countryFields = document.querySelectorAll('select[name="country"]');
-            
+
             if (countryFields.length > 0) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
                         this.getCountryFromCoordinates(position.coords.latitude, position.coords.longitude);
                     },
                     (error) => {
-                        console.log('地理位置获取失败:', error);
+                        console.log('Geolocation acquisition failed:', error);
                     }
                 );
             }
         }
     }
 
-    // 从坐标获取国家
+    // Get country from coordinates
     async getCountryFromCoordinates(lat, lng) {
         try {
             const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`);
             const data = await response.json();
-            
+
             if (data.countryCode) {
                 const countryFields = document.querySelectorAll('select[name="country"]');
                 countryFields.forEach(field => {
@@ -304,12 +304,12 @@ class FormOptimizer {
                 });
             }
         } catch (error) {
-            console.log('国家信息获取失败:', error);
+            console.log('Country information acquisition failed:', error);
         }
     }
 }
 
-// 初始化表单优化器
+// Initialize form optimizer
 document.addEventListener('DOMContentLoaded', () => {
     new FormOptimizer();
 });

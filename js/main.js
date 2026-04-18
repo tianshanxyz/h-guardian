@@ -2,11 +2,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuCloseBtn = document.querySelector('.mobile-menu-close');
     const navMenu = document.querySelector('.nav-menu');
     
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+        });
+    }
+    
+    if (mobileMenuCloseBtn) {
+        mobileMenuCloseBtn.addEventListener('click', function() {
+            navMenu.classList.remove('active');
         });
     }
     
@@ -119,5 +126,34 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+    
+    // FAQ Accordion Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = '0';
+                    }
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    if (answer) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                }
+            });
+        }
     });
 });

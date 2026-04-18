@@ -6,7 +6,7 @@ class ComponentLoader {
     
     async loadComponent(componentName) {
         try {
-            const response = await fetch(`/includes/${componentName}.html`);
+            const response = await fetch(`components/${componentName}.html`);
             if (!response.ok) {
                 throw new Error(`Failed to load ${componentName}`);
             }

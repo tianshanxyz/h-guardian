@@ -1,6 +1,53 @@
+# AI Crawler Optimization - Allow all major AI bots
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Omgilibot
+Allow: /
+Crawl-delay: 1
+
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: AppleBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BingBot
+Allow: /
+Crawl-delay: 1
+
+# Standard crawlers
 User-agent: *
 Allow: /
+Disallow: /backup_*/
+Disallow: /components/
+Disallow: /.trae/
+Disallow: /*.md$
+Disallow: /*.backup$
 
-Sitemap: https://h-guardian.com/sitemap.xml
+Sitemap: https://www.h-guardian.com/sitemap.xml
 
 Crawl-delay: 1

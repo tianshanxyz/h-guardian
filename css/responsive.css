@@ -39,12 +39,32 @@
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
     
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+    
+    .mobile-menu-close {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        cursor: pointer;
+        padding: 10px;
+        margin-left: auto;
+        margin-bottom: 15px;
+        transition: var(--transition);
+    }
+    
+    .mobile-menu-close:hover {
+        color: var(--primary-color);
+        transform: scale(1.1);
     }
     
     .nav-dropdown .dropdown-content {
