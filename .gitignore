@@ -5,3 +5,7 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+
+# Backup folder
+_docs_backup/
+*.backup
