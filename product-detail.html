@@ -1174,7 +1174,7 @@
             // 快速询价表单
             const quickInquiryForm = document.getElementById('quick-inquiry');
             if (quickInquiryForm) {
-                quickInquiryForm.addEventListener('submit', function(e) {
+                quickInquiryForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
                     // 验证邮箱
@@ -1184,19 +1184,19 @@
                         return;
                     }
                     
-                    // 显示加载状态
                     const submitBtn = this.querySelector('button[type="submit"]');
                     const originalText = submitBtn.innerHTML;
+                    
+                    // 显示加载状态
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Calculating...';
                     submitBtn.disabled = true;
                     
-                    // 模拟计算报价
-                    setTimeout(() => {
+                    try {
+                        // 计算价格
                         const quantity = parseInt(document.getElementById('quantity').value);
                         const urgency = document.getElementById('urgency').value;
                         
-                        // 计算价格（示例逻辑）
-                        let basePrice = 0.05; // 每个口罩的基础价格
+                        let basePrice = 0.05;
                         let urgencyMultiplier = 1;
                         
                         if (urgency === 'urgent') urgencyMultiplier = 1.2;
@@ -1205,7 +1205,7 @@
                         let unitPrice = basePrice * urgencyMultiplier;
                         let totalPrice = (unitPrice * quantity).toFixed(2);
                         
-                        // 显示报价结果
+                        // 显示报价结果 modal
                         const quoteModal = document.createElement('div');
                         quoteModal.style.cssText = `
                             position: fixed;
@@ -1231,7 +1231,7 @@
                             ">
                                 <h3 style="color: #339999; margin-bottom: 20px;">Your Instant Quote</h3>
                                 <div style="margin-bottom: 20px;">
-                                    <p><strong>Product:</strong> 3-Ply Disposable Surgical Mask for Adults</p>
+                                    <p><strong>Product:</strong> ${document.title.replace(' | H-Guardian', '')}</p>
                                     <p><strong>Quantity:</strong> ${quantity.toLocaleString()} pieces</p>
                                     <p><strong>Urgency:</strong> ${urgency.charAt(0).toUpperCase() + urgency.slice(1)} Delivery</p>
                                     <hr style="margin: 20px 0;">
@@ -1274,10 +1274,48 @@
                             document.body.removeChild(quoteModal);
                         });
                         
-                        // 联系销售按钮事件
-                        document.getElementById('contact-sales').addEventListener('click', function() {
-                            alert('Redirecting to contact page...');
-                            window.location.href = 'contact.html';
+                        // 联系销售按钮事件 - 修复：发送邮件
+                        document.getElementById('contact-sales').addEventListener('click', async function() {
+                            try {
+                                // 使用 EmailJS 发送邮件
+                                if (typeof emailjs !== 'undefined') {
+                                    const templateParams = {
+                                        from_name: 'Product Detail Quick Quote',
+                                        from_email: email,
+                                        reply_to: email,
+                                        product_name: document.title.replace(' | H-Guardian', ''),
+                                        quantity: quantity.toLocaleString(),
+                                        unit_price: `$${unitPrice.toFixed(3)}`,
+                                        total_price: `$${totalPrice}`,
+                                        urgency: urgency,
+                                        customer_email: email,
+                                        page_url: window.location.href,
+                                        submission_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })
+                                    };
+                                    
+                                    console.log('📧 Sending product detail quote email...', templateParams);
+                                    
+                                    const response = await emailjs.send(
+                                        'service_9zp6s9v',
+                                        'template_rfge4zj',
+                                        templateParams
+                                    );
+                                    
+                                    console.log('✅ Quote email sent successfully:', response);
+                                    
+                                    // 显示成功消息
+                                    alert('✅ Quote request sent successfully! We will contact you within 24 hours.');
+                                    
+                                    // 关闭 modal
+                                    document.body.removeChild(quoteModal);
+                                    
+                                } else {
+                                    throw new Error('EmailJS not loaded');
+                                }
+                            } catch (error) {
+                                console.error('❌ Email sending error:', error);
+                                alert('❌ Failed to send quote. Please contact info@h-guardian.com directly.');
+                            }
                         });
                         
                         // 点击模态框外部关闭
@@ -1287,10 +1325,21 @@
                             }
                         });
                         
-                        // 重置按钮状态
+                        // 记录提交
+                        console.log('Quick quote calculated:', { email, quantity, urgency, totalPrice });
+                        
+                        // 恢复按钮状态
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
-                    }, 1500);
+                        
+                    } catch (error) {
+                        console.error('❌ Quick quote error:', error);
+                        alert('Failed to calculate quote. Please try again or contact info@h-guardian.com');
+                        
+                        // 恢复按钮状态
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
                 });
             }
             
