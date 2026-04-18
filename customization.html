@@ -1290,6 +1290,16 @@
             });
         }
     </script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init('1_y80J3lBqJfYafV7');
+            console.log('✅ EmailJS initialized on customization page');
+        })();
+    </script>
+    <script src="js/form-handler.js"></script>
     <script src="js/lazy-load.js"></script>
 </body>
 </html>
