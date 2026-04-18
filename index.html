@@ -1297,10 +1297,10 @@
                 });
             });
             
-            // 快速询价功能
+            // 快速询价功能 - 修复：添加 EmailJS 邮件发送
             const quickQuoteForm = document.getElementById('quick-quote-form');
             if (quickQuoteForm) {
-                quickQuoteForm.addEventListener('submit', function(e) {
+                quickQuoteForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
                     const product = document.getElementById('quick-product').value;
@@ -1324,11 +1324,12 @@
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Calculating...';
                     submitBtn.disabled = true;
                     
-                    // 模拟计算过程
-                    setTimeout(() => {
+                    try {
                         // 计算价格
                         const pricePerPiece = calculatePricePerPiece(product, quantity);
                         const totalPrice = pricePerPiece * quantity;
+                        const shippingCost = calculateShipping(quantity);
+                        const totalEstimated = totalPrice + shippingCost;
                         
                         // 显示结果
                         const resultsDiv = document.getElementById('quick-quote-results');
@@ -1339,9 +1340,9 @@
                             <p><strong>Quantity:</strong> ${quantity.toLocaleString()} pieces</p>
                             <p><strong>Unit Price:</strong> $${pricePerPiece.toFixed(4)}/piece</p>
                             <p><strong>Total Price:</strong> $${totalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-                            <p><strong>Estimated Shipping:</strong> $${calculateShipping(quantity).toLocaleString()}</p>
+                            <p><strong>Estimated Shipping:</strong> $${shippingCost.toLocaleString()}</p>
                             <p style="font-weight: bold; color: #339999; margin-top: 10px;">
-                                Total Estimated: $${(totalPrice + calculateShipping(quantity)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                                Total Estimated: $${totalEstimated.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                             </p>
                             <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
                                 Detailed quotation will be sent to: ${email}
@@ -1349,16 +1350,67 @@
                         `;
                         
                         resultsDiv.style.display = 'block';
+                        
+                        // 发送邮件到 info@h-guardian.com
+                        if (typeof emailjs !== 'undefined') {
+                            const templateParams = {
+                                from_name: 'Quick Quote Request',
+                                from_email: email,
+                                reply_to: email,
+                                product_type: product,
+                                quantity: quantity.toLocaleString(),
+                                unit_price: `$${pricePerPiece.toFixed(4)}`,
+                                total_price: `$${totalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                estimated_shipping: `$${shippingCost.toLocaleString()}`,
+                                total_estimated: `$${totalEstimated.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                                customer_email: email,
+                                page_url: window.location.href,
+                                submission_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })
+                            };
+                            
+                            console.log('📧 Sending quick quote email...', templateParams);
+                            
+                            const response = await emailjs.send(
+                                'service_9zp6s9v',
+                                'template_rfge4zj',
+                                templateParams
+                            );
+                            
+                            console.log('✅ Quote email sent successfully:', response);
+                            
+                            // 添加成功提示
+                            const successMsg = document.createElement('p');
+                            successMsg.style.cssText = `
+                                color: #28a745;
+                                font-weight: bold;
+                                margin-top: 10px;
+                                text-align: center;
+                            `;
+                            successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Quote request sent successfully! We will contact you within 24 hours.';
+                            detailsDiv.appendChild(successMsg);
+                            
+                        } else {
+                            console.warn('EmailJS not loaded, quote not sent via email');
+                        }
+                        
+                        // 恢复按钮状态
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                         
                         // 滚动到结果区域
                         resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         
-                        // 这里可以添加实际的表单提交逻辑
+                        // 记录提交
                         console.log('Quick quote submitted:', { product, quantity, email });
                         
-                    }, 1500);
+                    } catch (error) {
+                        console.error('❌ Quick quote error:', error);
+                        alert('Failed to calculate quote. Please try again or contact info@h-guardian.com');
+                        
+                        // 恢复按钮状态
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
                 });
             }
             
