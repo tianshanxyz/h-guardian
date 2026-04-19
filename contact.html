@@ -1253,8 +1253,25 @@
                 });
             });
 
-            // Form submission is handled by js/form-handler.js
-            // No inline handler needed
+            // Form submission handling
+            multiStepForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Show loading state
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate sending process
+                setTimeout(() => {
+                    // Hide form, show success message
+                    this.style.display = 'none';
+                    this.querySelector('.success-message').style.display = 'block';
+
+                    // Add actual form submission logic here
+                    console.log('Form submitted successfully');
+                }, 2000);
+            });
 
             // Real-time confirmation info update
             document.querySelectorAll('input, select, textarea').forEach(field => {
@@ -1415,16 +1432,6 @@
             });
         }
     </script>
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init('1_y80J3lBqJfYafV7');
-            console.log('✅ EmailJS initialized on contact page');
-        })();
-    </script>
-    <script src="js/form-handler.js"></script>
     <script src="js/lazy-load.js"></script>
 </body>
 </html>
