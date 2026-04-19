@@ -156,11 +156,13 @@
             toEmail: EMAILJS_CONFIG.toEmail
         });
         
-        // 准备邮件参数 - 不使用 to_email 变量，直接在模板中设置
+        // 准备邮件参数
         const templateParams = {
+            to_email: EMAILJS_CONFIG.toEmail,  // 添加收件人邮箱
+            to_name: 'H-Guardian Team',  // 添加收件人名称
             from_name: formData['inquiry-name'] || formData['quote-name'] || 'Website Visitor',
             from_email: formData['inquiry-email'] || formData['quote-email'] || '',
-            reply_to: formData['inquiry-email'] || formData['quote-email'] || '',  // 添加 reply_to
+            reply_to: formData['inquiry-email'] || formData['quote-email'] || '',
             company: formData['inquiry-company'] || formData['quote-company'] || 'Not provided',
             subject: formData['inquiry-subject'] || 'Website Inquiry',
             message: formData['inquiry-message'] || formData['quote-message'] || '',

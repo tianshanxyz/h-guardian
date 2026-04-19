@@ -1096,7 +1096,7 @@
             
             <div class="quick-quote-container" style="max-width: 800px; margin: 0 auto;">
                 <div class="quick-quote-widget" style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <form class="mini-quote-form" id="quick-quote-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <form class="mini-quote-form" data-form-type="quick-quote" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div class="form-group" style="grid-column: span 2;">
                             <label for="quick-product" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Product Type</label>
                             <select id="quick-product" name="product" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
@@ -1298,7 +1298,7 @@
             });
             
             // 快速询价功能 - 修复：添加 EmailJS 邮件发送
-            const quickQuoteForm = document.getElementById('quick-quote-form');
+            const quickQuoteForm = document.querySelector('form[data-form-type="quick-quote"]');
             if (quickQuoteForm) {
                 quickQuoteForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
