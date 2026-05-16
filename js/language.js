@@ -15,7 +15,7 @@ class LanguageManager {
         for (const lang of this.languages) {
             try {
                 console.log(`LanguageManager: Loading ${lang}.json...`);
-                const response = await fetch(`lang/${lang}.json`);
+                const response = await fetch(`lang/${lang}.json?v=${Date.now()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
                 }
