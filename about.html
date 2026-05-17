@@ -243,11 +243,14 @@
             font-weight: 700;
             margin-bottom: 10px;
             font-family: 'Roboto', sans-serif;
+            color: white;
         }
         
         .stat-label {
             font-size: 1rem;
-            opacity: 0.9;
+            opacity: 0.95;
+            color: white;
+            font-weight: 500;
         }
         
         /* Products Section */
@@ -302,6 +305,66 @@
             color: white;
         }
         
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            background: var(--gray-light);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            min-width: 150px;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .language-switcher:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-dropdown a {
+            display: block;
+            padding: 8px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .lang-dropdown a:hover,
+        .lang-dropdown a.active {
+            background: var(--gray-light);
+            color: var(--primary-color);
+        }
+
         /* Mission Section */
         .mission-section {
             padding: 100px 0;
@@ -326,7 +389,9 @@
         .mission-content p {
             font-size: 1.2rem;
             line-height: 1.8;
-            opacity: 0.95;
+            opacity: 1;
+            color: white;
+            font-weight: 400;
         }
         
         /* Contact Section */
