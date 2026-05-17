@@ -9,3 +9,4 @@ node_modules/
 # Backup folder
 _docs_backup/
 *.backup
+backup/
