@@ -10,3 +10,9 @@ node_modules/
 _docs_backup/
 *.backup
 backup/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
