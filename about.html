@@ -236,8 +236,19 @@
         
         .stat-item {
             padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
         }
-        
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
@@ -245,7 +256,7 @@
             font-family: 'Roboto', sans-serif;
             color: white;
         }
-        
+
         .stat-label {
             font-size: 1rem;
             opacity: 0.95;
@@ -784,48 +795,43 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
+                <div class="footer-column">
                     <div class="footer-logo">
                         <img src="images/logo.png" alt="H-Guardian Logo">
                     </div>
-                    <p>Your trusted partner for high-quality protective masks. 23 years of manufacturing excellence.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <p>Nanjing Freeman Health Technology Co., Ltd<br>Jialian (Hubei) Medical Products Co., Ltd</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="products.html">Products</a></li>
-                            <li><a href="factory.html">Factory</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Products</h4>
-                        <ul>
-                            <li><a href="products.html#adults">Adult Masks</a></li>
-                            <li><a href="products.html#teens">Teen Masks</a></li>
-                            <li><a href="products.html#kids">Kids Masks</a></li>
-                            <li><a href="products.html#double-clip">Double Nose-Clip</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Nanjing & Xiantao, China</li>
-                        </ul>
-                    </div>
+
+                <div class="footer-column">
+                    <h4 data-translate="footer_quick_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="products.html" data-translate="nav_products">Products</a></li>
+                        <li><a href="factory.html" data-translate="nav_factory">Factory</a></li>
+                        <li><a href="customization.html" data-translate="nav_customization">Customization</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-translate="footer_contact_us">Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_address">Xiantao, Hubei, China</span></li>
+                        <li><i class="fas fa-phone"></i> +86 173 6191 1595</li>
+                        <li><i class="fas fa-envelope"></i> info@h-guardian.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +86 173 6191 1595</li>
+                    </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 H-Guardian (Nanjing Freeman Health Technology Co., Ltd.). All rights reserved.</p>
+                <p><span data-translate="footer_copyright">© 2003-2026 H-Guardian. All rights reserved.</span> | <a href="privacy-policy.html" data-translate="footer_privacy">Privacy Policy</a> | <a href="terms-of-service.html" data-translate="footer_terms">Terms of Service</a></p>
             </div>
         </div>
     </footer>
